@@ -1,24 +1,26 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11570563&assignment_repo_type=AssignmentRepo)
-# TÍTULO DO PROJETO
+# Task-It
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Projeto de Desenvolvimento`
 
-`SEMESTRE`
+`Eixo 4`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O Projeto consiste num app/site com objetivo de contribuir na organização de tarefas através de calendários, timer e também utilizando um dos métodos que melhor contribuem no desempenho da execução das atividades, Pomodoro.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Aaron Stiebler Carneiro da Silva
+* Diego Victor Fraga
+* Igor Teixeira da Costa
+* Thaís Malta Boscatti
+* Thais Munhoz Carneiro
+* Vinícius Eduardo Silva Oliveira
 
 ## Orientador
 
-* Nome completo do professor 1
+* Wagner Cipriano da Silva
 
 ## Instruções de utilização
 
