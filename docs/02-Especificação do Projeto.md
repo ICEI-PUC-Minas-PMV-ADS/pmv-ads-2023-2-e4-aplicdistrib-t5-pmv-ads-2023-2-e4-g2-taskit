@@ -10,16 +10,70 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 <table>
   <tr>
-    <th colspan=2>Jéssica Souza - 26 anos</th>
+    <th colspan=2>Thaissa Teixeira - 22 anos</th>
   </tr>
   <tr>
     <td>
-      <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/1cd19890-9cc9-406d-b5d8-750a209ffed1)" />    
+      <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/51f6c73b-97cd-4bfc-858d-5042cdb7f926" />    
     </td>
     <td>
       <p>
-        Estudante do último ano de advocacia. Além dos estudos, já participa de audiências como estagiária.
-        Para dar conta de ler todos os artigos necessários para seu TCC, bem como os documentos necessários para se preparar para cada audiência, Jéssica procura um app onde possa <b style="color:lightblue">listar cada compromisso</b> (TCC e casos), bem como <b style="color:lightblue">descrever o conteúdo relacionado a cada um deles</b>.
+        Estudante de Gerência de RH, Thaissa já atua como "Tech Recruiter", entrevistando diversas pessoas para preencher posições vagas em empresas.
+        Para tornar o processo de entrevista mais simples e organizado, ela busca um app onde ela pode criar uma "checklist" com sub listas, e reutiliza-la para cada entrevistado.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <th colspan=2>Kaleb Fraga - 24 anos</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/3f5a975e-abed-4878-b60a-d41cab2a7ce9" />    
+    </td>
+    <td>
+      <p>
+        Futuro diretor cinematográfico, Kaleb é graduando em um curso de Cinema.
+        Para dar conta de ler todos os artigos e obras necessárias para seu TCC, Kaleb pensa em utilizar o<b style="color:lightblue">d método do pomodoro</b> e busca um app para auxilia-lo.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <th colspan=2>Vinicius Santos - 54 anos</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/071a1684-594b-410d-9344-25b55eeedf5c" />    
+    </td>
+    <td>
+      <p>
+        Vinicius Santos é autônomo em uma indústria não convencional, e nós não precisamos de detalhes sobre isso, o que importa é que ele precisa de um aplicativo com uma lista e de um cronômetro.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <th colspan=2>Thamara Munhoz - 26 anos</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/15644891-5842-498e-b857-760839cdfd99" />    
+    </td>
+    <td>
+      <p>
+        Autodidata e Desenvolvedora de Software freelancer, Thamara precisa de uma lista para gerenciar os projetos em que trabalha, bem como contabilizar quanto tempo gastou em cada projeto.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <th colspan=2>Jéssica Boscatti - 32 anos</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/1cd19890-9cc9-406d-b5d8-750a209ffed1" />    
+    </td>
+    <td>
+      <p>
+        Gerente de projetos, Jéssica trabalha com múltiplas equipes desenvolvendo produtos para diversos clientes da empresa em que trabalha.
+        Para não se perder entre os assuntos dos projetos nas reuniões, ela pensou em utilizar um aplicativo para listar os projetos e <b style="color:lightblue">adicionar tópicos com detalhes</b> de cada um.
       </p>
     </td>
   </tr>
