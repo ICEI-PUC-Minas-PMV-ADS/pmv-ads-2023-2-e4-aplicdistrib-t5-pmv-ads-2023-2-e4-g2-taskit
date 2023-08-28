@@ -1,10 +1,6 @@
 # Especificações do Projeto
 
-<span style="color:pink">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
-
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+A determinação exata do problema, suas personas, requisitos funcionais e não-funcionais foram acordadas em reuniões online entre os membros da equipe. Foram reunidas informações e observações e, complementarmente. Os detalhes levantados nesse processo auxiliaram na construção de personas e histórias de usuários.
 
 ## Personas
 
@@ -79,35 +75,16 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
   </tr>
 </table>
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
-
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+|EU COMO... `PERSONA` | QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
+|-------------------- |------------------------------------|----------------------------------------|
+|Thaissa Teixeira     | Cadastrar um perfil para acessar as listas de tarefas salvas previamente| Reutilizar listas criadas anteriormente em situações semelhantes  |
+|Kaleb Fraga          | Controlar o tempo gasto em cada tarefa  | Gerir o tempo disponível para concluir seu TCC |
+|Vinicius Santos      | Organizar tarefas por meio de listas e gerir o tempo de execução demandado por cada uma delas| Aumentar a produtividade da sua empresa |
+|Thamara Munhoz       | Criar listas de tarefas e determinar o tempo planejado para a execução das mesmas| Organizar as demandas diárias do trabalho e evitar atrasos nas entregas para os clientes |
+|Jéssica Boscatti     | Acessar regularmente, por meio de login, as informações nas listas salvas em seu perfil cadastrado | Editar ou excluir os itens já adicionados nas listas e organizar as tarefas em andamento ou concluídas |
 
 ## Modelagem do Processo de Negócio 
 
@@ -154,8 +131,8 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 |RF-002  | O software deve permitir que o usuário crie uma tarefa.   | ALTA |
 |RF-003  | O software deve permitir que o usuário exclua uma tarefa.   | ALTA |
 |RF-004  | O software deve permitir que o usuário edite uma tarefa.   | ALTA |
-|RF-005  | O software deve ter uma tela de login. | ALTA |
-|RF-006  | O software deve ter uma tela de cadastro.   | ALTA |
+|RF-005  | O software deve permitir o login e o logout. | ALTA |
+|RF-006  | O software deve permitir o cadastro de usuários.   | ALTA |
 
 ### Requisitos não Funcionais
 
