@@ -25,12 +25,18 @@ Apresente também alguns (pelo menos 2) objetivos específicos dependendo de ond
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A necessidade de conseguir ter foco nas atividades que precisam ser executadas, organização de tarefas e agenda em um mundo cada vez mais corrido e com mais informação faz com que seja necessário ter apoio para organizar e criar rotina para as pessoas.
+O processo de organização deve ser prático, com o cuidado de não onerar o usuário, por isso o Task-it é um aplicativo de simples uso, de fácil organização e com ganho de tempo e visibilidade do que pode ser importante no dia a dia, impactando de forma positiva a rotina do usuário. 
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+A falta de planejamento gera impactos negativos, seja pela falta de controle do que precisa ser feito, como pela constante procrastinação, que acarreta diversos problemas tanto na vida, quanto na saúde.
+Da mesma forma como o início frequente de tarefas que não são concluídas também causam desmotivação e frustração, por isso a importância de uma mudança gradual, que possa ser incorporada e assimilada como hábito.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Sendo assim, vimos que é possível, através do Task-it, um aplicativo sem complicações, apoiar o usuário em sua vida.
+
+
+Fontes:https://ead.pucpr.br/blog/procrastinar
+       https://suaevolucao.com.br/a-importancia-dos-habitos/
+
 
 ## Público-Alvo
 
