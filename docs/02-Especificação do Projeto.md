@@ -29,7 +29,7 @@ A determinação exata do problema, suas personas, requisitos funcionais e não-
     <td>
       <p>
         Futuro diretor cinematográfico, Kaleb é graduando em um curso de Cinema.
-        Para dar conta de ler todos os artigos e obras necessárias para seu TCC, Kaleb pensa em utilizar o<b style="color:lightblue">d método do pomodoro</b> e busca um app para auxilia-lo.
+        Para dar conta de ler todos os artigos e obras necessárias para seu TCC, Kaleb pensa em utilizar o<b style="color:lightblue"> método do pomodoro</b> e busca um app para auxilia-lo.
       </p>
     </td>
   </tr>
@@ -42,7 +42,7 @@ A determinação exata do problema, suas personas, requisitos funcionais e não-
     </td>
     <td>
       <p>
-        Vinicius Santos é autônomo em uma indústria não convencional, e nós não precisamos de detalhes sobre isso, o que importa é que ele precisa de um aplicativo com uma lista e de um cronômetro.
+        Vinicius Santos é autônomo em uma indústria não convencional, e nós não precisamos de detalhes sobre isso, o que importa é que ele precisa de um aplicativo com uma lista para gerenciamento de tarefas e de um cronômetro.
       </p>
     </td>
   </tr>
