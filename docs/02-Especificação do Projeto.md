@@ -29,7 +29,7 @@ A determinação exata do problema, suas personas, requisitos funcionais e não-
     <td>
       <p>
         Futuro diretor cinematográfico, Kaleb é graduando em um curso de Cinema.
-        Para dar conta de ler todos os artigos e obras necessárias para seu TCC, Kaleb pensa em utilizar o<b style="color:lightblue">d método do pomodoro</b> e busca um app para auxilia-lo.
+        Para dar conta de ler todos os artigos e obras necessárias para seu TCC, Kaleb pensa em utilizar o<b style="color:lightblue"> método do pomodoro</b> e busca um app para auxilia-lo.
       </p>
     </td>
   </tr>
@@ -42,7 +42,7 @@ A determinação exata do problema, suas personas, requisitos funcionais e não-
     </td>
     <td>
       <p>
-        Vinicius Santos é autônomo em uma indústria não convencional, e nós não precisamos de detalhes sobre isso, o que importa é que ele precisa de um aplicativo com uma lista e de um cronômetro.
+        Vinicius Santos é autônomo em uma indústria não convencional, e nós não precisamos de detalhes sobre isso, o que importa é que ele precisa de um aplicativo com uma lista para gerenciamento de tarefas e de um cronômetro.
       </p>
     </td>
   </tr>
@@ -157,16 +157,7 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 
 ## Diagrama de Casos de Uso
 
-O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
-
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
+O Diagrama de Casos, conforme ilustrado abaixo, serve para permitir uma melhor representação visual entre o usuário e o sistema, baseado nos requisitos funcionais do sistema.
 
 # Matriz de Rastreabilidade
 
@@ -189,7 +180,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 
 # Gerenciamento de Projeto
 
-De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar projetos, e que caracterizam a multidisciplinaridade envolvida, são: Integração, Escopo, Cronograma (Tempo), Custos, Qualidade, Recursos, Comunicações, Riscos, Aquisições, Partes Interessadas. Para desenvolver projetos um profissional deve se preocupar em gerenciar todas essas dez áreas. Elas se complementam e se relacionam, de tal forma que não se deve apenas examinar uma área de forma estanque. É preciso considerar, por exemplo, que as áreas de Escopo, Cronograma e Custos estão muito relacionadas. Assim, se eu amplio o escopo de um projeto eu posso afetar seu cronograma e seus custos.
+Em observação ao cronograma geral dos entregáveis do projeto junto aos requisitos, foi construído um gráfico ilustrando o avanço das diferentes etapas do projeto com as respectivas dependências (gráfico de gantt). Também foi criado uma tabela com estimativa de custos.
 
 ## Gerenciamento de Tempo
 
