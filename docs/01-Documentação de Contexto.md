@@ -16,12 +16,9 @@ Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thin
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+O objetivo do Task-it é auxiliar a rotina, a organização do dia-a-dia e das tarefas que possibilitam alcanças os objetivos dos usuários.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Possibilitar o acompanhamento das tarefas que precisam ser executadas pelo usuário, assim como formas de controle de tempo, que ajudam a se programar melhor e incentivar a execução dessas tarefas.
 
 ## Justificativa
 
@@ -41,11 +38,3 @@ Fontes:https://ead.pucpr.br/blog/procrastinar
 ## Público-Alvo
 
 O público-alvo do Task-it são pessoas adultas, que já utilizam computadores ou smartphones, e possuem dificuldade em execução de tarefas até a sua conclusão, organização de rotina e sequência de atividades e que precisam de apoio para tornar seu dia mais produtivo e de fácil acompanhamento.
-
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
