@@ -179,22 +179,14 @@ Em observação ao cronograma geral dos entregáveis do projeto junto aos requis
 
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
+Para o gerenciamento do cronograma do projeto foi utilizado o método de Gantt. As imagens abaixo mostram: a Tabela de Organização das tarefas, com as datas de início e fim, e, também, com as ordem cronológica a serem executadas; e o diagrama de Gantt, onde trás essa ilustração da tabela.
 
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
+![Tabela de Cronograma do Diagrama de Gantt)](./img/Tabela%20de%20Cronograma.jpg)
 
-O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
-
-![Gráfico de Gantt](img/02-grafico-gantt.png)
-
-## Gerenciamento de Equipe
-
-O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
-
-![Simple Project Timeline](img/02-project-timeline.png)
+![Gráfico de Gantt](./img/Diagrama%20de%20Gantt%20(TaskIt).png)
 
 ## Gestão de Orçamento
 
-O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo.
+O orçamento foi planejado para o tempo estimado de 5 meses, desde o brainstorm até a entrega do produto. Foi levado em consideração os gastos totais e a forma de pagamento desses gastos. Também foi feito uma reserva para gastos emergenciais de 10% dos gastos totais.
 
-![Orçamento](img/02-orcamento.png)
+![Orçamento](./img/Tabela%20de%20Custos%20Totais.jpg)
