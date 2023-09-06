@@ -159,6 +159,8 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 
 O Diagrama de Casos, conforme ilustrado abaixo, serve para permitir uma melhor representação visual entre o usuário e o sistema, baseado nos requisitos funcionais do sistema.
 
+![Casos de Uso](.img/casos_de_uso.png)
+
 # Matriz de Rastreabilidade
 
 A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
