@@ -81,9 +81,9 @@ A determinação exata do problema, suas personas, requisitos funcionais e não-
 |EU COMO... `PERSONA` | QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |-------------------- |------------------------------------|----------------------------------------|
 |Thaissa Teixeira     | Cadastrar um perfil para acessar as listas de tarefas salvas previamente| Reutilizar listas criadas anteriormente em situações semelhantes  |
-|Kaleb Fraga          | Controlar o tempo gasto em cada tarefa  | Gerir o tempo disponível para concluir seu TCC |
-|Vinicius Santos      | Organizar tarefas por meio de listas e gerir o tempo de execução demandado por cada uma delas| Aumentar a produtividade da sua empresa |
-|Thamara Munhoz       | Criar listas de tarefas e determinar o tempo planejado para a execução das mesmas| Organizar as demandas diárias do trabalho e evitar atrasos nas entregas para os clientes |
+|Kaleb Fraga          | Controlar o tempo gasto em cada tarefa e acompanhar sua produtividade por meio de relatórios | Gerir o tempo disponível para concluir seu TCC |
+|Vinicius Santos      | Compartilhar suas listas de tarefas com outros funcionários da empresa | Aumentar a produtividade da sua empresa |
+|Thamara Munhoz       | Criar listas de tarefas e categorizá-las segundo sua urgência ou complexidade| Organizar as demandas diárias do trabalho e evitar atrasos nas entregas para os clientes |
 |Jéssica Boscatti     | Acessar regularmente, por meio de login, as informações nas listas salvas em seu perfil cadastrado | Editar ou excluir os itens já adicionados nas listas e organizar as tarefas em andamento ou concluídas |
 
 ## Modelagem do Processo de Negócio 
@@ -127,12 +127,13 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 
 |ID    | Descrição do Requisito  | Prioridade |
 |--------|-----------------------------------------|----|
-|RF-001  | O software deve apresentar um timer para o controle de tempo. | MÉDIA | 
-|RF-002  | O software deve permitir que o usuário crie uma tarefa.   | ALTA |
-|RF-003  | O software deve permitir que o usuário exclua uma tarefa.   | ALTA |
-|RF-004  | O software deve permitir que o usuário edite uma tarefa.   | ALTA |
-|RF-005  | O software deve permitir o login e o logout. | ALTA |
-|RF-006  | O software deve permitir o cadastro de usuários.   | ALTA |
+|RF-001  | O software deve permitir que o usuário crie uma lista de tarefas. | ALTA | 
+|RF-002  | O software deve permitir o cadastro de usuários.   | ALTA |
+|RF-003  | O O software deve permitir o login e logout.   | ALTA |
+|RF-004  | O software deve apresentar um timer para o controle de tempo.   | MÉDIA |
+|RF-005  | O software deve permitir que o usuário organize suas tarefas utilizando as categorias urgente, difícil e fácil. | MÉDIA |
+|RF-006  | O software deve gerar um relatório com o tempo gasto em cada tarefa.   | BAIXA |
+|RF-007  | O software deve permitir o compartilhamento das listas.   | BAIXA |
 
 ### Requisitos não Funcionais
 
