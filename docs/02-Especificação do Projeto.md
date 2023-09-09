@@ -90,32 +90,19 @@ A determinação exata do problema, suas personas, requisitos funcionais e não-
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+. 
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+.
 
 ### Processo 1 – NOME DO PROCESSO
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
-
-![Processo 1](img/02-bpmn-proc1.png)
-
-### Processo 2 – NOME DO PROCESSO
-
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
-
-![Processo 2](img/02-bpmn-proc2.png)
+.
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
-
-Usar o seguinte modelo: 
-
-![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
+.
 
 ## Requisitos
 
@@ -129,10 +116,10 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 |--------|-----------------------------------------|----|
 |RF-001  | O software deve permitir que o usuário crie uma lista de tarefas. | ALTA | 
 |RF-002  | O software deve permitir o cadastro de usuários.   | ALTA |
-|RF-003  | O O software deve permitir o login e logout.   | ALTA |
+|RF-003  | O software deve permitir o login e logout.   | ALTA |
 |RF-004  | O software deve apresentar um timer para o controle de tempo.   | MÉDIA |
 |RF-005  | O software deve permitir que o usuário organize suas tarefas utilizando as categorias urgente, difícil e fácil. | MÉDIA |
-|RF-006  | O software deve gerar um relatório com o tempo gasto em cada tarefa.   | BAIXA |
+|RF-006  | O software deve gerar um relatório comparando o tempo gasto com o tempo planejado.   | BAIXA |
 |RF-007  | O software deve permitir o compartilhamento das listas.   | BAIXA |
 
 ### Requisitos não Funcionais
@@ -142,9 +129,7 @@ A tabela a seguir apresenta os requisitos não funcionais que o projeto deverá 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
 |RNF-001| A aplicação deve ser publicada em repositório público acessível na internet (Repl.it, GitHub Pages etc.).| ALTA | 
-|RNF-002| Uso de design responsivo nas interfaces gráficas para diferentes tipos de telas de celular, tablet e etc. |  ALTA | 
-|RNF-003| O aplicativo deve ser compatível com os principais navegadores do mercado para mobile (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari) |  ALTA | 
-|RNF-004| O site não apresentará aos usuários quaisquer dados de cunho privativo e deverá atender às normas legais, tais como padrões LGPD e etc. | ALTA | 
+|RNF-002| O site não apresentará aos usuários quaisquer dados de cunho privativo e deverá atender às normas legais, tais como padrões LGPD e etc. | ALTA | 
 
 ## Restrições
 
