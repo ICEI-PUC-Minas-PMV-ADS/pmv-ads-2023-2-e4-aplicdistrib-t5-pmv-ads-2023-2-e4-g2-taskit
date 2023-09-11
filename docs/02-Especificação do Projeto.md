@@ -81,41 +81,28 @@ A determinação exata do problema, suas personas, requisitos funcionais e não-
 |EU COMO... `PERSONA` | QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |-------------------- |------------------------------------|----------------------------------------|
 |Thaissa Teixeira     | Cadastrar um perfil para acessar as listas de tarefas salvas previamente| Reutilizar listas criadas anteriormente em situações semelhantes  |
-|Kaleb Fraga          | Controlar o tempo gasto em cada tarefa  | Gerir o tempo disponível para concluir seu TCC |
-|Vinicius Santos      | Organizar tarefas por meio de listas e gerir o tempo de execução demandado por cada uma delas| Aumentar a produtividade da sua empresa |
-|Thamara Munhoz       | Criar listas de tarefas e determinar o tempo planejado para a execução das mesmas| Organizar as demandas diárias do trabalho e evitar atrasos nas entregas para os clientes |
+|Kaleb Fraga          | Controlar o tempo gasto em cada tarefa e acompanhar sua produtividade por meio de relatórios | Gerir o tempo disponível para concluir seu TCC |
+|Vinicius Santos      | Compartilhar suas listas de tarefas com outros funcionários da empresa | Aumentar a produtividade da sua empresa |
+|Thamara Munhoz       | Criar listas de tarefas e categorizá-las segundo sua urgência ou complexidade| Organizar as demandas diárias do trabalho e evitar atrasos nas entregas para os clientes |
 |Jéssica Boscatti     | Acessar regularmente, por meio de login, as informações nas listas salvas em seu perfil cadastrado | Editar ou excluir os itens já adicionados nas listas e organizar as tarefas em andamento ou concluídas |
 
 ## Modelagem do Processo de Negócio 
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+. 
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+.
 
 ### Processo 1 – NOME DO PROCESSO
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
-
-![Processo 1](img/02-bpmn-proc1.png)
-
-### Processo 2 – NOME DO PROCESSO
-
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
-
-![Processo 2](img/02-bpmn-proc2.png)
+.
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
-
-Usar o seguinte modelo: 
-
-![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
+.
 
 ## Requisitos
 
@@ -127,12 +114,13 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 
 |ID    | Descrição do Requisito  | Prioridade |
 |--------|-----------------------------------------|----|
-|RF-001  | O software deve apresentar um timer para o controle de tempo. | MÉDIA | 
-|RF-002  | O software deve permitir que o usuário crie uma tarefa.   | ALTA |
-|RF-003  | O software deve permitir que o usuário exclua uma tarefa.   | ALTA |
-|RF-004  | O software deve permitir que o usuário edite uma tarefa.   | ALTA |
-|RF-005  | O software deve permitir o login e o logout. | ALTA |
-|RF-006  | O software deve permitir o cadastro de usuários.   | ALTA |
+|RF-001  | O software deve permitir que o usuário crie uma lista de tarefas. | ALTA | 
+|RF-002  | O software deve permitir o cadastro de usuários.   | ALTA |
+|RF-003  | O software deve permitir o login e logout.   | ALTA |
+|RF-004  | O software deve apresentar um timer para o controle de tempo.   | MÉDIA |
+|RF-005  | O software deve permitir que o usuário organize suas tarefas utilizando as categorias urgente, difícil e fácil. | MÉDIA |
+|RF-006  | O software deve gerar um relatório comparando o tempo gasto com o tempo planejado.   | BAIXA |
+|RF-007  | O software deve permitir o compartilhamento das listas.   | BAIXA |
 
 ### Requisitos não Funcionais
 
@@ -141,9 +129,7 @@ A tabela a seguir apresenta os requisitos não funcionais que o projeto deverá 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
 |RNF-001| A aplicação deve ser publicada em repositório público acessível na internet (Repl.it, GitHub Pages etc.).| ALTA | 
-|RNF-002| Uso de design responsivo nas interfaces gráficas para diferentes tipos de telas de celular, tablet e etc. |  ALTA | 
-|RNF-003| O aplicativo deve ser compatível com os principais navegadores do mercado para mobile (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari) |  ALTA | 
-|RNF-004| O site não apresentará aos usuários quaisquer dados de cunho privativo e deverá atender às normas legais, tais como padrões LGPD e etc. | ALTA | 
+|RNF-002| O site não apresentará aos usuários quaisquer dados de cunho privativo e deverá atender às normas legais, tais como padrões LGPD e etc. | ALTA | 
 
 ## Restrições
 
@@ -158,6 +144,8 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 ## Diagrama de Casos de Uso
 
 O Diagrama de Casos, conforme ilustrado abaixo, serve para permitir uma melhor representação visual entre o usuário e o sistema, baseado nos requisitos funcionais do sistema.
+
+![Casos de Uso](img/casos_de_uso.png)
 
 # Matriz de Rastreabilidade
 
@@ -184,22 +172,14 @@ Em observação ao cronograma geral dos entregáveis do projeto junto aos requis
 
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
+Para o gerenciamento do cronograma do projeto foi utilizado o método de Gantt. As imagens abaixo mostram: a Tabela de Organização das tarefas, com as datas de início e fim, e, também, com as ordem cronológica a serem executadas; e o diagrama de Gantt, onde trás essa ilustração da tabela.
 
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
+![Tabela de Cronograma do Diagrama de Gantt)](./img/Tabela%20de%20Cronograma.jpg)
 
-O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
-
-![Gráfico de Gantt](img/02-grafico-gantt.png)
-
-## Gerenciamento de Equipe
-
-O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
-
-![Simple Project Timeline](img/02-project-timeline.png)
+![Gráfico de Gantt](./img/Diagrama%20de%20Gantt%20(TaskIt).png)
 
 ## Gestão de Orçamento
 
-O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo.
+O orçamento foi planejado para o tempo estimado de 5 meses, desde o brainstorm até a entrega do produto. Foi levado em consideração os gastos totais e a forma de pagamento desses gastos. Também foi feito uma reserva para gastos emergenciais de 10% dos gastos totais.
 
-![Orçamento](img/02-orcamento.png)
+![Orçamento](./img/Tabela%20de%20Custos%20Totais.jpg)
