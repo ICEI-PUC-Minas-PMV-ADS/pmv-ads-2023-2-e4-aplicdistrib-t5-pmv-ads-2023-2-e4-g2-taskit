@@ -78,13 +78,13 @@ A determinação exata do problema, suas personas, requisitos funcionais e não-
 ## Histórias de Usuários
 
 
-|EU COMO... `PERSONA` | QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|-------------------- |------------------------------------|----------------------------------------|
-|Thaissa Teixeira     | Cadastrar um perfil para acessar as listas de tarefas salvas previamente| Reutilizar listas criadas anteriormente em situações semelhantes  |
-|Kaleb Fraga          | Controlar o tempo gasto em cada tarefa e acompanhar sua produtividade por meio de relatórios | Gerir o tempo disponível para concluir seu TCC |
-|Vinicius Santos      | Compartilhar suas listas de tarefas com outros funcionários da empresa | Aumentar a produtividade da sua empresa |
-|Thamara Munhoz       | Criar listas de tarefas e categorizá-las segundo sua urgência ou complexidade| Organizar as demandas diárias do trabalho e evitar atrasos nas entregas para os clientes |
-|Jéssica Boscatti     | Acessar regularmente, por meio de login, as informações nas listas salvas em seu perfil cadastrado | Editar ou excluir os itens já adicionados nas listas e organizar as tarefas em andamento ou concluídas |
+| EU COMO... `PERSONA` | QUERO/PRECISO ... `FUNCIONALIDADE`                                                                 | PARA ... `MOTIVO/VALOR`                                                                                |
+|----------------------|----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| Thaissa Teixeira     | Cadastrar um perfil para acessar as listas de tarefas salvas previamente                           | Reutilizar listas criadas anteriormente em situações semelhantes                                       |
+| Kaleb Fraga          | Controlar o tempo gasto em cada tarefa e acompanhar sua produtividade por meio de relatórios       | Gerir o tempo disponível para concluir seu TCC                                                         |
+| Vinicius Santos      | Compartilhar suas listas de tarefas com outros funcionários da empresa                             | Aumentar a produtividade da sua empresa                                                                |
+| Thamara Munhoz       | Criar listas de tarefas e categorizá-las segundo sua urgência ou complexidade                      | Organizar as demandas diárias do trabalho e evitar atrasos nas entregas para os clientes               |
+| Jéssica Boscatti     | Acessar regularmente, por meio de login, as informações nas listas salvas em seu perfil cadastrado | Editar ou excluir os itens já adicionados nas listas e organizar as tarefas em andamento ou concluídas |
 
 ## Modelagem do Processo de Negócio 
 
@@ -112,34 +112,34 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade em que os mesmos devem ser entregues. 
 
-|ID    | Descrição do Requisito  | Prioridade |
-|--------|-----------------------------------------|----|
-|RF-001  | O software deve permitir que o usuário crie uma lista de tarefas. | ALTA | 
-|RF-002  | O software deve permitir o cadastro de usuários.   | ALTA |
-|RF-003  | O software deve permitir o login e logout.   | ALTA |
-|RF-004  | O software deve apresentar um timer para o controle de tempo.   | MÉDIA |
-|RF-005  | O software deve permitir que o usuário organize suas tarefas utilizando as categorias urgente, difícil e fácil. | MÉDIA |
-|RF-006  | O software deve gerar um relatório comparando o tempo gasto com o tempo planejado.   | BAIXA |
-|RF-007  | O software deve permitir o compartilhamento das listas.   | BAIXA |
+| ID     | Descrição do Requisito                                                                                          | Prioridade |
+|--------|-----------------------------------------------------------------------------------------------------------------|------------|
+| RF-001 | O software deve permitir que o usuário crie uma lista de tarefas.                                               | ALTA       |
+| RF-002 | O software deve permitir o cadastro de usuários.                                                                | ALTA       |
+| RF-003 | O software deve permitir o login e logout.                                                                      | ALTA       |
+| RF-004 | O software deve apresentar um timer para o controle de tempo.                                                   | MÉDIA      |
+| RF-005 | O software deve permitir que o usuário organize suas tarefas utilizando as categorias urgente, difícil e fácil. | MÉDIA      |
+| RF-006 | O software deve gerar um relatório comparando o tempo gasto com o tempo planejado.                              | BAIXA      |
+| RF-007 | O software deve permitir o compartilhamento das listas.                                                         | BAIXA      |
 
 ### Requisitos não Funcionais
 
 A tabela a seguir apresenta os requisitos não funcionais que o projeto deverá atender.
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| A aplicação deve ser publicada em repositório público acessível na internet (Repl.it, GitHub Pages etc.).| ALTA | 
-|RNF-002| O site não apresentará aos usuários quaisquer dados de cunho privativo e deverá atender às normas legais, tais como padrões LGPD e etc. | ALTA | 
+| ID      | Descrição do Requisito                                                                                                                  | Prioridade |
+|---------|-----------------------------------------------------------------------------------------------------------------------------------------|------------|
+| RNF-001 | A aplicação deve ser publicada em repositório público acessível na internet (Repl.it, GitHub Pages etc.).                               | ALTA       |
+| RNF-002 | O site não apresentará aos usuários quaisquer dados de cunho privativo e deverá atender às normas legais, tais como padrões LGPD e etc. | ALTA       |
 
 ## Restrições
 
 As questões que limitam a execução desse projeto e que se configuram como obrigações claras para o desenvolvimento do projeto em questão são apresentadas na tabela a seguir.
 
-|ID| Restrição                                             |
-|-----|-------------------------------------------------------|
-|RE-01| O projeto deve ser entregue até 10/12/2023. |
-|RE-02| A equipe não pode subcontratar o desenvolvimento do trabalho.|
-|RE-03| O projeto utiliza as linguagens HTML, CSS, JavaScript e React, para que os usuários possam visualizar e interagir com o site na versão mobile.|
+| ID    | Restrição                                                                                                                                      |
+|-------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| RE-01 | O projeto deve ser entregue até 10/12/2023.                                                                                                    |
+| RE-02 | A equipe não pode subcontratar o desenvolvimento do trabalho.                                                                                  |
+| RE-03 | O projeto utiliza as linguagens HTML, CSS, JavaScript e React, para que os usuários possam visualizar e interagir com o site na versão mobile. |
 
 ## Diagrama de Casos de Uso
 
@@ -149,22 +149,25 @@ O Diagrama de Casos, conforme ilustrado abaixo, serve para permitir uma melhor r
 
 # Matriz de Rastreabilidade
 
+| &nbsp;     | RF-01 | RF-02 | RF-03 | RF-04 | RF-05 | RF-06 | RF-07 | RNF-01 | RNF-02 | RE-01 | RE-02 | RE-3 |
+|------------|-------|-------|-------|-------|-------|-------|-------|--------|--------|-------|-------|------|
+| **RF-01**  |       | ❌     | ❌     |       |       |       |       |        | ❌      | ❌     | ❌     | ❌    |
+| **RF-02**  |       |       |       |       |       |       |       |        | ❌      |       |       |      |
+| **RF-03**  |       | ❌     |       |       |       |       |       |        | ❌      |       |       |      |
+| **RF-04**  |       | ❌     | ❌     |       |       |       |       |        | ❌      |       |       |      |
+| **RF-05**  | ❌     | ❌     | ❌     |       |       |       |       |        | ❌      |       |       |      |
+| **RF-06**  | ❌     | ❌     | ❌     |       |       |       |       |        | ❌      |       |       |      |
+| **RF-07**  | ❌     | ❌     | ❌     |       |       |       |       |        | ❌      |       |       |      |
+| **RNF-01** |       |       |       |       |       |       |       |        | ❌      |       |       |      |
+| **RNF-02** |       |       |       |       |       |       |       |        |        |       | ❌     |      |
+| **RE-01**  | ❌     | ❌     | ❌     | ❌     | ❌     | ❌     | ❌     | ❌      | ❌      | ❌     | ❌     | ❌    |
+| **RE-02**  |       |       |       |       |       |       |       |        | ❌      | ❌     |       |      |
+| **RE-03**  |       |       |       |       |       |       |       |        | ❌      | ❌     | ❌     |      |
 
-| &nbsp; | RF-01 | RF-02 | RF-03 | RF-04 | RF-05 | RF-06 | RNF-01 | RNF-02 | RNF-03 | RNF-04 | RE-01 | RE-02 | RE-3 |
-| ------ | ----- | ----- | ----- | ----- | ----- | ----- | ------ | ------ | ------ | ------ | ----- | ----- | ---- |
-| RF-01  |       |       |       |       |       |       |        |   ❌   |        |        |       |       |  ❌  |
-| RF-02  |       |       |  ❌  |  ❌   |  ❌   |  ❌   |        |  ❌    |        |        |       |       |  ❌  |
-| RF-03  |       |  ❌   |       |       |       |       |        |  ❌    |        |        |       |       |  ❌  |
-| RF-04  |       |  ❌   |       |       |       |       |        |  ❌    |        |        |       |       |  ❌  |
-| RF-05  |       |  ❌   |       |       |       |  ❌   |        |  ❌    |        |        |       |       |  ❌  |
-| RF-06  |       |  ❌   |       |       |  ❌   |       |        |   ❌   |        |        |       |       |  ❌  |
-| RNF-01 |       |       |       |       |       |       |        |        |        |        |       |       |      |
-| RNF-02 |  ❌   |  ❌  |  ❌   |  ❌   |  ❌   |  ❌   |        |        |        |        |       |       |      |
-| RNF-03 |       |       |       |       |       |       |        |        |        |        |       |       |      |
-| RNF-04 |       |       |       |       |       |       |        |        |        |        |       |       |      |
-| RE-01  |       |       |       |       |       |       |        |        |        |        |       |       |      |
-| RE-02  |       |       |       |       |       |       |        |        |        |        |       |       |      |
-| RE-03  |  ❌   |  ❌  |  ❌   |  ❌   |  ❌   |  ❌   |        |        |        |        |       |       |      |
+> **Legenda**:
+> 
+> - **Coluna vertical**: requisitos funcionais, não funcionais e restrições
+> - **Coluna horizontal**: relação de dependências entre os requisitos e restrições
 
 # Gerenciamento de Projeto
 
