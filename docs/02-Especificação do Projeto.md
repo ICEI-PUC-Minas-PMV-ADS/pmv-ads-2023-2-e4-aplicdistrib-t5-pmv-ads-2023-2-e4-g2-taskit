@@ -90,19 +90,30 @@ A determinação exata do problema, suas personas, requisitos funcionais e não-
 
 ### Análise da Situação Atual
 
-. 
+Na atualidade, o excesso de informação e de estímulos externos dificulta a manutenção do foco na concretização de tarefas diárias. Diversas pessoas chegam ao fim do dia ansiosas e frustradas por não terem conseguido concluir as atividades relacionadas ao trabalho e à vida pessoal.
 
 ### Descrição Geral da Proposta
 
-.
+O desenvolvimento de uma aplicação distribuída de gestão de tarefas e de tempo tem como objetivos aumentar a concentração, diminuir a ansiedade e elevar a produtividade e qualidade de vida.
+Organizar as tarefas por meio de listas auxilia os indivíduos a terem mais clareza sobre seus objetivos e controlar o tempo otimiza a distribuição do esforço empregado na execução das atividades.
+As informações adicionadas pelo usuário serão editáveis, existindo a possibilidade de adicionar ou excluir dados ao longo do tempo.
 
-### Processo 1 – NOME DO PROCESSO
+### Processo Atual 1 – Dificuldade para organizar tarefas diárias
 
-.
+O usuário não consegue organizar de forma apropriada todas as tarefas que precisa de executar e gerir o tempo dedicado a cada uma delas.
+
+### Processo Proposto 1 – Elaboração de uma lista de tarefas por meio da aplicação TaskIt
+![negocios](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/79fa1d3c-ce40-4845-bb77-7842512281b1)
 
 ## Indicadores de Desempenho
 
-.
+|# | Indicador | Objetivos |Descrição|Cálculo|Fonte|Perspectiva|
+|--| ----------| ----------|---------|-------|-----|----------|
+|01|Número de usuários cadastrados|Aumentar a taxa de crescimento do aplicativo|Avaliar quantos usuários novos cadastram-se por mês|Média do número de usuários cadastrados por mês|Banco de dados do projeto|Aumentar a taxa de crescimento| 
+|02|Número de exclusão de contas do aplicativo|Reduzir o número de usuários que deixam de utilizar o aplicativo|Avaliar as mudanças necessárias para evitar futuras exclusões |Média do número de exclusões realizadas por mês| Banco de dados do projeto |Diminuir o número de exclusões| 
+|03|Quantidade de tarefas criadas|Aumentar a frequência de uso|Verificar atividade diária dos usuários ativos|Número de tarefas criadas/editadas/excluídas por dia|Banco de dados do projeto|Aumentar o número de tarefas cadastradas |
+|04|Tempo de uso| Aumentar a frequência de uso |Verificar por quanto tempo o usuário utilizou o aplicativo|Tempo de uso do timer| Banco de dados do projeto |Aumentar o tempo de uso| 
+|05|Taxa de erros|Diminuir quantidade de falhas que o aplicativo apresentou|Percentual de solicitações que resultam em  erros ou falhas|Quantidade de falhas que o aplicativo apresentou por mês|Testes do sistema|Corrigir e verificar as falhas|
 
 ## Requisitos
 
