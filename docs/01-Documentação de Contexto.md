@@ -15,9 +15,11 @@ O problema a ser abordado nesse projeto é sobre a dificuldade que as pessoas t�
 
 ## Objetivos
 
-O objetivo do Task-it é auxiliar a rotina, a organização do dia-a-dia e das tarefas que possibilitam alcanças os objetivos dos usuários.
+O objetivo do Task-it é auxiliar a rotina, a organização do dia a dia e das tarefas que possibilitam alcanças os objetivos dos usuários.
 
-Possibilitar o acompanhamento das tarefas que precisam ser executadas pelo usuário, assim como formas de controle de tempo, que ajudam a se programar melhor e incentivar a execução dessas tarefas.
+Realizar o acompanhamento das tarefas: Através de uma interface simples, o usuário poderá cadastrar e acompanhar suas tarefas que precisam ser realizadas, passando a ter uma visão do que realmente precisa ser feito, de acordo com seus objetivos. 
+Controlar melhor o seu tempo: Através do método pomodoro é possível ter um controle do tempo que é dedicado ao que se deseja realizar, possibilitando assim maior foco em suas tarefas.
+Qualidade de vida: Organização do tempo, de obrigações e visão concreta do que precisa ser realizado, assim como do tempo real que se tem disponível, possibilita que se tenha objetivos mais reais, plejamentos mais bem realizados, proporcionando mais bem-estar ao reduzir o estresse de correria desnecessária.
 
 ## Justificativa
 
