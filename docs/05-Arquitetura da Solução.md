@@ -4,7 +4,7 @@ O software é dividido entre uma aplicação monolítica (**Frontend Web + Backe
 
 A aplicação Next.js e o banco de dados PostgreSQL serão hospedados na [**Vercel**](https://vercel.com) pela simplicidade e pela opção gratuita.
 
-![architecture](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/d8c75880-a9e8-43e2-b8ff-31ab5da78d18)
+![architecture](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/2be1a776-04af-4f54-9322-7064f4b728b1)
 
 ## Diagrama de Classes
 
