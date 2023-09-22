@@ -7,7 +7,9 @@ Tendo essa pergunta em mente, nossa proposta vem com o objetivo de sanar esse co
  
 ## Problema
 
-O problema a ser abordado nesse projeto é sobre a dificuldade que as pessoas têm em controlar e se organizar em seu dia a dia. 
+O processo de lidar com tantas obrigações, objetivos e áreas da vida moderna tem tornado cada vez mais complicado o processo de gestão desse tempo, fazendo com que o dia a dia se torne mais estressante, as atividades sem foco e ainda mais complicado de conciliar com o lazer de forma prazerosa, sem preocupações, devido acúmulo de tarefas que se perdem em meio a desorganização que a correria pode ocasionar. 
+
+O Task-it é desenvolvido para apoiar nessa organização, no incentivo das pequenas tarefas que levam a grandes conclusões, de maneira leve, fácil e simples para o usuário.  
 
  
 
