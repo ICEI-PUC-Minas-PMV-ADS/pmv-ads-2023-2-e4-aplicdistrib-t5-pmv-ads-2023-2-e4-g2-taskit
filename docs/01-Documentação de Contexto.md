@@ -2,8 +2,9 @@
 
 Atualmente, a cada momento que se passa, as rotinas do dia a dia estão ficando cada vez mais difíceis de se ter controle, mais e mais o tempo e gasto de maneira irrelevante. Mas, como fazer isso se você não tem controle da sua própria agenda pessoal? 
 
-Tendo essa pergunta em mente, nossa proposta vem com o objetivo de sanar esse contratempo, criando um sistema de gestão e controle de tempo de fácil uso e abrangente. 
+Tendo essa pergunta em mente, nossa proposta vem com o objetivo de sanar esse contratempo, criando um sistema de gestão e controle de tempo de fácil uso e abrangente, o “taskit”. 
 
+ Nosso aplicativo, tem como objetivo atender a demanda dos jovens adultos, estudantes e profissionais de diversas áreas que possuem dificuldade em ter uma agenda organizada. Com design simples e de fácil uso, temos em mente que qualquer pessoa consiga utilizar o “taskit” e possa ter um meio de ter um maior controle de como utilizar seu tempo de maneira mais eficiente.
  
 ## Problema
 
