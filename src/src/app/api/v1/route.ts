@@ -20,12 +20,26 @@ export function GET(req: Request) {
       title: "Taskit API",
       version: "0.2.0"
     },
-    host: "http://localhost:3000",
     schemes: [
       "https",
       "http"
     ],
+    host: "localhost:3000",
     basePath: '/api/v1',
+    servers: [
+      {
+        url: "http://localhost:3000",
+        description: "Development"
+      },
+      {
+        url: "https://taskit.aaroncarneiro.com",
+        description: "Production"
+      },
+      {
+        url: "https://taskit-three.vercel.app",
+        description: "Production (Alternative domain)"
+      }
+    ],
     tags: tags,
     paths: {
       ...TaskRouteDoc.paths,
