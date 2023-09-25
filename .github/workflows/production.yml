@@ -5,6 +5,7 @@ on:
 
 env:
   APP_NAME: taskit
+  APP_DOMAIN: 'https://taskit-three.vercel.app'
   APP_PATH: './src'
   NODE_VERSION: '18.x'
 
@@ -22,6 +23,12 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
 
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: taskit-app
+        path: ./src/
+        
     - name: npm install, build, and test
       working-directory: ./src
       run: |
@@ -29,11 +36,6 @@ jobs:
         npm run build --if-present
         npm run test --if-present
 
-    - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v3
-      with:
-        name: taskit-app
-        path: ./src/.next
 
   deploy:
     permissions:
@@ -42,7 +44,7 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      url: ${{ env.APP_DOMAIN }}
 
     steps:
     - name: Download artifact from build job
