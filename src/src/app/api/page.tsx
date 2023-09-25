@@ -1,8 +1,16 @@
 'use client';
 
-import "swagger-ui-react/swagger-ui.css"
-import SwaggerUI from 'swagger-ui-react'
+import { useEffect } from "react";
+import { SwaggerUIBundle } from "swagger-ui-dist";
+import "swagger-ui-dist/swagger-ui.css";
 
-export default async function Swagger() {
-    return <SwaggerUI url="/swagger.json" />
+export default function SwaggerDocs() {
+  useEffect(() => {
+    SwaggerUIBundle({
+      url: "/api/v1",
+      dom_id: '#swagger-ui',
+    })
+  }, []);
+
+  return <div id="swagger-ui"></div>;
 }
