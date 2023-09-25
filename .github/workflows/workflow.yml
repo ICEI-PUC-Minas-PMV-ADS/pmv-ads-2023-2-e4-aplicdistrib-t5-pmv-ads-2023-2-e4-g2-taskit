@@ -17,6 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Configure NPM
+      working-directory: src
+
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
@@ -24,16 +27,17 @@ jobs:
         cache: 'npm'
 
     - name: npm install, build, and test
+      working-directory: src
       run: |
         npm install
         npm run build --if-present
         npm run test --if-present
 
     - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3      
       with:
         name: taskit-app
-        path: .
+        path: ./src/.next
 
   deploy:
     permissions:
