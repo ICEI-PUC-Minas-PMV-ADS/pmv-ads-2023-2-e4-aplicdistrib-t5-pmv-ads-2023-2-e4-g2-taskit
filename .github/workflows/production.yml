@@ -17,24 +17,20 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Go to project dir
-      run: |
-        cd ./src
-
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: ${{ env.NODE_VERSION }}
-        cache: 'npm'
 
     - name: npm install, build, and test
+      working-directory: ./src
       run: |
         npm install
         npm run build --if-present
         npm run test --if-present
 
     - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v3      
+      uses: actions/upload-artifact@v3
       with:
         name: taskit-app
         path: ./src/.next
@@ -57,11 +53,10 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: 'npm'
+        node-version: ${{ env.NODE_VERSION }}        
 
     - name: 'Deploy to Vercel'
+      id: deploy-to-vercel
       run: |
         npm install -g vercel
         vercel -t ${{ secrets.VERCEL_TOKEN }} --name ${{ env.APP_NAME }} --yes
-      id: deploy-to-vercel      
