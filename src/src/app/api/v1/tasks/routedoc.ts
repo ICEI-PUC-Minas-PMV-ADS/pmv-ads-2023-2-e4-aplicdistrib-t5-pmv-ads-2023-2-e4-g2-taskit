@@ -8,7 +8,7 @@ export const TaskRouteDoc: IRouteDoc = {
         }
     ],
     paths: {
-        "/tasks": {
+        "/api/v1/tasks": {
             get: {
                 tags: [
                     "Tasks"

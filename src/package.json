@@ -30,6 +30,7 @@
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@types/swagger-ui-dist": "^3.30.1"
+    "@types/swagger-ui-dist": "^3.30.1",
+    "vercel": "^32.3.1"
   }
 }

@@ -9,7 +9,7 @@ export const UserRouteDoc: IRouteDoc = {
     }
   ],
   paths: {
-    "/users": {
+    "/api/v1/users": {
       get: UserMethods.get
     }
   },

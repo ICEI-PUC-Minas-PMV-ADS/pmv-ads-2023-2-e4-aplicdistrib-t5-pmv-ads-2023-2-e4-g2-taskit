@@ -42,7 +42,16 @@ const GetMethod: IRoutePathMethod = {
   }
 }
 export function GET(req: Request) {
-  return NextResponse.json({ status: "ok" });
+  return NextResponse.json([
+    {
+      "id": 1,
+      "name": "Aaron Carneiro",
+      "email": "edu@aaroncanreiro.com",
+      "password": "eyJwYXNzd29yZCI6IjEyMzQ2NS",
+      "createdAt": new Date(2023, 7, 12, 19, 30, 12),
+      "updatedAt": new Date(Date.now())
+    }
+  ]);
 }
 
 export const UserMethods = {
