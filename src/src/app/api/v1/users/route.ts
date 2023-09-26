@@ -1,5 +1,8 @@
-import { IRoutePathMethod } from "@/shared/interfaces/apidocs.interface";
 import { NextResponse } from "next/server";
+import { sha256 } from "js-sha256";
+
+import { IRoutePathMethod } from "@/shared/interfaces/apidocs.interface";
+import { UserService } from "./user.service";
 
 const GetMethod: IRoutePathMethod = {
   tags: [
@@ -41,17 +44,22 @@ const GetMethod: IRoutePathMethod = {
     }
   }
 }
-export function GET(req: Request) {
-  return NextResponse.json([
-    {
-      "id": 1,
-      "name": "Aaron Carneiro",
-      "email": "edu@aaroncanreiro.com",
-      "password": "eyJwYXNzd29yZCI6IjEyMzQ2NS",
-      "createdAt": new Date(2023, 7, 12, 19, 30, 12),
-      "updatedAt": new Date(Date.now())
-    }
-  ]);
+export async function GET(req: Request) {
+  const users = await UserService.List();
+  return NextResponse.json(users);
+}
+
+interface NewUser {
+  name: string;
+  email: string;
+  password: string;
+}
+// create user
+export async function POST(req: Request) {
+  const user: NewUser = await req.json();
+  let password = sha256.hmac(user.email.toLowerCase(), user.password);
+  const newUser = UserService.Create({ ...user, email: user.email.toLowerCase(), password });
+  return NextResponse.json(newUser);
 }
 
 export const UserMethods = {
