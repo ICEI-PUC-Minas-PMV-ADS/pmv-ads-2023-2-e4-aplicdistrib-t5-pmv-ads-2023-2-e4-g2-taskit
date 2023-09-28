@@ -30,7 +30,13 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 
 ## Modelo Físico
 
-Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+O uso combinado do Prisma e POstgreSQL é uma escolha mais harmoniosa para aplicações. O Prisma sendo um ORM mais intuitivo, simplificando a intereção com banco de dados e promovendo mais produtividade.
+
+Com o uso do Prisma Studio, facilita a interação com o PostgreSQL, fornecendo uma interface de usuário visual e intuitiva, permitindo criar, ler, atualizar e excluir (CRUD) registros diretamente da interface.
+
+Por ser uma ferramente gráfica de gerenciamento e visualização de dados, oferece uma interface simples e convidativa para interafir com o banco deixando tudo de forma bem intuitiva.
+
+Em resumo, o Prisma Studio é uma ferramenta aliada para nós desenvolvedores e proporciona uma maneira intuitiva e eficaz de interagir e visualizar os dados do banco de dados. Trazendo uma experiência de gerenciamento de dados mais rica e eficiente.
 
 ## Tecnologias Utilizadas
 
