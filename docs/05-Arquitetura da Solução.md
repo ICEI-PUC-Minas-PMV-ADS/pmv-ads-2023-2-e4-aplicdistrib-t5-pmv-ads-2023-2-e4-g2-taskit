@@ -36,7 +36,7 @@ Com o uso do Prisma Studio, facilita a interação com o PostgreSQL, fornecendo 
 
 Por ser uma ferramente gráfica de gerenciamento e visualização de dados, oferece uma interface simples e convidativa para interafir com o banco deixando tudo de forma bem intuitiva.
 
-Em resumo, o Prisma Studio é uma ferramenta aliada para nós desenvolvedores e proporciona uma maneira intuitiva e eficaz de interagir e visualizar os dados do banco de dados. Trazendo uma experiência de gerenciamento de dados mais rica e eficiente.
+Em resumo, o Prisma Studio é uma ferramenta aliada para nós desenvolvedores e proporciona uma maneira intuitiva e eficaz de interagir e visualizar os dados do banco de dados. Trazendo uma experiência de gerenciamento de dados mais rica e eficiente em comparação com interfaces de linha de comando tradicionais.
 
 ## Tecnologias Utilizadas
 
