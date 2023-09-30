@@ -3,77 +3,30 @@
 A determinação exata do problema, suas personas, requisitos funcionais e não-funcionais foram acordadas em reuniões online entre os membros da equipe. Foram reunidas informações e observações e, complementarmente. Os detalhes levantados nesse processo auxiliaram na construção de personas e histórias de usuários.
 
 ## Personas
+| Thaissa Teixeira                                                                                                                                                                        |                                                                                                                                                                                                                                                    |                                                                                                                                        |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| <p align="center"><img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/51f6c73b-97cd-4bfc-858d-5042cdb7f926" width="200" height="200"/></p>                                                                                                                                                            | **Idade:** 22  anos <br> **Ocupação:** Estudante de Gerência de RH.                                                                                                                                                          | **Aplicativos**: Instagram e TikTok                                                                                   |
+| **Motivações:**   Tornar o processo de entrevista mais simples e organizado, ela busca um app onde ela pode criar uma "checklist" com sub listas, e reutilizá-la para cada entrevistado. | **Frustrações:** A complexidade e a burocracia de alguns processos seletivos.   | **Hobbies, História:** Adora tecnologia e utilizar aplicativos para facilitar sua organização. |
 
-<table>
-  <tr>
-    <th colspan=2>Thaissa Teixeira - 22 anos</th>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/51f6c73b-97cd-4bfc-858d-5042cdb7f926" />    
-    </td>
-    <td>
-      <p>
-        Estudante de Gerência de RH, Thaissa já atua como "Tech Recruiter", entrevistando diversas pessoas para preencher posições vagas em empresas.
-        Para tornar o processo de entrevista mais simples e organizado, ela busca um app onde ela pode criar uma "checklist" com sub listas, e reutiliza-la para cada entrevistado.
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <th colspan=2>Kaleb Fraga - 24 anos</th>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/3f5a975e-abed-4878-b60a-d41cab2a7ce9" />    
-    </td>
-    <td>
-      <p>
-        Futuro diretor cinematográfico, Kaleb é graduando em um curso de Cinema.
-        Para dar conta de ler todos os artigos e obras necessárias para seu TCC, Kaleb pensa em utilizar o<b style="color:lightblue"> método do pomodoro</b> e busca um app para auxilia-lo.
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <th colspan=2>Vinicius Santos - 54 anos</th>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/071a1684-594b-410d-9344-25b55eeedf5c" />    
-    </td>
-    <td>
-      <p>
-        Vinicius Santos é autônomo em uma indústria não convencional, e nós não precisamos de detalhes sobre isso, o que importa é que ele precisa de um aplicativo com uma lista para gerenciamento de tarefas e de um cronômetro.
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <th colspan=2>Thamara Munhoz - 26 anos</th>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/15644891-5842-498e-b857-760839cdfd99" />    
-    </td>
-    <td>
-      <p>
-        Autodidata e Desenvolvedora de Software freelancer, Thamara precisa de uma lista para gerenciar os projetos em que trabalha, bem como contabilizar quanto tempo gastou em cada projeto.
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <th colspan=2>Jéssica Boscatti - 32 anos</th>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/1cd19890-9cc9-406d-b5d8-750a209ffed1" />    
-    </td>
-    <td>
-      <p>
-        Gerente de projetos, Jéssica trabalha com múltiplas equipes desenvolvendo produtos para diversos clientes da empresa em que trabalha.
-        Para não se perder entre os assuntos dos projetos nas reuniões, ela pensou em utilizar um aplicativo para listar os projetos e <b style="color:lightblue">adicionar tópicos com detalhes</b> de cada um.
-      </p>
-    </td>
-  </tr>
-</table>
+| Kaleb Fraga                                                                                                                                                                        |                                                                                                                                                                                                                                                    |                                                                                                                                        |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| <p align="center"><img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/3f5a975e-abed-4878-b60a-d41cab2a7ce9" width="200" height="200"/></p>                                                                                                                                                            | **Idade:** 24  anos <br> **Ocupação:** Futuro diretor cinematográfico, Kaleb é graduando em um curso de Cinema.                                                                                                                                                          | **Aplicativos**: TikTok                                                                                   |
+| **Motivações:**   Para dar conta de ler todos os artigos e obras necessárias para seu TCC, Kaleb pensa em utilizar o método do pomodoro e busca um app para auxiliá-lo.| **Frustrações:** Dificuldade para gerenciar seu tempo.   | **Hobbies, História:** Gosta de tecnologia e de desenvolver projetos acadêmicos. |
+
+| Vinicius Santos                                                                                                                                                                        |                                                                                                                                                                                                                                                    |                                                                                                                                        |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| <p align="center"><img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/071a1684-594b-410d-9344-25b55eeedf5c" width="200" height="200"/></p>                                                                                                                                                            | **Idade:** 54  anos <br> **Ocupação:** autônomo em uma indústria não convencional.                                                                                                                                                          | **Aplicativos**: LinkedIn                                                                                   |
+| **Motivações:**   Precisa de um aplicativo com uma lista para gerenciamento de tarefas e de um cronômetro.| **Frustrações:** Compartilhar com facilidade as tarefas da empresa com outros funcionários.   | **Hobbies, História:** Dedica a maior parte do seu tempo ao crescimento da própria empresa. |
+
+| Thamara Munhoz                                                                                                                                                                        |                                                                                                                                                                                                                                                    |                                                                                                                                        |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| <p align="center"><img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/15644891-5842-498e-b857-760839cdfd99" width="200" height="200"/></p>                                                                                                                                                            | **Idade:** 26  anos <br> **Ocupação:** Autodidata e Desenvolvedora de Software freelancer.                                                                                                                                                          | **Aplicativos**: LinkedIn, Instagram e TikTok                                                                                   |
+| **Motivações:**   Precisa de uma lista para gerenciar os projetos em que trabalha, bem como contabilizar quanto tempo gastou em cada projeto.| **Frustrações:** Dificuldade para priorizar tarefas.   | **Hobbies, História:** Se interessa por tecnologia e produtividade. |
+
+| Jéssica Boscatti                                                                                                                                                                       |                                                                                                                                                                                                                                                    |                                                                                                                                        |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| <p align="center"><img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/1cd19890-9cc9-406d-b5d8-750a209ffed1" width="200" height="200"/></p>                                                                                                                                                             | **Idade:** 32  anos <br> **Ocupação:**  Gerente de projetos.                                                                                                                                                          | **Aplicativos**: LinkedIn e Instagram                                                                                  |
+| **Motivações:**   Para não se perder entre os assuntos dos projetos nas reuniões, ela pensou em utilizar um aplicativo para listar os projetos e acessá-los a partir de diferentes dispositivos.| **Frustrações:** Dificuldade para acessar suas listas de tarefas em reuniões diversas.   | **Hobbies, História:** Se interessa por produtividade e administração de empresas. |
 
 ## Histórias de Usuários
 
