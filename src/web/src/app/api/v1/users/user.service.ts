@@ -1,15 +1,18 @@
 import { db } from "@/shared/database/db.connection";
 
 async function Create(user: any) {
-  return await db.user.create({
+  const { id, name, email, createdAt, updatedAt } = await db.user.create({
     data: {
       name: user.name,
       email: user.email,
+      password: user.password,
       tasks: user.tasks,
       createdAt: new Date(),
       updatedAt: new Date(),
     }
-  })  
+  })
+
+  return { id, name, email, createdAt, updatedAt };
 }
 
 async function List() {
@@ -46,7 +49,6 @@ async function Update(user: any) {
       id: true,
       name: true,
       email: true,
-      password: true,
       tasks: true,
       createdAt: true,
       updatedAt: true,
@@ -103,9 +105,6 @@ async function Login(email: string, password: string) {
       id: true,
       name: true,
       email: true,
-      tasks: true,
-      createdAt: true,
-      updatedAt: true,
     },
   })
 }
