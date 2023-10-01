@@ -3,6 +3,7 @@ import { sha256 } from "js-sha256";
 
 import { IRoutePathMethod } from "@/shared/interfaces/apidocs.interface";
 import { UserService } from "./user.service";
+import { useServerAuth } from "@/shared/api/useServerAuth";
 
 const GetMethod: IRoutePathMethod = {
   tags: [
@@ -45,6 +46,10 @@ const GetMethod: IRoutePathMethod = {
   }
 }
 export async function GET(req: Request) {
+  const url = new URL(req.url);
+  const isAuthenticated = await useServerAuth(req);
+  if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 403, redirectTo: url.host + '/login' }, { status: 403 });
+
   const users = await UserService.List();
   return NextResponse.json(users);
 }
