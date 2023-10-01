@@ -1,5 +1,6 @@
 import { IRouteDoc } from "@/shared/interfaces/apidocs.interface";
-import { UserMethods } from "./route";
+import { GetUsers, CreateUser } from "./route";
+import { DeleteUser, UpdateUser, GetUser } from "./[id]/route";
 
 export const UserRouteDoc: IRouteDoc = {
   tags: [
@@ -10,13 +11,20 @@ export const UserRouteDoc: IRouteDoc = {
   ],
   paths: {
     "/api/v1/users": {
-      get: UserMethods.get
+      get: GetUsers,
+      post: CreateUser
+    },
+    "/api/v1/users/{id}": {
+      get: GetUser,
+      put: UpdateUser,
+      delete: DeleteUser
     }
   },
   components: {
     schemas: {
       User: {
         type: "object",
+        required: ["id", "name", "email"],
         properties: {
           id: {
             type: "string"
@@ -36,6 +44,35 @@ export const UserRouteDoc: IRouteDoc = {
           updatedAt: {
             type: "string"
           }
+        }
+      },
+      NewUserDTO: {
+        type: "object",
+        required: ["name", "email", "password"],
+        properties: {
+          name: {
+            type: "string"
+          },
+          email: {
+            type: "string"
+          },
+          password: {
+            type: "string"
+          },
+        }
+      },
+      UpdateUserDTO: {
+        type: "object",
+        properties: {
+          name: {
+            type: "string"
+          },
+          email: {
+            type: "string"
+          },
+          password: {
+            type: "string"
+          },
         }
       }
     }
