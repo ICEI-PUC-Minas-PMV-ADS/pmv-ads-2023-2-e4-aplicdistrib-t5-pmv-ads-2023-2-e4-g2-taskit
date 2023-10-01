@@ -7,8 +7,8 @@ async function Create(session: Session | any) {
     return await db.session.update({
       where: { id: session.id, userId: session.userId },
       data: {
-        sessionToken: session.sessionToken,
         userId: session.userId,
+        sessionToken: session.sessionToken,
         expires: session.expires
       }
     })  
@@ -32,7 +32,23 @@ async function Get(sessionToken: string, userId: number) {
   })
 }
 
+async function Invalidate(sessionId: number, userId: number) {
+  return await db.session.update({
+    where: { id: sessionId, userId },
+    data: {
+      sessionToken: '',
+      expires: ''
+    },
+    select: {
+      id: true,
+      sessionToken: true,
+      expires: true,
+    }
+  })
+}
+
 export const AuthService = {
+  Invalidate,
   Create,
   Get,
 }

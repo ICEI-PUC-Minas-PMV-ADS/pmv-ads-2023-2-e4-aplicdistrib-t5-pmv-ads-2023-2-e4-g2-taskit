@@ -8,9 +8,11 @@ export interface IRouteTag {
 export interface IRouteSchemas {
   [key: string]: {
     type: string;
+    required?: string[];
     properties: {
       [key: string]: {
         type: string;
+        format?: string;
       }
     }
   }
@@ -35,37 +37,39 @@ export interface IRoutePathMethod {
     required: boolean;
     schema: {
       type: string;
+      $ref?: string;
+      properties?: {
+        [key: string]: {
+          type: string;
+          format?: string;
+        }
+      };
     }
   }[],
   responses: {
-    200: {
-      description: string;
-      content: {
-        [key: string]: {
-          schema: {
-            type?: string;
-            items?: {
-              $ref: string;
-            }
-            $ref?: string;
-            example?: any;
-          }
-        }
-      }
-    },
+    200: IResponse,
+    [key: string]: IResponse,
+  } | {
+    200: IResponse,
+    401: IResponse,
+    [key: string]: IResponse,
+  },
+  security?: {
+    [key: string]: []
+  },
+}
+
+export interface IResponse {
+  description: string;
+  content: {
     [key: string]: {
-      description: string;
-      content: {
-        [key: string]: {
-          schema: {
-            type?: string;
-            items?: {
-              $ref: string;
-            }
-            $ref?: string;
-            example?: any;
-          }
+      schema: {
+        type?: string;
+        items?: {
+          $ref: string;
         }
+        $ref?: string;
+        example?: any;
       }
     }
   }
