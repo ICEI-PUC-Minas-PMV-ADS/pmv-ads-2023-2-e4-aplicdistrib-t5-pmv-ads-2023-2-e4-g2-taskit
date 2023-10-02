@@ -56,7 +56,7 @@ Em resumo, o Prisma Studio é uma ferramenta aliada para nós desenvolvedores e 
 
 - [React.js](https://reactjs.dev) - Biblioteca para criação de interfaces de usuário.
 - [Next.js 13](https://nextjs.org) - Framework para React.js que permite criar aplicações web rápidas e seguras.
-- [Tailwind CSS](https://tailwindcss.com) - Framework CSS que permite criar interfaces de usuário de forma rápida e consistente.
+- [NativeWind](https://nativewind.dev) - Framework CSS que permite criar interfaces de usuário de forma rápida e consistente.
 
 ### App
 
