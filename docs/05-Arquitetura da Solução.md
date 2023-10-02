@@ -14,29 +14,56 @@ A aplicação Next.js e o banco de dados PostgreSQL serão hospedados na [**Verc
 
 ## Modelo ER
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/101607336/378b5aad-6901-4509-aff2-d347e5f88459)
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
 
 ## Esquema Relacional
 
-O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
- 
-As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/101607336/4f68b189-be24-4c9e-b62c-e8f86a8bcfac)
 
-> - [Criando um modelo relacional - Documentação da IBM](https://www.ibm.com/docs/pt-br/cognos-analytics/10.2.2?topic=designer-creating-relational-model)
 
 ## Modelo Físico
 
-Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+O uso combinado do Prisma e POstgreSQL é uma escolha mais harmoniosa para aplicações. O Prisma sendo um ORM mais intuitivo, simplificando a intereção com banco de dados e promovendo mais produtividade.
+
+Com o uso do Prisma Studio, facilita a interação com o PostgreSQL, fornecendo uma interface de usuário visual e intuitiva, permitindo criar, ler, atualizar e excluir (CRUD) registros diretamente da interface.
+
+Por ser uma ferramente gráfica de gerenciamento e visualização de dados, oferece uma interface simples e convidativa para interafir com o banco deixando tudo de forma bem intuitiva.
+
+Em resumo, o Prisma Studio é uma ferramenta aliada para nós desenvolvedores e proporciona uma maneira intuitiva e eficaz de interagir e visualizar os dados do banco de dados. Trazendo uma experiência de gerenciamento de dados mais rica e eficiente em comparação com interfaces de linha de comando tradicionais.
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+### Ferramentas e Serviços
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+- [Visual Studio Code](https://code.visualstudio.com/) - Editor de código fonte.
+- [Postman](https://taskit-pucminas.postman.co/) - Ferramenta para testar APIs REST.
+- [Docker](https://www.docker.com/) - Plataforma para criação e execução de containers.
+- [GitHub](https://github.com) - Plataforma de hospedagem de código fonte e controle de versão.
+- [GitHub Actions](https://github.com/actions) - Ferramenta de integração contínua do GitHub.
+- [Vercel](https://vercel.com/) - Plataforma de hospedagem de aplicações web serverless e bancos de dados.
+
+### API
+
+- [Node.js](https://nodejs.dev) - Ambiente de execução Javascript server-side.
+- [Typescript](https://typescriptlang.org) - Superset do Javascript que adiciona tipagem estática e outros recursos.
+- [Next.js 13](https://nextjs.org) - Framework para React.js que conta com um backend embutido, podendo ser utilizado também como uma API.
+- [Prisma](https://prisma.io) - ORM para Node.js compatível com Typescript, que facilita a interação com o banco de dados.
+- [PostgreSQL](https://postgresql.org) - Banco de dados principal da aplicação.
+- [Swagger UI](https://swagger.io) - Ferramenta para documentação de APIs REST.
+
+### Web
+
+- [React.js](https://reactjs.dev) - Biblioteca para criação de interfaces de usuário.
+- [Next.js 13](https://nextjs.org) - Framework para React.js que permite criar aplicações web rápidas e seguras.
+- [NativeWind](https://nativewind.dev) - Framework CSS que permite criar interfaces de usuário de forma rápida e consistente.
+
+### App
+
+- [React Native](https://reactnative.dev) - Biblioteca para criação de interfaces de usuário.
+- [Tailwind CSS](https://tailwindcss.com) - Framework CSS que permite criar interfaces de usuário de forma rápida e consistente.
+
+> Uma relação completa das tecnologias utilizadas pode ser encontrada no arquivo [package.json](../src/web/package.json) dentro do diretório do projeto.
 
 ## Hospedagem
 
@@ -46,15 +73,13 @@ Caso a build seja um sucesso, e não haja falhas nos testes unitários, o deploy
 
 ## Qualidade de Software
 
-Conceituar qualidade de fato é uma tarefa complexa, mas ela pode ser vista como um método gerencial que através de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
+Escolhemos trabalhar contemplando as principais características de qualidade que podem ser atribuídas ao sistema. Entre elas:
 
-No contexto de desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem satisfeitas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, tal nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+Adequação funcional: O nosso sistema está focado em ser capaz de realizar as tarefas propostas e objetivos específicos.
 
-A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software.
-Com base nessas características e nas respectivas sub-características, identifique as sub-características que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software considerando-se alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão a equipe avaliar os objetos de interesse.
+Confiabilidade (Tolerância a falhas): Um sistema que seja capaz de operar diante de falhas.
+    -Maturidade: Capacidade de atingir as necessidade de confiabilidade.
 
-> **Links Úteis**:
->
-> - [ISO/IEC 25010:2011 - Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models](https://www.iso.org/standard/35733.html/)
-> - [Análise sobre a ISO 9126 – NBR 13596](https://www.tiespecialistas.com.br/analise-sobre-iso-9126-nbr-13596/)
-> - [Qualidade de Software - Engenharia de Software 29](https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209/)
+Compatibilidade (Interoperabilidade): Uma das subcaracterísticas chave do nosso projeto, pois trata-se da possibilidade de dois ou mais sistemas trocarem informações.
+
+Portabilidade: Um ponto extremamente importante, no qual é necessário que nosso sistema consiga ser funcional em um novo hardware, software e outros ambientes.

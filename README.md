@@ -1,5 +1,12 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11570563&assignment_repo_type=AssignmentRepo)
-# Task-It
+
+<div align="center">
+    <h1>Task-It</h1>
+    <p>
+        <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/releases/tag/0.1.0" target="_blank"><img src="https://img.shields.io/badge/Task--It-v0.1.0-blue" /></a>
+        <a href="https://taskit-three.vercel.app/api" target="_blank"><img src="https://img.shields.io/github/deployments/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/production?label=API%20Deploy"/></a>    
+    </p>
+</div>
 
 `Análise e Desenvolvimento de Sistemas`
 
@@ -11,12 +18,12 @@ O Projeto consiste num app/site com objetivo de contribuir na organização de t
 
 ## Integrantes
 
-* Aaron Stiebler Carneiro da Silva
-* Diego Victor Fraga
-* Igor Teixeira da Costa
-* Thaís Malta Boscatti
-* Thais Munhoz Carneiro
-* Vinícius Eduardo Silva Oliveira
+* [Aaron Stiebler Carneiro da Silva](https://github.com/euaaron)
+* [Diego Victor Fraga](https://github.com/diegovfm12)
+* [Igor Teixeira da Costa](https://github.com/Igortdcosta)
+* [Thaís Malta Boscatti](https://github.com/thmabos)
+* [Thais Munhoz Carneiro](https://github.com/MunhozC)
+* [Vinícius Eduardo Silva Oliveira](https://github.com/Vicinius115)
 
 ## Orientador
 
@@ -24,7 +31,7 @@ O Projeto consiste num app/site com objetivo de contribuir na organização de t
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+- [API e Web](/src/web/README.md)
 
 # Documentação
 
