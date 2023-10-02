@@ -6,7 +6,7 @@ on:
 env:
   APP_NAME: taskit
   APP_DOMAIN: 'https://taskit-three.vercel.app'
-  APP_PATH: './src'
+  APP_PATH: './src/web'
   NODE_VERSION: '18.x'
 
 permissions:
@@ -27,10 +27,10 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: taskit-app
-        path: ./src/
+        path: ./src/web
         
     - name: npm install, build, and test
-      working-directory: ./src
+      working-directory: ./src/web
       run: |
         npm install
         npm run build --if-present
