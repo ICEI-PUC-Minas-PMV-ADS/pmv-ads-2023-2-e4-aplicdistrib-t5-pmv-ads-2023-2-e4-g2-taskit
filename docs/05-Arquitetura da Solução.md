@@ -40,9 +40,36 @@ Em resumo, o Prisma Studio é uma ferramenta aliada para nós desenvolvedores e 
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+### Ferramentas e Serviços
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+- [Visual Studio Code](https://code.visualstudio.com/) - Editor de código fonte.
+- [Postman](https://taskit-pucminas.postman.co/) - Ferramenta para testar APIs REST.
+- [Docker](https://www.docker.com/) - Plataforma para criação e execução de containers.
+- [GitHub](https://github.com) - Plataforma de hospedagem de código fonte e controle de versão.
+- [GitHub Actions](https://github.com/actions) - Ferramenta de integração contínua do GitHub.
+- [Vercel](https://vercel.com/) - Plataforma de hospedagem de aplicações web serverless e bancos de dados.
+
+### API
+
+- [Node.js](https://nodejs.dev) - Ambiente de execução Javascript server-side.
+- [Typescript](https://typescriptlang.org) - Superset do Javascript que adiciona tipagem estática e outros recursos.
+- [Next.js 13](https://nextjs.org) - Framework para React.js que conta com um backend embutido, podendo ser utilizado também como uma API.
+- [Prisma](https://prisma.io) - ORM para Node.js compatível com Typescript, que facilita a interação com o banco de dados.
+- [PostgreSQL](https://postgresql.org) - Banco de dados principal da aplicação.
+- [Swagger UI](https://swagger.io) - Ferramenta para documentação de APIs REST.
+
+### Web
+
+- [React.js](https://reactjs.dev) - Biblioteca para criação de interfaces de usuário.
+- [Next.js 13](https://nextjs.org) - Framework para React.js que permite criar aplicações web rápidas e seguras.
+- [Tailwind CSS](https://tailwindcss.com) - Framework CSS que permite criar interfaces de usuário de forma rápida e consistente.
+
+### App
+
+- [React Native](https://reactnative.dev) - Biblioteca para criação de interfaces de usuário.
+- [Tailwind CSS](https://tailwindcss.com) - Framework CSS que permite criar interfaces de usuário de forma rápida e consistente.
+
+> Uma relação completa das tecnologias utilizadas pode ser encontrada no arquivo [package.json](../src/web/package.json) dentro do diretório do projeto.
 
 ## Hospedagem
 
