@@ -18,11 +18,15 @@ export async function PUT(req: Request) {
 
   const token = jwt.sign({ id: user.id, name: user.name, email: user.email }, email, { expiresIn: "336h" });
 
-  const session = await AuthService.Create({ id: sessionId, sessionToken: token, userId: user.id, expires: new Date(Date.now() + 336 * 60 * 60 * 1000) });
+  let session;
+  if (!sessionId) {
+    session = await AuthService.Create({ sessionToken: token, userId: user.id, expires: new Date(Date.now() + 336 * 60 * 60 * 1000) });    
+  } else {
+    session = await AuthService.Create({ id: sessionId, sessionToken: token, userId: user.id, expires: new Date(Date.now() + 336 * 60 * 60 * 1000) });
+  }
 
   return NextResponse.json({ id: session.id, token: session.sessionToken, expires: session.expires });
 }
-
 
 export const Login: IRoutePathMethod = {
   tags: [
@@ -53,7 +57,7 @@ export const Login: IRoutePathMethod = {
             $ref: "#/components/schemas/User",
             example: {
               id: 1,
-              token: "fd8613i6o3gd0sdh9v89qy398ctn8y3hex32.c23rhh30imv0i408yx9.3corjviuqcxw.3afasc3q37j37",              
+              token: "fd8613i6o3gd0sdh9v89qy398ctn8y3hex32.c23rhh30imv0i408yx9.3corjviuqcxw.3afasc3q37j37",
               expires: new Date().toISOString(),
               userId: 1,
             }

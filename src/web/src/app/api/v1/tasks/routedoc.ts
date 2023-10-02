@@ -1,4 +1,5 @@
 import { IRouteDoc } from "@/shared/interfaces/apidocs.interface";
+import { DeleteTask, GetTask, UpdateTask } from "./[id]/route";
 
 export const TaskRouteDoc: IRouteDoc = {
   tags: [
@@ -9,32 +10,12 @@ export const TaskRouteDoc: IRouteDoc = {
   ],
   paths: {
     "/api/v1/tasks": {
-      get: {
-        tags: [
-          "Tasks"
-        ],
-        summary: "List tasks data from database.",
-        description: "",
-        operationId: "getTasks",
-        produces: [
-          "application/json"
-        ],
-        responses: {
-          200: {
-            content: {
-              task: {
-                schema: {
-                  type: "array",
-                  items: {
-                    $ref: "#/components/schemas/Task"
-                  }
-                }
-              }
-            },
-            description: "OK"
-          }
-        }
-      }
+      
+    },
+    "/api/v1/tasks/{id}": {
+      get: GetTask,
+      put: UpdateTask,
+      delete: DeleteTask,
     }
   },
   components: {
