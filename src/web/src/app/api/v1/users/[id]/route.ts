@@ -20,19 +20,19 @@ export async function GET(req: Request, { params }: UsersParams) {
   const url = new URL(req.url);
   const isAuthenticated = await useServerAuth(req);
   if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
-
-  let user: any;
-  const userId: string | number = Number(params.id);
-
-  if (typeof userId === 'number') {
-    user = await UserService.Get(userId);
-  } else {
-    user = await UserService.GetByEmail(params.id);
+  
+  try {
+    let user: any;
+    const userId: string | number = Number(params.id);
+    if (typeof userId === 'number') {
+      user = await UserService.Get(userId);
+    } else {
+      user = await UserService.GetByEmail(params.id);
+    }
+    return NextResponse.json(user);
+  } catch (err) {
+    return NextResponse.json({ code: 404, message: "User not found." }, { status: 404 });
   }
-
-  if (!user) return NextResponse.json({ code: 404, message: "User not found." }, { status: 404 });
-
-  return NextResponse.json(user);
 }
 
 /**
@@ -49,11 +49,12 @@ export async function PUT(req: Request, { params }: UsersParams) {
     user.password = sha256.hmac(user.email!.toLowerCase(), user.password);
   }
 
-  const updatedUser = await UserService.Update({ ...user, id: Number(params.id) });
-
-  if (!updatedUser) return NextResponse.json({ code: 404, message: "User not found." }, { status: 404 });
-
-  return NextResponse.json(updatedUser);
+  try {
+    const updatedUser = await UserService.Update({ ...user, id: Number(params.id) });
+    return NextResponse.json(updatedUser);
+  } catch (err) {
+    return NextResponse.json({ code: 404, message: "User not found." }, { status: 404 });
+  }
 }
 
 /**
@@ -65,11 +66,12 @@ export async function DELETE(req: Request, { params }: UsersParams) {
   const isAuthenticated = await useServerAuth(req);
   if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
 
-  const deletedUser = await UserService.Delete(Number(params.id));
-
-  if (!deletedUser) return NextResponse.json({ code: 404, message: "User not found." }, { status: 404 });
-
-  return NextResponse.json({ message: "User deleted. Good bye " + deletedUser.name + "!" }, { status: 200, });
+  try {
+    const deletedUser = await UserService.Delete(Number(params.id));
+    return NextResponse.json({ message: "User deleted. Good bye " + deletedUser.name + "!" }, { status: 200, });
+  } catch (err) {
+    return NextResponse.json({ code: 404, message: "User not found." }, { status: 404 });
+  }
 }
 
 export const GetUser: IRoutePathMethod = {

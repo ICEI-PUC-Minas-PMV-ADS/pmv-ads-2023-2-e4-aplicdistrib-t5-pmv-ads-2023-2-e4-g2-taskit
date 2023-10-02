@@ -1,6 +1,6 @@
 'use client'
 
-import { User } from '@/shared/models/User';
+import type { User } from '@prisma/client';
 import { useState } from 'react'
 
 interface UserProps {
