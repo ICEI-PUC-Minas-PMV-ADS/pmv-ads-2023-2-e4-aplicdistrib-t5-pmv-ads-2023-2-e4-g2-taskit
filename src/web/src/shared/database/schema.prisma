@@ -3,37 +3,44 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL")
+  provider = "mongodb"
+  url = env("DATABASE_URL")
 }
 
 model Task {
-  id          Int         @id @default(autoincrement())
+  id          String         @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   content     String?
   createdAt   DateTime    @default(now()) @map(name: "created_at")
   updatedAt   DateTime    @updatedAt @map(name: "updated_at")
+  startedAt   DateTime    @map(name: "started_at")
   finishedAt  DateTime?   @map(name: "finished_at")
+  timeSpent   String
   owner       User?       @relation(fields: [ownerId], references: [id], onDelete: Cascade)
-  ownerId     Int?
+  ownerId     String?     @db.ObjectId
   subtasks    Subtask[]
+  statusId    String      @db.ObjectId
   @@map(name: "tasks")
 }
 
 model Subtask {
-  id          Int         @id @default(autoincrement())
+  id          String         @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   content     String?
   createdAt   DateTime    @default(now()) @map(name: "created_at")
   updatedAt   DateTime    @updatedAt @map(name: "updated_at")
+  startedAt   DateTime    @map(name: "started_at")
   finishedAt  DateTime?   @map(name: "finished_at")
+  timeSpent   String
   task        Task        @relation(fields: [taskId], references: [id], onDelete: Cascade)
-  taskId      Int
+  taskId      String      @db.ObjectId
+  statusId    String      @db.ObjectId
   @@map(name: "subtasks")
 }
 
+
 model User {
-  id            Int       @id @default(autoincrement())
+  id            String         @id @default(auto()) @map("_id") @db.ObjectId
   name          String?
   email         String?   @unique
   password      String?   @map("password_hash")
@@ -45,10 +52,16 @@ model User {
   @@map(name: "users")
 }
 
+model Status {
+id  String         @id @default(auto()) @map("_id") @db.ObjectId
+label String
+@@map(name:"status")
+}
+
 model Session {
-  id           Int      @id @default(autoincrement())
+  id           String         @id @default(auto()) @map("_id") @db.ObjectId
   sessionToken String   @unique @map("session_token")
-  userId       Int      @map("user_id")
+  userId       String      @map("user_id") @db.ObjectId
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -56,8 +69,8 @@ model Session {
 }
 
 model Account {
-  id                 Int     @id @default(autoincrement())
-  userId             Int     @map("user_id")
+  id                 String         @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String     @map("user_id") @db.ObjectId
   type               String
   provider           String
   providerAccountId  String  @map("provider_account_id")
