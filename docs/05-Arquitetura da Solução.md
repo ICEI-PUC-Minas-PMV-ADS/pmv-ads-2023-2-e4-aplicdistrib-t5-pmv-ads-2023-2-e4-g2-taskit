@@ -1,8 +1,9 @@
 # Arquitetura da Solução
 
-O software é dividido entre uma aplicação monolítica (**Frontend Web + Backend API**) através do framework [**React**](https://react.dev), [**Next.js**](https://nextjs.org), e **aplicação mobile,** criada com [**React Native**](https://reactnative.dev), que poderá consumir a API dita anteriormente. Ele apresentará uma abordagem **offline-first**, onde o os dados serão salvos localmente em um banco [**SQLite**](https://www.sqlite.org) ou no [**LocalStorage**](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage) do navegador. Caso o usuário deseje **sincronizar seus dados** com mais de um dispositivo, ou **compartilhar com outras pessoas**, ele deverá fazer login ou criar um conta para tal. Feito isso, ele poderá configurar para sempre sincronizar os dados com o nosso banco [**PostgreSQL**](https://www.postgresql.org/), fazer sincronias periódicamente em determinados horários ou fazê-la manualmente.
+O software é dividido entre uma aplicação monolítica (**Frontend Web + Backend API**) através do framework [**React**](https://react.dev), [**Next.js**](https://nextjs.org), e **aplicação mobile,** criada com [**React Native**](https://reactnative.dev), que poderá consumir a API dita anteriormente. Ele apresentará uma abordagem **offline-first**, onde o os dados serão salvos localmente em um banco [**SQLite**](https://www.sqlite.org) ou no [**LocalStorage**](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage) do navegador. Caso o usuário deseje **sincronizar seus dados** com mais de um dispositivo, ou **compartilhar com outras pessoas**, ele deverá fazer login ou criar um conta para tal. Feito isso, ele poderá configurar para sempre sincronizar os dados com o nosso banco [**MongoDB**](https://www.mongodb.com/pt-br), fazer sincronias periódicamente em determinados horários ou fazê-la manualmente.
+Decidimos trabalhar com esses frameworks, pela possibilidade de integração e utilização de forma harmoniosa, o que facilita tanto ao usuario, ao utilizar a aplicação, quanto aos desenvolvedores do projeto. 
 
-A aplicação Next.js e o banco de dados PostgreSQL serão hospedados na [**Vercel**](https://vercel.com) pela simplicidade e pela opção gratuita.
+A aplicação Next.js e o banco de dados MongoDB serão hospedados na [**Vercel**](https://vercel.com) pela simplicidade e pela opção gratuita.
 
 ![architecture](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/2be1a776-04af-4f54-9322-7064f4b728b1)
 
@@ -49,7 +50,7 @@ Em resumo, o Prisma Studio é uma ferramenta aliada para nós desenvolvedores e 
 - [Typescript](https://typescriptlang.org) - Superset do Javascript que adiciona tipagem estática e outros recursos.
 - [Next.js 13](https://nextjs.org) - Framework para React.js que conta com um backend embutido, podendo ser utilizado também como uma API.
 - [Prisma](https://prisma.io) - ORM para Node.js compatível com Typescript, que facilita a interação com o banco de dados.
-- [PostgreSQL](https://postgresql.org) - Banco de dados principal da aplicação.
+- [MOngoDB](https://www.mongodb.com/pt-br) - Banco de dados principal da aplicação.
 - [Swagger UI](https://swagger.io) - Ferramenta para documentação de APIs REST.
 
 ### Web
