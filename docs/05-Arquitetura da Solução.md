@@ -1,6 +1,7 @@
 # Arquitetura da Solução
 
 O software é dividido entre uma aplicação monolítica (**Frontend Web + Backend API**) através do framework [**React**](https://react.dev), [**Next.js**](https://nextjs.org), e **aplicação mobile,** criada com [**React Native**](https://reactnative.dev), que poderá consumir a API dita anteriormente. Ele apresentará uma abordagem **offline-first**, onde o os dados serão salvos localmente em um banco [**SQLite**](https://www.sqlite.org) ou no [**LocalStorage**](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage) do navegador. Caso o usuário deseje **sincronizar seus dados** com mais de um dispositivo, ou **compartilhar com outras pessoas**, ele deverá fazer login ou criar um conta para tal. Feito isso, ele poderá configurar para sempre sincronizar os dados com o nosso banco [**MongoDB**](https://www.mongodb.com/pt-br), fazer sincronias periódicamente em determinados horários ou fazê-la manualmente.
+
 Decidimos trabalhar com esses frameworks, pela possibilidade de integração e utilização de forma harmoniosa, o que facilita tanto ao usuario, ao utilizar a aplicação, quanto aos desenvolvedores do projeto. 
 
 A aplicação Next.js e o banco de dados MongoDB serão hospedados na [**Vercel**](https://vercel.com) pela simplicidade e pela opção gratuita.
@@ -25,9 +26,9 @@ A aplicação Next.js e o banco de dados MongoDB serão hospedados na [**Vercel*
 
 ## Modelo Físico
 
-O uso combinado do Prisma e POstgreSQL é uma escolha mais harmoniosa para aplicações. O Prisma sendo um ORM mais intuitivo, simplificando a intereção com banco de dados e promovendo mais produtividade.
+O uso combinado do Prisma e MongoDB é uma escolha mais harmoniosa para aplicações. O Prisma sendo um ORM mais intuitivo, simplificando a intereção com banco de dados e promovendo mais produtividade.
 
-Com o uso do Prisma Studio, facilita a interação com o PostgreSQL, fornecendo uma interface de usuário visual e intuitiva, permitindo criar, ler, atualizar e excluir (CRUD) registros diretamente da interface.
+Com o uso do Prisma Studio, facilita a interação com o MOngoDB, fornecendo uma interface de usuário visual e intuitiva, permitindo criar, ler, atualizar e excluir (CRUD) registros diretamente da interface.
 
 Por ser uma ferramente gráfica de gerenciamento e visualização de dados, oferece uma interface simples e convidativa para interafir com o banco deixando tudo de forma bem intuitiva.
 
