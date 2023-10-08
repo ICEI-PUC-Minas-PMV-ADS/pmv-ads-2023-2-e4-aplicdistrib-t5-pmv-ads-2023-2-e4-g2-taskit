@@ -14,9 +14,9 @@
 
 > Se quiser ter um banco local para desenvolvimento:
 > 1. [instale o Docker](https://docs.docker.com/desktop/install/windows-install/)
-> 2. Execute no terminal **`docker run -d -e POSTGRES_DB=taskit -e POSTGRES_PASSWORD=123654 -e POSTGRES_USER=postgres -p "6500:5432" postgres`** para subir um banco Postgres local
-> 3. Adicione **`POSTGRES_PRISMA_URL="postgres://postgres:123654@localhost:6500/taskit"`** no arquivo **`.env`** e comente a variável com o endereço do banco de produção (caso tenha).
-> 4. Execute **`yarn migrate`**
+> 2. Execute no terminal **`docker-compose up`** para subir um banco MongoDB local
+> 3. Adicione **`DATABASE_URL="mongodb+srv://taskit:taskit2023@localhost:27001/taskit"`** no arquivo **`.env`** e comente a variável com o endereço do banco de produção (caso tenha).
+> 4. Execute **`yarn db:update`**
 
 ## Histórico de versões
 
