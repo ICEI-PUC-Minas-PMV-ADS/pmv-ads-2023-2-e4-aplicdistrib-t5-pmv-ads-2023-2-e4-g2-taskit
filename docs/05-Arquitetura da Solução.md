@@ -13,7 +13,7 @@ MongoDB: compatibilidade com o Node.js e necessidade de utilizar um banco de dad
 A aplicação Next.js e o banco de dados MongoDB serão hospedados na [**Vercel**](https://vercel.com) pela simplicidade e pela opção gratuita.
 
 
-![Software Architecture](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/6ed198e5-d5aa-497e-9986-5536cb739f19)
+![Software Architecture](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/c92ee9cd-4871-43f9-b90a-d200daa68176)
 
 ## Diagrama de Classes
 ![Uploading Software Architecture.png…]()
