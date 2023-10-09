@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import { sha256 } from "js-sha256";
 
 import { UserService } from "./user.service";
-import { useServerAuth } from "@/shared/api/useServerAuth";
-import { IRoutePathMethod } from "@/shared/interfaces/apidocs.interface";
+import { verifyToken } from "@/shared/api/utils/verifyToken";
+import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 
 /**
  * Get all users from database
@@ -12,7 +12,7 @@ import { IRoutePathMethod } from "@/shared/interfaces/apidocs.interface";
 export async function GET(req: Request) {
   const url = new URL(req.url);
 
-  const isAuthenticated = await useServerAuth(req);
+  const isAuthenticated = await verifyToken(req);
   if (!isAuthenticated) return NextResponse.json({ code: 401, message: 'Access Denied', redirectTo: url.host + '/login' }, { status: 401 });
 
   const users = await UserService.List();

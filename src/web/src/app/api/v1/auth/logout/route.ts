@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
 
 import { AuthService } from "../auth.service";
-import { IRoutePathMethod } from "@/shared/interfaces/apidocs.interface";
-import { useServerAuth } from "@/shared/api/useServerAuth";
+import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
+import { verifyToken } from "@/shared/api/utils/verifyToken";
 
 export async function PUT(req: Request) {
   const url = new URL(req.url);  
-  const isAuthenticated = await useServerAuth(req);
+  const isAuthenticated = await verifyToken(req);
   if (!isAuthenticated) return NextResponse.json({ code: 403, message: 'Access Denied.', redirectTo: url.host + '/login' }, { status: 403 });
 
   const { sessionId, userId }: any = await req.json();

@@ -2,9 +2,8 @@ import { NextResponse } from "next/server";
 import { sha256 } from "js-sha256";
 import jwt from "jsonwebtoken";
 
-import { UserService } from "../../users/user.service";
 import { AuthService } from "../auth.service";
-import { IRoutePathMethod } from "@/shared/interfaces/apidocs.interface";
+import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 
 export async function PUT(req: Request) {
   const { email, password, sessionId }: any = await req.json();
@@ -12,7 +11,7 @@ export async function PUT(req: Request) {
   if (!email || !password) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
 
   const hash = sha256.hmac(email.toLowerCase(), password);
-  const user = await UserService.Login(email, hash);
+  const user = await AuthService.Login(email, hash);
 
   if (!user) return NextResponse.json({ code: 401, message: "Invalid Credentials" }, { status: 401 });
 

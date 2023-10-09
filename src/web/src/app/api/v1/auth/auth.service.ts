@@ -1,6 +1,5 @@
-import { db } from "@/shared/database/db.connection";
+import { db } from "@/shared/api/database/db.connection";
 import { Session } from "@prisma/client";
-
 
 async function Create(session: Session | any) {
   if (session.id) {
@@ -23,7 +22,7 @@ async function Create(session: Session | any) {
   }
 }
 
-async function Get(sessionToken: string, userId: number) {
+async function Get(sessionToken: string, userId: string) {
   return await db.session.findUnique({
     where: { sessionToken, userId },
     select: {
@@ -32,7 +31,7 @@ async function Get(sessionToken: string, userId: number) {
   })
 }
 
-async function Invalidate(sessionId: number, userId: number) {
+async function Invalidate(sessionId: string, userId: string) {
   return await db.session.update({
     where: { id: sessionId, userId },
     data: {
@@ -47,8 +46,23 @@ async function Invalidate(sessionId: number, userId: number) {
   })
 }
 
+async function Login(email: string, password: string) {
+  return await db.user.findFirst({
+    where: {
+      email,
+      password,
+    },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+    },
+  })
+}
+
 export const AuthService = {
   Invalidate,
   Create,
   Get,
+  Login
 }

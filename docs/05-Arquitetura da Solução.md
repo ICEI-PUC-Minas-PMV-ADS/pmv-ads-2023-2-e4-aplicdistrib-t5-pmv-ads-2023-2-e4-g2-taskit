@@ -32,6 +32,8 @@ Por ser uma ferramente gráfica de gerenciamento e visualização de dados, ofer
 
 Em resumo, o Prisma Studio é uma ferramenta aliada para nós desenvolvedores e proporciona uma maneira intuitiva e eficaz de interagir e visualizar os dados do banco de dados. Trazendo uma experiência de gerenciamento de dados mais rica e eficiente em comparação com interfaces de linha de comando tradicionais.
 
+[Schema Prisma](../src/web/src/shared/api/database/schema.prisma)
+
 ## Tecnologias Utilizadas
 
 ### Ferramentas e Serviços

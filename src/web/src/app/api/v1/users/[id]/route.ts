@@ -1,10 +1,11 @@
 import { User } from "@prisma/client";
-
 import { NextResponse } from "next/server";
-import { UserService } from "../user.service";
 import { sha256 } from "js-sha256";
-import { useServerAuth } from "@/shared/api/useServerAuth";
-import { IRoutePathMethod } from "@/shared/interfaces/apidocs.interface";
+import JWT from 'jsonwebtoken';
+
+import { verifyToken } from "@/shared/api/utils/verifyToken";
+import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
+import { UserService } from "../user.service";
 
 interface UsersParams {
   params: {
@@ -14,17 +15,25 @@ interface UsersParams {
 
 /**
  * Get user data from database
- * @description check GetUserByID and GetUserByEmail bellow to see the route documentation
+ * @description check GetUser bellow to see the route documentation
  */
 export async function GET(req: Request, { params }: UsersParams) {
+  /** Check Token Validity */
+  try {
+    const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;
+    const tokenUser: any = JWT.decode(token);
+    JWT.verify(token, tokenUser.email);
+  } catch (err) {
+    return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
+  }
   const url = new URL(req.url);
-  const isAuthenticated = await useServerAuth(req);
+  const isAuthenticated = await verifyToken(req);
   if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
-  
+  /** End of Check Token Validity */    
   try {
     let user: any;
-    const userId: string | number = Number(params.id);
-    if (typeof userId === 'number') {
+    const userId: string = params.id;
+    if (!userId.includes('@')) {
       user = await UserService.Get(userId);
     } else {
       user = await UserService.GetByEmail(params.id);
@@ -40,9 +49,19 @@ export async function GET(req: Request, { params }: UsersParams) {
  * @description check UpdateUser bellow to see the route documentation
  */
 export async function PUT(req: Request, { params }: UsersParams) {
+  /** Check Token Validity */
+  try {
+    const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;
+    const tokenUser: any = JWT.decode(token);
+    if (params.id !== tokenUser.id) return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
+    JWT.verify(token, tokenUser.email);
+  } catch (err) {
+    return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
+  }
   const url = new URL(req.url);
-  const isAuthenticated = await useServerAuth(req);
+  const isAuthenticated = await verifyToken(req);
   if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
+  /** End of Check Token Validity */
 
   const user: User = await req.json();
   if (user.password && user.password !== '') {
@@ -50,7 +69,7 @@ export async function PUT(req: Request, { params }: UsersParams) {
   }
 
   try {
-    const updatedUser = await UserService.Update({ ...user, id: Number(params.id) });
+    const updatedUser = await UserService.Update({ ...user, id: params.id });
     return NextResponse.json(updatedUser);
   } catch (err) {
     return NextResponse.json({ code: 404, message: "User not found." }, { status: 404 });
@@ -62,12 +81,22 @@ export async function PUT(req: Request, { params }: UsersParams) {
  * @description check DeleteUser bellow to see the route documentation
  */
 export async function DELETE(req: Request, { params }: UsersParams) {
-  const url = new URL(req.url);
-  const isAuthenticated = await useServerAuth(req);
-  if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
-
+  /** Check Token Validity */
   try {
-    const deletedUser = await UserService.Delete(Number(params.id));
+    const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;
+    const tokenUser: any = JWT.decode(token);
+    if (params.id !== tokenUser.id) return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
+    JWT.verify(token, tokenUser.email);
+    const url = new URL(req.url);
+    const isAuthenticated = await verifyToken(req);
+    if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
+  } catch (err) {
+    return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
+  }
+  /** End of Check Token Validity */  
+  
+  try {
+    const deletedUser = await UserService.Delete(params.id);
     return NextResponse.json({ message: "User deleted. Good bye " + deletedUser.name + "!" }, { status: 200, });
   } catch (err) {
     return NextResponse.json({ code: 404, message: "User not found." }, { status: 404 });

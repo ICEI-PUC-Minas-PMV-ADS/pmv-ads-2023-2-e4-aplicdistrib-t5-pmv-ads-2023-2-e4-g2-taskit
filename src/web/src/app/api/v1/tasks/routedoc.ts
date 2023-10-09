@@ -1,5 +1,6 @@
-import { IRouteDoc } from "@/shared/interfaces/apidocs.interface";
+import { IRouteDoc } from "@/shared/api/interfaces/apidocs.interface";
 import { DeleteTask, GetTask, UpdateTask } from "./[id]/route";
+import { CreateTask, ListTask } from "./route";
 
 export const TaskRouteDoc: IRouteDoc = {
   tags: [
@@ -12,7 +13,11 @@ export const TaskRouteDoc: IRouteDoc = {
     "/api/v1/tasks": {
       
     },
-    "/api/v1/tasks/{id}": {
+    "/api/v1/tasks/": {
+      post: CreateTask,
+      get: ListTask,
+    },      
+    "/api/v1/tasks/{id}": {      
       get: GetTask,
       put: UpdateTask,
       delete: DeleteTask,

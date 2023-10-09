@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Task {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  content   String?
+  createdAt DateTime  @default(now()) @map(name: "created_at")
+  updatedAt DateTime  @updatedAt @map(name: "updated_at")
+  workedAt  DateTime? @map(name: "worked_at")
+  timeSpent String?
+  owner     User?     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  ownerId   String?   @db.ObjectId
+  subtasks  Subtask[]
+  statusId  String    @db.ObjectId
+  canEdit   String[]  @map(name: "can_edit")
+  canView   String[]  @map(name: "can_view")
+
+  @@map(name: "tasks")
+}
+
+model Subtask {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  content   String?
+  createdAt DateTime  @default(now()) @map(name: "created_at")
+  updatedAt DateTime  @updatedAt @map(name: "updated_at")
+  workedAt  DateTime? @map(name: "worked_at")
+  timeSpent String?
+  task      Task      @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  taskId    String    @db.ObjectId
+  statusId  String    @db.ObjectId
+
+  @@map(name: "subtasks")
+}
+
+model User {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  name      String?
+  avatar    String?   @map("avatar_url")
+  email     String?   @unique
+  password  String?   @map("password_hash")
+  createdAt DateTime  @default(now()) @map(name: "created_at")
+  updatedAt DateTime  @updatedAt @map(name: "updated_at")
+  tasks     Task[]
+  accounts  Account[]
+  sessions  Session[]
+
+  @@map(name: "users")
+}
+
+model Status {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  label String @unique
+
+  @@map(name: "status")
+}
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id") @db.ObjectId
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model Account {
+  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String  @map("user_id") @db.ObjectId
+  type               String
+  provider           String
+  providerAccountId  String  @map("provider_account_id")
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
