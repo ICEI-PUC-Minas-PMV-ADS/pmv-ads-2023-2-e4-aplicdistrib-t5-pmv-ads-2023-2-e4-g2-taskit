@@ -4,6 +4,12 @@ O software é dividido entre uma aplicação monolítica (**Frontend Web + Backe
 
 Decidimos trabalhar com esses frameworks, pela possibilidade de integração e utilização de forma harmoniosa, o que facilita tanto ao usuario, ao utilizar a aplicação, quanto aos desenvolvedores do projeto. 
 
+Além de serem ferramentas amplamente utilizadas no mercado, as escolhas da arquitetura do projeto justificam-se da seguinte forma: 
+React: flexibilidade, reutilização de componentes e integração com o React Native. 
+Next.Js:  compatibilidade com o TypeScript e criação de aplicações web rápidas e seguras.
+Prisma: ORM para Node.js compatível com Typescript, que facilita a interação com o banco de dados.
+MongoDB: compatibilidade com o Node.js e necessidade de utilizar um banco de dados NoSQL no projeto.
+
 A aplicação Next.js e o banco de dados MongoDB serão hospedados na [**Vercel**](https://vercel.com) pela simplicidade e pela opção gratuita.
 
 ![architecture](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/26356962/2be1a776-04af-4f54-9322-7064f4b728b1)
