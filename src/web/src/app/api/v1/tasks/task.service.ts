@@ -1,5 +1,4 @@
-import { db } from "@/shared/database/db.connection";
-import { Task } from "@prisma/client";
+import { db } from "@/shared/api/database/db.connection";
 
 async function Create(task: any) {
   const { id, ownerId, title, content, createdAt, updatedAt } = await db.task.create({
@@ -7,6 +6,7 @@ async function Create(task: any) {
       title: task.title,
       content: task.content,
       ownerId: task.ownerId,
+      status: task.status,
       createdAt: new Date(),
       updatedAt: new Date(),
     }
@@ -15,62 +15,164 @@ async function Create(task: any) {
   return { id, ownerId, title, content, createdAt, updatedAt };
 }
 
-async function List(ownerId: number) {
-  return await db.task.findMany({
-    where: { ownerId },
+async function List(userId: string, quantity = 10, page = 1) {
+  const tasks = await db.task.findMany({
+    where: {
+      ownerId: userId
+    },
+    include: {
+      allowance: {
+        select: {
+          userId: true,
+          permission: true,
+        }
+      },
+      owner: {
+        select: {
+          id: true,
+          avatar: true,
+          name: true,
+        }
+      }
+    },
+    take: quantity,
+    skip: quantity * (page - 1),
+  });
+
+  return tasks;
+}
+
+async function Get(id: string, userId: string) {
+  return await db.task.findUniqueOrThrow({
+    where: {
+      id,
+      OR: [
+        { ownerId: { equals: userId } },
+        {
+          allowance: {
+            some: {
+              userId: userId
+            }
+          }
+        }]
+    },
     select: {
       id: true,
       title: true,
+      status: true,
       content: true,
       subtasks: true,
       createdAt: true,
       updatedAt: true,
-      finishedAt: true,
-    },
-  })
-}
-
-async function Get(id: number) {
-  return await db.task.findUnique({
-    where: { id },
-    select: {
-      id: true,
-      title: true,
-      content: true,
+      workedAt: true,
+      timeSpent: true,
       ownerId: true,
-      subtasks: true,
-      createdAt: true,
-      updatedAt: true,
-      finishedAt: true,
+      allowance: {
+        select: {
+          userId: true,
+          permission: true,
+        }
+      },
+      owner: {
+        select: {
+          id: true,
+          avatar: true,
+          name: true,
+        }
+      }
     },
   })
 }
 
-async function Update(task: Task) {
-  return await db.task.update({
-    where: { id: task.id },
+async function Update(id: string, task: any, userId: string) {
+  const updatedTask = await db.task.update({
+    where: {
+      id,
+      OR: [
+        { ownerId: { equals: userId } },
+        {
+          allowance: {
+            some: {
+              userId: userId,
+              AND: {
+                permission: 'edit'
+              }
+            }
+          }
+        }]
+    },
     select: {
       id: true,
       title: true,
+      status: true,
       content: true,
+      allowance: {
+        select: {
+          userId: true,
+          permission: true,
+        }
+      },
       subtasks: true,
+      workedAt: true,
       updatedAt: true,
-      finishedAt: true,
+      timeSpent: true,
     },
     data: {
       title: task.title,
-      content: task.content,      
-      ownerId: task.ownerId,
-      updatedAt: new Date(),
-      finishedAt: task.finishedAt,
+      status: task.status,
+      content: task.content,
+      workedAt: task.startedAt,
+      timeSpent: task.timeSpent,
+      subtasks: task.subtasks,
     }
   })
+  return updatedTask;
 }
 
-async function Delete(id: number, ownerId: number) {
+async function Delete(id: string, ownerId: string) {
   return await db.task.delete({
     where: { id, ownerId },
   })
+}
+
+async function VerifyOwner(id: string, userId: string) {
+  return await db.task.findUnique({
+    where: { id, ownerId: userId },
+    select: { id: true }
+  })
+}
+
+async function Share(id: string, userId: string, permission: 'edit' | 'view') {
+  return await db.sharedTask.update({
+    where: { taskId: id, userId },
+    data: {
+      permission,
+    },
+    select: {
+      taskId: true,
+      permission: true,
+      userId: true,
+    }
+  }).catch(async () => {
+    return await db.sharedTask.create({
+      select: {
+        taskId: true,
+        permission: true,
+        userId: true,
+      },
+      data: {
+        taskId: id,
+        permission,
+        userId,
+      },
+    })
+  });
+}
+
+async function Unshare(id: string, userId: string) {
+  return await db.sharedTask.delete({
+    where: { taskId: id, userId },
+  });
 }
 
 export const TaskService = {
@@ -78,5 +180,8 @@ export const TaskService = {
   Update,
   Delete,
   List,
-  Get
+  Get,
+  Share,
+  Unshare,
+  VerifyOwner
 }

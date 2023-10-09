@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { TaskRouteDoc } from './tasks/routedoc'
 import { UserRouteDoc } from './users/routedoc'
 import { AuthRouteDoc } from './auth/routedoc'
+import { StatusRouteDoc } from "./status/route";
 
 export function GET(req: Request) {
   const tags: any = [];
@@ -19,6 +20,10 @@ export function GET(req: Request) {
     tags.push(...AuthRouteDoc.tags);
   }
 
+  if (StatusRouteDoc.tags) {
+    tags.push(...StatusRouteDoc.tags);
+  }
+  
   return NextResponse.json({
     openapi: "3.1.0",
     info: {
@@ -51,6 +56,7 @@ export function GET(req: Request) {
       ...TaskRouteDoc.paths,
       ...UserRouteDoc.paths,
       ...AuthRouteDoc.paths,
+      ...StatusRouteDoc.paths,
     },
     components: {
       securitySchemes: {
@@ -64,6 +70,7 @@ export function GET(req: Request) {
         ...TaskRouteDoc.components?.schemas,
         ...UserRouteDoc.components?.schemas,
         ...AuthRouteDoc.components?.schemas,
+        ...StatusRouteDoc.components?.schemas,
         ResponseInfo: {
           type: "object",
           required: [ "code", "message" ],

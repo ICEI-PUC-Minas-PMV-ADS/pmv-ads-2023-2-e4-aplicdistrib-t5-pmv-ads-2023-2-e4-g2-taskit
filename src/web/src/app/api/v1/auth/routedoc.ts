@@ -1,4 +1,4 @@
-import { IRouteDoc } from "@/shared/interfaces/apidocs.interface";
+import { IRouteDoc } from "@/shared/api/interfaces/apidocs.interface";
 import { Logout } from "./logout/route";
 import { Login } from "./login/route";
 
@@ -24,8 +24,7 @@ export const AuthRouteDoc: IRouteDoc = {
         required: [ "id", "token", "expires", "userId" ],
         properties: {
           id: {
-            type: "integer",
-            format: "int32"
+            type: "string"
           },
           token: {
             type: "string"
@@ -34,8 +33,7 @@ export const AuthRouteDoc: IRouteDoc = {
             type: "string"
           },
           userId: {
-            type: "integer",
-            format: "int32"
+            type: "string"
           }
         }
       }

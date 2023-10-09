@@ -1,4 +1,4 @@
-import { IRouteDoc } from "@/shared/interfaces/apidocs.interface";
+import { IRouteDoc } from "@/shared/api/interfaces/apidocs.interface";
 import { GetUsers, CreateUser } from "./route";
 import { DeleteUser, UpdateUser, GetUser } from "./[id]/route";
 
@@ -32,17 +32,37 @@ export const UserRouteDoc: IRouteDoc = {
           name: {
             type: "string"
           },
+          avatar: {
+            type: "string",
+            format: "url"
+          },
           email: {
-            type: "string"
+            type: "string",
+            format: "email"
+          },
+          tasks: {
+            type: "array",
+            items: {              
+              $ref: "#/components/schemas/Task"
+            }
+          },
+          sessions: {
+            type: "array",
+            items: {
+              $ref: "#/components/schemas/Session"
+            }
           },
           password: {
-            type: "string"
+            type: "string",
+            format: "password"
           },
           createdAt: {
-            type: "string"
+            type: "string",
+            format: "date-time"
           },
           updatedAt: {
-            type: "string"
+            type: "string",
+            format: "date-time"
           }
         }
       },
@@ -53,11 +73,17 @@ export const UserRouteDoc: IRouteDoc = {
           name: {
             type: "string"
           },
+          avatar: {
+            type: "string",
+            format: "url",
+          },
           email: {
-            type: "string"
+            type: "string",
+            format: "email",
           },
           password: {
-            type: "string"
+            type: "string",
+            format: "password",
           },
         }
       },
@@ -68,10 +94,16 @@ export const UserRouteDoc: IRouteDoc = {
             type: "string"
           },
           email: {
-            type: "string"
+            type: "string",
+            format: "email",
+          },
+          avatar: {
+            type: "string",
+            format: "url",
           },
           password: {
-            type: "string"
+            type: "string",
+            format: "password",
           },
         }
       }

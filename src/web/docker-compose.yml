@@ -1,0 +1,69 @@
+version: '3'
+services:
+  main:
+    hostname: main
+    image: mongo
+    expose:
+      - 27017
+    ports:
+      - 30001:27017 
+    restart: always
+    command: mongod --replSet my-mongo-set
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=taskit
+      - MONGO_INITDB_ROOT_PASSWORD=taskit2023
+  backup1:
+    hostname: backup1
+    image: mongo
+    expose:
+      - 27017
+    ports:
+      - 30002:27017
+    restart: always
+    command: mongod --replSet my-mongo-set
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=taskit
+      - MONGO_INITDB_ROOT_PASSWORD=taskit2023
+  backup2:
+    hostname: backup2
+    image: mongo
+    expose:
+      - 27017
+    ports:
+      - 30003:27017
+    restart: always
+    command: mongod --replSet my-mongo-set
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=taskit
+      - MONGO_INITDB_ROOT_PASSWORD=taskit2023
+
+  mongoinit:
+    image: mongo
+    restart: "no"
+    depends_on:
+      - main
+      - backup1
+      - backup2
+    command: >
+      mongo --host mongo1:27017 --eval 
+      '
+      db = (new Mongo("localhost:27017")).getDB("test");
+      config = {
+      "_id" : "taskit-mongo-set",
+      "members" : [
+        {
+          "_id" : 0,
+          "host" : "main:27017"
+        },
+        {
+          "_id" : 1,
+          "host" : "backup1:27017"
+        },
+        {
+          "_id" : 2,
+          "host" : "backup2:27017"
+        }
+      ]
+      };
+      rs.initiate(config);
+      '      

@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import JWT from 'jsonwebtoken';
 
-import { useServerAuth } from "@/shared/api/useServerAuth";
+import { verifyToken } from "@/shared/api/utils/verifyToken";
+import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 import { TaskService } from "../task.service";
-import { IRoutePathMethod } from "@/shared/interfaces/apidocs.interface";
 
 interface TasksParams {
   params: {
@@ -11,70 +11,70 @@ interface TasksParams {
   }
 }
 export async function GET(req: Request, { params }: TasksParams) {
-  const url = new URL(req.url);
-  const isAuthenticated = await useServerAuth(req);
-  if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
-
-
+  /** Check Token Validity */
+  const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;
+  const tokenUser: any = JWT.decode(token);  
   try {
-    const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;
-    const user: any = JWT.decode(token);
-    JWT.verify(token, user.email);
+    JWT.verify(token, tokenUser.email);
   } catch (err) {
     return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
   }
+  const url = new URL(req.url);
+  const isAuthenticated = await verifyToken(req);
+  if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
+  /** End of Check Token Validity */
 
   try {
-    const task = TaskService.Get(Number(params.id));
+    const task = await TaskService.Get(params.id, tokenUser.id);
     return NextResponse.json(task);
   } catch (err) {
     return NextResponse.json({ code: 404, message: "Task not found." }, { status: 404 });
   }
-
 }
 
 export async function PUT(req: Request, { params }: TasksParams) {
-  const url = new URL(req.url);
-  const isAuthenticated = await useServerAuth(req);
-  if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
-
+  /** Check Token Validity */
   const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;
-  const user: any = JWT.decode(token);
-
+  const tokenUser: any = JWT.decode(token);  
   try {
-    JWT.verify(token, user.email);
+    JWT.verify(token, tokenUser.email);
   } catch (err) {
     return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
   }
+  const url = new URL(req.url);
+  const isAuthenticated = await verifyToken(req);
+  if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
+  /** End of Check Token Validity */
 
   const task = await req.json();
   if (!task) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
 
   try {
-    const updatedTask = TaskService.Get(Number(params.id));
+    const taskId = params.id;
+    const userId = tokenUser.id;
+    const updatedTask = await TaskService.Update(taskId, task, userId);
     return NextResponse.json(updatedTask, { status: 200 });
   } catch (err) {
     return NextResponse.json({ code: 404, message: "Task not found." }, { status: 404 });
   }
-
 }
 
 export async function DELETE(req: Request, { params }: TasksParams) {
-  const isAuthenticated = await useServerAuth(req);
-  const url = new URL(req.url);
-  if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
-
+  /** Check Token Validity */
   const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;
-  const user: any = JWT.decode(token);
-
+  const tokenUser: any = JWT.decode(token);
   try {
-    JWT.verify(token, user.email);
+    JWT.verify(token, tokenUser.email);
   } catch (err) {
     return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
   }
+  const url = new URL(req.url);
+  const isAuthenticated = await verifyToken(req);
+  if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
+  /** End of Check Token Validity */
 
   try {
-    await TaskService.Delete(Number(params.id), Number(user.id));
+    await TaskService.Delete(params.id, tokenUser.id);
     return NextResponse.json({ message: "Task deleted" }, { status: 200, });
   } catch (err) {
     return NextResponse.json({ code: 404, message: "Task not found!" }, { status: 404 });

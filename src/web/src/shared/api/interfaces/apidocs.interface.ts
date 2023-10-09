@@ -12,6 +12,9 @@ export interface IRouteSchemas {
     properties: {
       [key: string]: {
         type: string;
+        items?: {
+          $ref: string;
+        }
         format?: string;
       }
     }

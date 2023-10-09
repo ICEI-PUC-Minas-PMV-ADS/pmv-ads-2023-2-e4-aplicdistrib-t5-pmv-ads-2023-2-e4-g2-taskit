@@ -3,9 +3,14 @@ import JWT from 'jsonwebtoken';
 
 import { verifyToken } from "@/shared/api/utils/verifyToken";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
-import { TaskService } from "./task.service";
+import { TaskService } from "../../task.service";
 
-export async function POST(req: Request) {
+interface TasksParams {
+  params: {
+    id: string;
+  }
+}
+export async function PUT(req: Request, { params }: TasksParams) {
   /** Check Token Validity */
   const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;
   const tokenUser: any = JWT.decode(token);
@@ -19,14 +24,20 @@ export async function POST(req: Request) {
   if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
   /** End of Check Token Validity */
 
-  const task = await req.json();
-  if (!task || !task.ownerId) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
+  const { userId, permission } = await req.json();
+  if (!userId || !['edit', 'view'].includes(permission)) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
 
-  const createdTask = await TaskService.Create({ ...task, canEdit: task.canEdit ?? [], canView: task.canView ?? [], subtasks: task.subtasks ?? [] });
-  return NextResponse.json(createdTask);
+  try {
+    const task = await TaskService.VerifyOwner(params.id, tokenUser.id);
+    if (!task) return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
+    const updatedTask = await TaskService.Share(task.id, userId, permission);
+    return NextResponse.json(updatedTask, { status: 200 });
+  } catch (err) {
+    return NextResponse.json({ code: 404, message: "Task not found." }, { status: 404 });
+  }
 }
 
-export async function GET(req: Request) {
+export async function PATCH(req: Request, { params }: TasksParams) {
   /** Check Token Validity */
   const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;
   const tokenUser: any = JWT.decode(token);
@@ -40,21 +51,26 @@ export async function GET(req: Request) {
   if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
   /** End of Check Token Validity */
 
-  if (!tokenUser.id) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
+  const { userId, permission } = await req.json();
+  if (!userId || !['edit', 'view'].includes(permission)) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
 
-  const task = await TaskService.List(tokenUser.id);
-  if (!task || task.length === 0) return NextResponse.json({ code: 202, message: "There are no tasks for this user." }, { status: 202 });
-
-  return NextResponse.json(task);
+  try {
+    const task = await TaskService.VerifyOwner(params.id, tokenUser.id);
+    if (!task) return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
+    const updatedTask = await TaskService.Unshare(params.id, userId);
+    return NextResponse.json(updatedTask, { status: 200 });    
+  } catch (err) {
+    return NextResponse.json({ code: 404, message: "Task not found." }, { status: 404 });
+  }
 }
 
-export const CreateTask: IRoutePathMethod = {
+export const ShareTask: IRoutePathMethod = {
   tags: [
     "Tasks"
   ],
-  summary: "Create task",
-  description: "Adds a task to database",
-  operationId: "CreateTask",
+  summary: "Share task",
+  description: "Shares task with other user",
+  operationId: "ShareTask",
   security: {
     Bearer: []
   },
@@ -71,14 +87,14 @@ export const CreateTask: IRoutePathMethod = {
     }
   },
   {
-    name: "task",
+    name: "userId",
     in: "body",
-    description: "Task ID",
+    description: "Who to share with and permission level (edit or view)",
     required: true,
     schema: {
       type: "object",
-      $ref: "#/components/schemas/Task"
-    }
+      $ref: "#/components/schemas/Share"
+    },
   }],
   responses: {
     200: {
@@ -86,7 +102,7 @@ export const CreateTask: IRoutePathMethod = {
         "application/json": {
           schema: {
             $ref: "#/components/schemas/Task",
-            example: [{
+            example: {
               id: 1,
               ownerId: 1,
               title: "Task 1",
@@ -94,20 +110,11 @@ export const CreateTask: IRoutePathMethod = {
               status: "new",
               createdAt: "2021-08-01T00:00:00.000Z",
               updatedAt: "2021-08-01T00:00:00.000Z"
-            },
-            {
-              id: 2,
-              ownerId: 2,
-              title: "Task 2",
-              description: "Description example",
-              status: "new",
-              createdAt: "2021-08-01T00:00:00.000Z",
-              updatedAt: "2021-08-01T00:00:00.000Z"
-            }]
+            }
           }
         }
       },
-      description: "OK."
+      description: "OK. Task Updated."
     },
     400: {
       content: {
@@ -115,13 +122,13 @@ export const CreateTask: IRoutePathMethod = {
           schema: {
             $ref: "#/components/schemas/ResponseInfo",
             example: {
-              code: 400,
+              code: 401,
               message: "Bad Request"
             }
           }
         }
       },
-      description: "Error. We've found some inconsistency with your request."
+      description: "Error. Empty body."
     },
     401: {
       content: {
@@ -136,17 +143,32 @@ export const CreateTask: IRoutePathMethod = {
         }
       },
       description: "Error. User is not authenticated."
+    },
+    404: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/ResponseInfo",
+            example: {
+              code: 401,
+              message: "Task not found!"
+            }
+          }
+        }
+      },
+      description: "Error. Task does not exist."
     }
   }
 }
 
-export const ListTask: IRoutePathMethod = {
+
+export const UnshareTask: IRoutePathMethod = {
   tags: [
     "Tasks"
   ],
-  summary: "Get all tasks from user or shared with him",
-  description: "Returns task from database",
-  operationId: "GetTask",
+  summary: "Unshare task",
+  description: "Unshares task with other user",
+  operationId: "UnshareTask",
   security: {
     Bearer: []
   },
@@ -161,6 +183,15 @@ export const ListTask: IRoutePathMethod = {
     schema: {
       type: "string"
     }
+  },
+  {
+    name: "userId",
+    in: "body",
+    description: "Who to share with",
+    required: true,
+    schema: {
+      type: "string",
+    }
   }],
   responses: {
     200: {
@@ -180,7 +211,7 @@ export const ListTask: IRoutePathMethod = {
           }
         }
       },
-      description: "OK."
+      description: "OK. Task Updated."
     },
     400: {
       content: {
@@ -188,13 +219,13 @@ export const ListTask: IRoutePathMethod = {
           schema: {
             $ref: "#/components/schemas/ResponseInfo",
             example: {
-              code: 400,
+              code: 401,
               message: "Bad Request"
             }
           }
         }
       },
-      description: "Error. We've found some inconsistency with your request."
+      description: "Error. Empty body."
     },
     401: {
       content: {
@@ -210,19 +241,19 @@ export const ListTask: IRoutePathMethod = {
       },
       description: "Error. User is not authenticated."
     },
-    202: {
+    404: {
       content: {
         "application/json": {
           schema: {
             $ref: "#/components/schemas/ResponseInfo",
             example: {
-              code: 202,
-              message: "There are no tasks for this user."
+              code: 401,
+              message: "Task not found!"
             }
           }
         }
       },
-      description: "Error. Sorry, we do not have anything for you now."
+      description: "Error. Task does not exist."
     }
   }
 }
