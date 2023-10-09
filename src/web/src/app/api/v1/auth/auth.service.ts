@@ -1,25 +1,33 @@
 import { db } from "@/shared/api/database/db.connection";
 import { Session } from "@prisma/client";
 
-async function Create(session: Session | any) {
-  if (session.id) {
+async function Create({ userId, sessionToken, agent, os = 'unknown', expires }: Session | any) {
+  return await db.session.findFirstOrThrow({
+    where: { userId, agent, os },
+  }).then(async ({ id }) => {
     return await db.session.update({
-      where: { id: session.id, userId: session.userId },
+      where: { id },
       data: {
-        userId: session.userId,
-        sessionToken: session.sessionToken,
-        expires: session.expires
+        sessionToken,
+        expires
+      },
+      select: {
+        id: true,
+        sessionToken: true,
+        expires: true,
       }
-    })  
-  } else {
+    })
+  }).catch(async () => {
     return await db.session.create({
       data: {
-        sessionToken: session.sessionToken,
-        userId: session.userId,
-        expires: session.expires
-      }
-    })  
-  }
+        userId,
+        sessionToken,
+        agent,
+        os,
+        expires
+      },
+    })
+  });
 }
 
 async function Get(sessionToken: string, userId: string) {
@@ -31,9 +39,9 @@ async function Get(sessionToken: string, userId: string) {
   })
 }
 
-async function Invalidate(sessionId: string, userId: string) {
+async function Invalidate(id: string, userId: string) {
   return await db.session.update({
-    where: { id: sessionId, userId },
+    where: { id, userId },
     data: {
       sessionToken: '',
       expires: ''

@@ -6,7 +6,7 @@ import { AuthService } from "../auth.service";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 
 export async function PUT(req: Request) {
-  const { email, password, sessionId }: any = await req.json();
+  const { email, password, os }: any = await req.json();
 
   if (!email || !password) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
 
@@ -17,12 +17,9 @@ export async function PUT(req: Request) {
 
   const token = jwt.sign({ id: user.id, name: user.name, email: user.email }, email, { expiresIn: "336h" });
 
-  let session;
-  if (!sessionId) {
-    session = await AuthService.Create({ sessionToken: token, userId: user.id, expires: new Date(Date.now() + 336 * 60 * 60 * 1000) });    
-  } else {
-    session = await AuthService.Create({ id: sessionId, sessionToken: token, userId: user.id, expires: new Date(Date.now() + 336 * 60 * 60 * 1000) });
-  }
+  const agent = req.headers.get("user-agent");
+  
+  const session = await AuthService.Create({ sessionToken: token, userId: user.id, agent, os, expires: new Date(Date.now() + 336 * 60 * 60 * 1000) });
 
   return NextResponse.json({ id: session.id, token: session.sessionToken, expires: session.expires });
 }

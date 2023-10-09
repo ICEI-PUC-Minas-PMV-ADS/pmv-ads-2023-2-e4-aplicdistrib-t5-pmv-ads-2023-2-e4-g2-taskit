@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import JWT from 'jsonwebtoken';
 
 import { verifyToken } from "@/shared/api/utils/verifyToken";
+import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 import { TaskService } from "../../task.service";
 
 interface TasksParams {
@@ -24,14 +25,12 @@ export async function PUT(req: Request, { params }: TasksParams) {
   /** End of Check Token Validity */
 
   const { userId, permission } = await req.json();
-  if (!userId || !permission) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
+  if (!userId || !['edit', 'view'].includes(permission)) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
 
   try {
-    if (permission === 'edit') {
-      const updatedTask = await TaskService.AddToShareEdit(params.id, tokenUser.id, userId);
-      return NextResponse.json(updatedTask, { status: 200 });
-    }
-    const updatedTask = await TaskService.AddToShareView(params.id, tokenUser.id, userId);
+    const task = await TaskService.VerifyOwner(params.id, tokenUser.id);
+    if (!task) return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
+    const updatedTask = await TaskService.Share(task.id, userId, permission);
     return NextResponse.json(updatedTask, { status: 200 });
   } catch (err) {
     return NextResponse.json({ code: 404, message: "Task not found." }, { status: 404 });
@@ -53,16 +52,208 @@ export async function PATCH(req: Request, { params }: TasksParams) {
   /** End of Check Token Validity */
 
   const { userId, permission } = await req.json();
-  if (!userId || !permission) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
+  if (!userId || !['edit', 'view'].includes(permission)) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
 
   try {
-    if (permission === 'edit') {
-      const updatedTask = await TaskService.RemoveFromShareEdit(params.id, tokenUser.id, userId);
-      return NextResponse.json(updatedTask, { status: 200 });
-    }
-    const updatedTask = await TaskService.RemoveFromShareView(params.id, tokenUser.id, userId);
-    return NextResponse.json(updatedTask, { status: 200 });
+    const task = await TaskService.VerifyOwner(params.id, tokenUser.id);
+    if (!task) return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
+    const updatedTask = await TaskService.Unshare(params.id, userId);
+    return NextResponse.json(updatedTask, { status: 200 });    
   } catch (err) {
     return NextResponse.json({ code: 404, message: "Task not found." }, { status: 404 });
+  }
+}
+
+export const ShareTask: IRoutePathMethod = {
+  tags: [
+    "Tasks"
+  ],
+  summary: "Share task",
+  description: "Shares task with other user",
+  operationId: "ShareTask",
+  security: {
+    Bearer: []
+  },
+  produces: [
+    "application/json"
+  ],
+  parameters: [{
+    name: "id",
+    in: "path",
+    description: "Task ID",
+    required: true,
+    schema: {
+      type: "string"
+    }
+  },
+  {
+    name: "userId",
+    in: "body",
+    description: "Who to share with and permission level (edit or view)",
+    required: true,
+    schema: {
+      type: "object",
+      $ref: "#/components/schemas/Share"
+    },
+  }],
+  responses: {
+    200: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/Task",
+            example: {
+              id: 1,
+              ownerId: 1,
+              title: "Task 1",
+              description: "Description 1",
+              status: "new",
+              createdAt: "2021-08-01T00:00:00.000Z",
+              updatedAt: "2021-08-01T00:00:00.000Z"
+            }
+          }
+        }
+      },
+      description: "OK. Task Updated."
+    },
+    400: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/ResponseInfo",
+            example: {
+              code: 401,
+              message: "Bad Request"
+            }
+          }
+        }
+      },
+      description: "Error. Empty body."
+    },
+    401: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/ResponseInfo",
+            example: {
+              code: 401,
+              message: "Acess Denied"
+            }
+          }
+        }
+      },
+      description: "Error. User is not authenticated."
+    },
+    404: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/ResponseInfo",
+            example: {
+              code: 401,
+              message: "Task not found!"
+            }
+          }
+        }
+      },
+      description: "Error. Task does not exist."
+    }
+  }
+}
+
+
+export const UnshareTask: IRoutePathMethod = {
+  tags: [
+    "Tasks"
+  ],
+  summary: "Unshare task",
+  description: "Unshares task with other user",
+  operationId: "UnshareTask",
+  security: {
+    Bearer: []
+  },
+  produces: [
+    "application/json"
+  ],
+  parameters: [{
+    name: "id",
+    in: "path",
+    description: "Task ID",
+    required: true,
+    schema: {
+      type: "string"
+    }
+  },
+  {
+    name: "userId",
+    in: "body",
+    description: "Who to share with",
+    required: true,
+    schema: {
+      type: "string",
+    }
+  }],
+  responses: {
+    200: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/Task",
+            example: {
+              id: 1,
+              ownerId: 1,
+              title: "Task 1",
+              description: "Description 1",
+              status: "new",
+              createdAt: "2021-08-01T00:00:00.000Z",
+              updatedAt: "2021-08-01T00:00:00.000Z"
+            }
+          }
+        }
+      },
+      description: "OK. Task Updated."
+    },
+    400: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/ResponseInfo",
+            example: {
+              code: 401,
+              message: "Bad Request"
+            }
+          }
+        }
+      },
+      description: "Error. Empty body."
+    },
+    401: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/ResponseInfo",
+            example: {
+              code: 401,
+              message: "Acess Denied"
+            }
+          }
+        }
+      },
+      description: "Error. User is not authenticated."
+    },
+    404: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/ResponseInfo",
+            example: {
+              code: 401,
+              message: "Task not found!"
+            }
+          }
+        }
+      },
+      description: "Error. Task does not exist."
+    }
   }
 }

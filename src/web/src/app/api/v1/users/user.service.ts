@@ -5,6 +5,7 @@ async function Create(user: any) {
     data: {
       name: user.name,
       email: user.email,
+      avatar: user.avatar || 'https://gitlab.com/api/v4/avatar?email=' + user.email + '&size=64',
       password: user.password,
       tasks: user.tasks,
       createdAt: new Date(),
@@ -20,8 +21,8 @@ async function List() {
     select: {
       id: true,
       name: true,
+      avatar: true,
       email: true,
-      tasks: true,
       createdAt: true,
       updatedAt: true,
     },
@@ -36,9 +37,16 @@ async function Get(id: string) {
       name: true,
       avatar: true,
       email: true,
+      allowance: {
+        select: {
+          taskId: true,
+        }
+      },
       tasks: {
         select: {
-          _count: true,
+          id: true,
+          title: true,
+          status: true,
         }
       },
       sessions: {
@@ -61,7 +69,24 @@ async function Update(user: any) {
       name: true,
       avatar: true,
       email: true,
-      tasks: true,
+      allowance: {
+        select: {
+          taskId: true,
+        }
+      },
+      tasks: {
+        select: {
+          id: true,
+          title: true,
+          status: true,
+        }
+      },
+      sessions: {
+        select: {
+          id: true,
+          expires: true,
+        }
+      },
       createdAt: true,
       updatedAt: true,
     },
@@ -107,9 +132,26 @@ async function GetByEmail(email: string) {
     select: {
       id: true,
       name: true,
-      email: true,
       avatar: true,
-      tasks: true,
+      email: true,
+      allowance: {
+        select: {
+          taskId: true,
+        }
+      },
+      tasks: {
+        select: {
+          id: true,
+          title: true,
+          status: true,
+        }
+      },
+      sessions: {
+        select: {
+          id: true,
+          expires: true,
+        }
+      },
       createdAt: true,
       updatedAt: true,
     },

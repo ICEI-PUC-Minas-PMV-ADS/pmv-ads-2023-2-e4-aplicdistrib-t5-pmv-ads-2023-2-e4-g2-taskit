@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import JWT from 'jsonwebtoken';
 
 import { verifyToken } from "@/shared/api/utils/verifyToken";
-import { TaskService } from "./task.service";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
+import { TaskService } from "./task.service";
 
 export async function POST(req: Request) {
   /** Check Token Validity */
@@ -43,7 +43,7 @@ export async function GET(req: Request) {
   if (!tokenUser.id) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
 
   const task = await TaskService.List(tokenUser.id);
-  if (!task || task.length === 0) return NextResponse.json({ code: 204, message: "There are no tasks for this user." }, { status: 204 });
+  if (!task || task.length === 0) return NextResponse.json({ code: 202, message: "There are no tasks for this user." }, { status: 202 });
 
   return NextResponse.json(task);
 }
@@ -109,6 +109,20 @@ export const CreateTask: IRoutePathMethod = {
       },
       description: "OK."
     },
+    400: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/ResponseInfo",
+            example: {
+              code: 400,
+              message: "Bad Request"
+            }
+          }
+        }
+      },
+      description: "Error. We've found some inconsistency with your request."
+    },
     401: {
       content: {
         "application/json": {
@@ -122,20 +136,6 @@ export const CreateTask: IRoutePathMethod = {
         }
       },
       description: "Error. User is not authenticated."
-    },
-    404: {
-      content: {
-        "application/json": {
-          schema: {
-            $ref: "#/components/schemas/ResponseInfo",
-            example: {
-              code: 401,
-              message: "Task not found!"
-            }
-          }
-        }
-      },
-      description: "Error. Task does not exist."
     }
   }
 }
@@ -144,7 +144,7 @@ export const ListTask: IRoutePathMethod = {
   tags: [
     "Tasks"
   ],
-  summary: "Get task",
+  summary: "Get all tasks from user or shared with him",
   description: "Returns task from database",
   operationId: "GetTask",
   security: {
@@ -182,6 +182,20 @@ export const ListTask: IRoutePathMethod = {
       },
       description: "OK."
     },
+    400: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/ResponseInfo",
+            example: {
+              code: 400,
+              message: "Bad Request"
+            }
+          }
+        }
+      },
+      description: "Error. We've found some inconsistency with your request."
+    },
     401: {
       content: {
         "application/json": {
@@ -196,19 +210,19 @@ export const ListTask: IRoutePathMethod = {
       },
       description: "Error. User is not authenticated."
     },
-    404: {
+    202: {
       content: {
         "application/json": {
           schema: {
             $ref: "#/components/schemas/ResponseInfo",
             example: {
-              code: 401,
-              message: "Task not found!"
+              code: 202,
+              message: "There are no tasks for this user."
             }
           }
         }
       },
-      description: "Error. Task does not exist."
+      description: "Error. Sorry, we do not have anything for you now."
     }
   }
 }

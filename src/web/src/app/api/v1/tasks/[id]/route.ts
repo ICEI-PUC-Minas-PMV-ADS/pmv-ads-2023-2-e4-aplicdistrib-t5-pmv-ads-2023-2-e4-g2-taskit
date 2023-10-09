@@ -25,7 +25,7 @@ export async function GET(req: Request, { params }: TasksParams) {
   /** End of Check Token Validity */
 
   try {
-    const task = TaskService.Get(params.id, tokenUser.id);
+    const task = await TaskService.Get(params.id, tokenUser.id);
     return NextResponse.json(task);
   } catch (err) {
     return NextResponse.json({ code: 404, message: "Task not found." }, { status: 404 });
