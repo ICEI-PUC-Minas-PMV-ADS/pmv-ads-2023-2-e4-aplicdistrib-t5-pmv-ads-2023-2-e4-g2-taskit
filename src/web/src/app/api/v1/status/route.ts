@@ -1,14 +1,34 @@
+import { NextResponse } from "next/server";
+import JWT from "jsonwebtoken";
+
 import { db } from "@/shared/api/database/db.connection";
+import { verifyToken } from "@/shared/api/utils/verifyToken";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 import { IRouteDoc } from "@/shared/api/interfaces/apidocs.interface";
 
-export async function GET() {
-  return await db.status.findMany({
+export async function GET(req: Request) {
+  /** Check Token Validity */
+  const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;
+  const tokenUser: any = JWT.decode(token);
+  try {
+    JWT.verify(token, tokenUser.email);
+  } catch (err) {
+    return NextResponse.json({ code: 401, message: "Access Denied" }, { status: 401 });
+  }
+  const url = new URL(req.url);
+  const isAuthenticated = await verifyToken(req);
+  if (!isAuthenticated) return NextResponse.json({ message: 'Access Denied', code: 401, redirectTo: url.host + '/login' }, { status: 401 });
+  /** End of Check Token Validity */
+  const status = await db.status.findMany({
     select: {
       id: true,
       label: true,
     },
-  })
+  });
+
+  return NextResponse.json({
+    status,
+  }, { status: 200 });
 }
 
 const GetStatus: IRoutePathMethod = {
