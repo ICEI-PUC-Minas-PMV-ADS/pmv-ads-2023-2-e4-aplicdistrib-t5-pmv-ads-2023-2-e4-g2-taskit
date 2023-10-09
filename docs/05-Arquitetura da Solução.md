@@ -24,7 +24,8 @@ A aplicação Next.js e o banco de dados MongoDB serão hospedados na [**Vercel*
 
 ## Modelo ER
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/101607336/378b5aad-6901-4509-aff2-d347e5f88459)
+![image]![task1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/101607336/fbbe67fc-80b6-4679-ae03-c591f2626230)
+
 
 
 ## Esquema Relacional
