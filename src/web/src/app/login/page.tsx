@@ -1,3 +1,14 @@
+'use client'
+import Link from "next/link";
+import { useTheme } from "@/shared/hooks/Theme";
+
 export default function Login() {
-  return <h1>Login</h1>
+  const { setTheme } = useTheme();
+  setTheme('light');
+  return (
+  <>
+    <h1>Login</h1>
+    <Link href='/'>Go Home</Link>
+  </>
+  )
 }
