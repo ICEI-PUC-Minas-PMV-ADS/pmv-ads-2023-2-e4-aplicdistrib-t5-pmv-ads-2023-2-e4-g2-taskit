@@ -1,5 +1,16 @@
+'use client'
+import { GlobalStyle } from "./global.style";
+import { useTheme } from "@/shared/hooks/Theme";
+import Link from "next/link";
+
 export default function Home() {
+  const { setTheme } = useTheme();
+  setTheme('dark');
   return (
-    <h1>Hello World</h1>
+    <>
+      <GlobalStyle />
+      <h1>Hello World - Tema</h1>
+      <Link href='/login'>Login</Link>
+    </>
   )
 }
