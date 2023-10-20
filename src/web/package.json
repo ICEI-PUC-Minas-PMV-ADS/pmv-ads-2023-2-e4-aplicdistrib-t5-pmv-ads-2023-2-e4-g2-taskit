@@ -21,9 +21,11 @@
     "jsonwebtoken": "^9.0.2",
     "mongo": "^0.1.0",
     "next": "13.5.2",
+    "node": "^21.0.0",
     "postcss": "8.4.30",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.11.0",
     "sass": "^1.69.0",
     "styled-components": "^6.0.8",
     "swagger-ui-dist": "^5.7.2",
@@ -42,5 +44,8 @@
   },
   "prisma": {
     "schema": "src/shared/api/database/schema.prisma"
+  },
+  "volta": {
+    "node": "18.18.2"
   }
 }
