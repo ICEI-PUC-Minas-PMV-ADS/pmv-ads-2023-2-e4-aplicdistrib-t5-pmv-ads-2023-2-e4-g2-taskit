@@ -1,27 +1,38 @@
 .container {
-flex: 1;
-justify-content: flex-start;
-align-items: flex-start;
-display: flex;
-flex-direction: column;
-> header { // usando o sass
+  flex: 1;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  max-height: 100vh;
+
+  > header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 32px 0;
-    > img {
-        width: 300px;
-    }
-    > h1 {
-        font-size: 24px;
-        margin-top: 16px;
-    }
-}
 
-> main {
-  
-}
+    > img {
+      width: 300px;
+    }
+
+    > h1 {
+      font-size: 24px;
+      margin-top: 16px;
+    }
+  }
+
+  main {
+    max-width: 80vw;    
+    p {
+      text-wrap: wrap;
+      word-wrap: wrap;
+      flex-wrap: wrap;
+
+    }
+  }
 }
 
 .label {
@@ -33,11 +44,14 @@ flex-direction: column;
   justify-content: center;
   border-radius: .25rem;
   background: white;
+
   &:focus-within {
-    outline: solid 2px lightblue ;
+    outline: solid 2px lightblue;
   }
-  input { 
+
+  input {
     border: none;
+
     &:focus {
       outline: none;
     }

@@ -3,7 +3,7 @@ import StyledComponentsRegistry from '@/shared/configs/registry'
 
 
 import { GlobalStyle } from './global.style';
-import { ThemeProvider } from '@/shared/hooks/Theme';
+import { ThemeProvider } from '@/shared/hooks/useTheme';
 
 export default function StyleLayout({
   children,

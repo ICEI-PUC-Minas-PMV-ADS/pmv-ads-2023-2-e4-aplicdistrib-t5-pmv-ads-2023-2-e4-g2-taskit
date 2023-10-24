@@ -1,7 +1,7 @@
 
 'use client'
 import { GlobalStyle } from "./global.style";
-import { useTheme } from "@/shared/hooks/Theme";
+import { useTheme } from "@/shared/hooks/useTheme";
 import Link from "next/link";
 import Image from "next/image";
 
