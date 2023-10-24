@@ -54,10 +54,10 @@ export default function Login() {
             <input id="lastname" type="lastname" placeholder="LastName" />
           </label>
           <label className={style.label} htmlFor="email">
-            <input id="email" type="email" placeholder="E-mail" />
+            <input id="signemail" type="email" placeholder="E-mail" />
           </label>
           <label className={style.label} htmlFor="password">
-            <input id="password" type="password" placeholder="Password" />
+            <input id="signpassword" type="password" placeholder="Password" />
           </label>
           <label className={style.label} htmlFor="checkpassword">
             <input id="checkpassword" type="checkpassword" placeholder="CheckPassword" />
