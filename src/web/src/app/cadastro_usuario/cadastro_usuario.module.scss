@@ -1,0 +1,91 @@
+.container {
+    flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    flex-direction: column;
+    > header { // usando o sass
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 70px 0;
+        > img {
+            width: 300px;
+        }
+        > h1 {
+            font-size: 24px;
+            margin-top: 16px;
+            text-align: center;
+            
+         
+            
+        }
+    }
+    
+    > main {
+      
+    }
+    }
+    
+    .label {
+      border: solid 1px grey;
+      padding: .35rem .15rem;
+      display: flex;
+      row-gap: .5rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: .25rem;
+      background: white;
+      &:focus-within {
+        outline: solid 2px lightblue ;
+      }
+      input { 
+        border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    
+    .inputgroup {
+      display: flex;
+      flex-direction: column;
+      row-gap: .80rem;
+    }
+    
+    .btnCanc {
+
+      
+            text-align: center;
+            background-color:#f17878f5;
+            width: 180px;
+            border-radius:4px;
+            padding:10px 30px;
+            color:#000;
+            text-decoration:none;
+            font-size: 18px;
+            border: none;
+            margin-right: 50px;
+            margin-top: -54px;
+    
+
+    }
+
+    .btnCad{
+
+        
+        background-color:#49CDC3;
+            width: 180px;
+            border-radius:4px;
+            padding:10px 30px;
+            color:#000;
+            text-decoration:none;
+            border: none;
+            margin-left: 200px;
+            margin-top: 10px;
+            font-size: 18px;
+        
+
+
+    }
