@@ -41,7 +41,7 @@ export const Login: IRoutePathMethod = {
       description: "Create a new session for user",
       required: true,
       schema: {
-        type: "integer",
+        type: "string",
       }
     }
   ],
@@ -52,10 +52,10 @@ export const Login: IRoutePathMethod = {
           schema: {
             $ref: "#/components/schemas/User",
             example: {
-              id: 1,
+              id: "653d3b4b6f2dc131a30990ec",
               token: "fd8613i6o3gd0sdh9v89qy398ctn8y3hex32.c23rhh30imv0i408yx9.3corjviuqcxw.3afasc3q37j37",
               expires: new Date().toISOString(),
-              userId: 1,
+              userId: "653d3b4b6f2dc131a30990ec",
             }
           }
         }
