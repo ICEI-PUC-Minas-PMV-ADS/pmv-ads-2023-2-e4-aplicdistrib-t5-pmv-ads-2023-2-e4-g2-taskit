@@ -3,9 +3,10 @@
 import type { User } from '@prisma/client';
 import { useState } from 'react'
 import Image from 'next/image';
-import style from "./users.module.scss";
+import style from "./user.module.scss";
 import { useTheme } from "@/shared/hooks/Theme";
 import Link from "next/link";
+
 
 <header>
   <Image
@@ -17,17 +18,20 @@ import Link from "next/link";
 interface UserProps {
   params: {
     id: number;
+    token: string;
   }
 }
 
 async function getUser(id: number) {
   return await fetch(`/api/v1/users/${id}`).then(res => res.json())
+
 }
+
 
 export default function User({ params }: UserProps) {
   const [user, setUser] = useState<User>();
   const [error, setError] = useState<string>();
-  const{ setTheme } = useTheme();
+  const { setTheme } = useTheme();
   setTheme('dark')
 
   if (!user) {
@@ -39,29 +43,47 @@ export default function User({ params }: UserProps) {
       }
     });
   }
-//Caso dê erro na solicitação!
+
+ 
+  //Caso dê erro na solicitação!
   if (!user) {
     if (error) {
       return <div>
-        <div id='classdenied'>
-        <Image src="/logo.svg"
-width='200' height='50' alt="logo do taskit reloginho flutuante"
-/>
-</div>
-<h2 id='texto'> Você precisa estar logado</h2>
-<button>
-<Link href='/login'>Login</Link>
-</button>
+
+        <div className='container'>
+          <div id="img" className='style.Img'>
+
+            <Image  src="/logo.svg"
+              width='300' height='20' alt="logo do taskit reloginho flutuante"
+            />
+          </div>
+        </div>
+   
+          <form>
+            <h2> Bem vindo a sua tela de perfil!</h2>
+            <h3> Por favor, preencha os campos abaixo</h3>
+
+            <label htmlFor="name" />
+            <input id="name" type="text" placeholder="Nome" />
+            <label htmlFor="surname" />
+            <input id="surname" type="text" placeholder="Sobrenome" />
+            <button >
+              <Link href='/login'>submit</Link>
+            </button>
+
+          </form>
+
+        </div>
         {error}
-        </div>;
+    
     }
     return <div>
       <Image src="/logo.svg"
-width='200' height='50' alt="logo do taskit reloginho flutuante"
-/>
+        width='200' height='200' alt="logo do taskit reloginho flutuante"
+      />
       Loading...
-     
-      </div>;
+
+    </div>;
   }
 
   return <div>User {user.name}</div>;
