@@ -1,19 +1,61 @@
 # Plano de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
+## Caso de teste 01 - Cadastro do Usuário
 
-Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
+- Requisito Associado: RF-002 - O software deve permitir o cadastro de usuários.
+- Objetivo do Teste: Verificar se o cadastro será realizado.
+- Passos: Acessar o postman e preencher os campos solicitados.
+- Critério de Êxito: Retorno do código 200.
 
-Enumere quais cenários de testes foram selecionados para teste. Neste tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
+## Caso de teste 02 - Editar Cadastro do Usuário
+
+- Requisito Associado: RF-002 - O software deve permitir o cadastro de usuários.
+- Objetivo do Teste: Verificar se a alteração do cadastro será realizada.
+- Passos: Acessar o postman e preencher os campos solicitados.
+- Critério de Êxito: Retorno do código 200.
+
+## Caso de teste 03 - Apagar Cadastro do Usuário
+
+- Requisito Associado: RF-002 - O software deve permitir o cadastro de usuários.
+- Objetivo do Teste: Verificar se o cadastro será apagado.
+- Passos: Acessar o postman e preencher os campos solicitados.
+- Critério de Êxito: Retorno do código 200.
+
+## Caso de teste 04 - Login do Usuário
+
+- Requisito Associado: RF-003 - O software deve permitir o login e logout.
+- Objetivo do Teste: Verificar se o usuário conseguirá realizar o login com sucesso.
+- Passos: Acessar o postman e preencher os campos solicitados.
+- Critério de Êxito: Retorno do código 200.
+
+## Caso de teste 05 - Cadastro do Tarefa
+
+- Requisito Associado: RF-001 - O software deve permitir que o usuário crie uma lista de tarefas.
+- Objetivo do Teste: Verificar se o cadastro da tarefa será realizado.
+- Passos: Acessar o postman e preencher os campos solicitados.
+- Critério de Êxito: Retorno do código 200.
+
+## Caso de teste 06 - Editar Tarefa
+
+- Requisito Associado: RF-001 - O software deve permitir que o usuário crie uma lista de tarefas.
+- Objetivo do Teste: Verificar se a alteração da tarefa será realizada.
+- Passos: Acessar o postman e preencher os campos solicitados.
+- Critério de Êxito: Retorno do código 200.
+
+## Caso de teste 07 - Apagar Tarefa
+
+- Requisito Associado: RF-001 - O software deve permitir que o usuário crie uma lista de tarefas.
+- Objetivo do Teste: Verificar se a tarefa será apagada.
+- Passos: Acessar o postman e preencher os campos solicitados.
+- Critério de Êxito: Retorno do código 200.
+
+## Caso de teste 08 - Compartilhar Tarefa
+
+- Requisito Associado: RF-007 - O software deve permitir o compartilhamento das listas.
+- Objetivo do Teste: Verificar se a tarefa será compartilhada.
+- Passos: Acessar o postman e preencher os campos solicitados.
+- Critério de Êxito: Retorno do código 200.
  
-## Ferramentas de Testes (Opcional)
+# Ferramentas de Testes (Opcional)
 
-Comente sobre as ferramentas de testes utilizadas.
- 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
-> - [Criação e Geração de Planos de Teste de Software](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+- [Postman](https://www.postman.com/): ferramenta para testar, documentar e colaborar em APIs.
