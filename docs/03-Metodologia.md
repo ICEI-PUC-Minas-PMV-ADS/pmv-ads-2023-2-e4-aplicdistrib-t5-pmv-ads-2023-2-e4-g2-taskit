@@ -76,3 +76,12 @@ As ferramentas utilizadas no projeto serão:
     - Figma
 - Gerenciamento de Projeto:
     - GitHub
+ 
+# Relatório do Trabalho Desenvolvido pelo Grupo - Etapa 3
+
+- Aaron Stiebler Carneiro da Silva: Programação do Back-end da API
+- Diego Victor Fraga: Página de tarefas (RF-001)
+- Igor Teixeira da Costa: Página de login (RF-003)
+- Thaís Malta Boscatti: Página do temporizador (RF-004)
+- Thais Munhoz Carneiro: Página de cadastro (RF-002)
+- Vinícius Eduardo Silva Oliveira: Página de perfil do usuário (RF-002)
