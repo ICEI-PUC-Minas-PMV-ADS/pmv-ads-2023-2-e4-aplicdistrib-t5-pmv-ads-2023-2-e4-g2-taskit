@@ -1,16 +1,18 @@
+import "./globals.css";
+
 export const metadata = {
-  title: 'TaskIt',
-  description: 'Não perca nenhuma tarefa!',
-}
+  title: "tarefa",
+  description: "tarefas",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang='en'>
       <body>{children}</body>
     </html>
-  )
+  );
 }
