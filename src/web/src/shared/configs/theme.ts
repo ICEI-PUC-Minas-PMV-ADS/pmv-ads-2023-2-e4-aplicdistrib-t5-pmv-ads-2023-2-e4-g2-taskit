@@ -8,24 +8,27 @@ declare module 'styled-components' {
         primary: string,
         secondary: string,
         tertiary: string,
+        transparent: string,
       }
     },
     button: {
       background: {
         primary: string,
         secondary: string,
+        tertiary: string,
         transparent: string,
-        warning: string,
       },
       color: {
         primary: string,
         secondary: string,
-        warning: string,
+        tertiary: string,
+        transparent: string,
       },
       border: {
         primary: string,
         secondary: string,
-        warning: string,
+        tertiary: string,
+        transparent: string,
       }
     },
     input: {
@@ -33,16 +36,19 @@ declare module 'styled-components' {
         primary: string,
         secondary: string,
         tertiary: string,
+        transparent: string,
       },
       color: {
         primary: string,
         secondary: string,
         tertiary: string,
+        transparent: string,
       },
       border: {
         primary: string,
         secondary: string,
         tertiary: string,
+        transparent: string,
       },
     },
     text: {
@@ -50,6 +56,7 @@ declare module 'styled-components' {
         primary: string,
         secondary: string,
         tertiary: string,
+        transparent: string,
       }
     }
   }
@@ -62,24 +69,27 @@ export const defaultTheme: DefaultTheme = {
       primary: '#d9dee9',
       secondary: '#0e161f',
       tertiary: '#000000',
+      transparent: 'transparent',
     }
   },
   button: {
     background: {
       primary: '#379691',
       secondary: '#edfaf9',
+      tertiary: '#d7c1c9',
       transparent: 'transparent',
-      warning: '#d7c1c9',
     },
     color: {
       primary: '#FFFFFF',
       secondary: '#0e161f',
-      warning: '#0e161f',
+      tertiary: '#0e161f',
+      transparent: 'transparent',
     },
     border: {
       primary: '#379691',
       secondary: '#edfaf9',
-      warning: '#d7c1c9',
+      tertiary: '#d7c1c9',
+      transparent: 'transparent',
     }
   },
   input: {
@@ -87,16 +97,19 @@ export const defaultTheme: DefaultTheme = {
       primary: '#fafafa',
       secondary: '#98a0ce',
       tertiary: '#6e7285',
+      transparent: 'transparent',
     },
     color: {
       primary: '#2C3D4F',
       secondary: '#38373F',
       tertiary: '#AFF9F4',
+      transparent: 'transparent',
     },
     border: {
       primary: '#379691',
       secondary: '#edfaf9',
       tertiary: '#d7c1c9',
+      transparent: 'transparent',
     },
   },
   text: {
@@ -104,6 +117,7 @@ export const defaultTheme: DefaultTheme = {
       primary: '#2C3D4F',
       secondary: '#38373F',
       tertiary: '#AFF9F4',
+      transparent: 'transparent',
     }
   }
 }
@@ -115,24 +129,27 @@ export const darkTheme: DefaultTheme = {
       primary: '#0e161f',
       secondary: '#d9dee9',
       tertiary: '#000000',
+      transparent: 'transparent',
     }
   },
   button: {
     background: {
       primary: '#379691',
       secondary: '#edfaf9',
+      tertiary: '#d7c1c9',
       transparent: 'transparent',
-      warning: '#d7c1c9',
     },
     color: {
       primary: '#FFFFFF',
       secondary: '#0e161f',
-      warning: '#0e161f',
+      tertiary: '#0e161f',
+      transparent: 'transparent',
     },
     border: {
       primary: '#379691',
       secondary: '#edfaf9',
-      warning: '#d7c1c9',
+      tertiary: '#d7c1c9',
+      transparent: 'transparent',
     }
   },
   input: {
@@ -140,16 +157,19 @@ export const darkTheme: DefaultTheme = {
       primary: '#1f3145',      
       secondary: '#38373F',
       tertiary: '#14141b',
+      transparent: 'transparent',
     },
     color: {
       primary: '#AFF9F4',
       secondary: '#2C3D4F',
       tertiary: '#38373F',
+      transparent: 'transparent',
     },
     border: {
       primary: '#AFF9F4',
       secondary: '#2C3D4F',
       tertiary: '#38373F',
+      transparent: 'transparent',
     },
   },
   text: {
@@ -157,6 +177,7 @@ export const darkTheme: DefaultTheme = {
       primary: '#AFF9F4',
       secondary: '#2C3D4F',
       tertiary: '#38373F',
+      transparent: 'transparent',
     }
   }
 }

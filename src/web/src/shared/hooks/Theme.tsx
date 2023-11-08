@@ -11,7 +11,7 @@ export const useTheme = () => {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <StyledThemeProvider theme={theme === 'light' ? defaultTheme : darkTheme}>

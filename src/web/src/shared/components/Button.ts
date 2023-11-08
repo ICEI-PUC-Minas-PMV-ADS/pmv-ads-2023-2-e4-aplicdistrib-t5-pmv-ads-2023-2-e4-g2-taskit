@@ -1,21 +1,47 @@
-import styled from 'styled-components';
+"use client";
+
+import { darken, lighten, readableColor } from "polished";
+import styled from "styled-components";
+import { dimmColor } from "../utils/dimmColor";
 
 interface ButtonStyleProps {
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'warning' | 'transparent';
-  border?: boolean;
+  $variant?: "primary" | "secondary" | "tertiary" | "transparent";
+  $border?: boolean;
 }
 
 export const Button = styled.button<ButtonStyleProps>`
-  background-color: ${({ variant = 'primary', theme }) => theme.button.background[variant]};
-  color: ${({ variant = 'primary', theme }) => theme.button.color[variant]};
-  border: ${({ border, variant, theme }) => border && variant ? `1px solid ${theme.button.border[variant]}` : 'none'};
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  border: ${({ $border: border, $variant: variant, theme }) =>
+    border && variant ? `1px solid ${theme.button.border[variant]}` : "none"};
+  background-color: ${({ $variant: variant = "primary", theme }) =>
+    theme.button.background[variant]};
+
+  color: ${({ $variant: variant = "primary", theme }) =>
+    readableColor(
+      darken(0.1, theme.button.background[variant]),
+      "#fff",
+      "#000"
+    )};
+  font-size: 1rem;
+
   cursor: pointer;
+  text-decoration: none;
   transition: 0.3s;
 
-  &:hover {
-    background-color: #34495e;
+  &:hover,
+  &:focus {
+    background-color: ${({ $variant: variant = "primary", theme }) =>
+      darken(0.1, theme.button.background[variant])};
+    color: ${({ $variant: variant = "primary", theme }) =>
+      variant !== "transparent"
+        ? dimmColor(darken(0.1, theme.button.background[variant]))
+        : lighten(0.4, theme.text.color.secondary)};
   }
 `;

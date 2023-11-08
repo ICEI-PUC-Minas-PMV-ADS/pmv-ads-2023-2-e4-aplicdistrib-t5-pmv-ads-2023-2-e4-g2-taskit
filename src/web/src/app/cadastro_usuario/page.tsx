@@ -77,7 +77,7 @@ export default function cadastroUsuario() {
 
           <div className={style.inputgroup}>
             <h1>NOVO USUÁRIO</h1>
-            <b/>
+            <b />
             <label className={style.label}>
               <input id="name" type="text" placeholder="Nome de Usuário" />
             </label>
@@ -95,15 +95,6 @@ export default function cadastroUsuario() {
             <button className={style.btnCad} type="button">Confirmar</button>
             <a className={style.btnCanc} href="http://localhost:3000/login" >Cancelar</a>
           </div>
-
-
-          <div>
-
-
-
-
-          </div>
-
 
         </form>
 

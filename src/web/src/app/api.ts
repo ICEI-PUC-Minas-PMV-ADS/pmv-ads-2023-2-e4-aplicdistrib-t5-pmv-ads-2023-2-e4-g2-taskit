@@ -1,4 +1,4 @@
-import { ITask } from "/Users/Diego/Documents/trab/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/src/web/src/app/types/tasks";
+import { ITask } from "@/app/types/tasks";
 
 const baseUrl = 'http://localhost:3001';
 
