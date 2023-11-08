@@ -1,9 +1,8 @@
 'use client'
 import StyledComponentsRegistry from '@/shared/configs/registry'
-
+import { ThemeProvider } from '@/shared/hooks/Theme';
 
 import { GlobalStyle } from './global.style';
-import { ThemeProvider } from '@/shared/hooks/Theme';
 
 export default function StyleLayout({
   children,

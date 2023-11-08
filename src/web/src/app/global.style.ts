@@ -7,7 +7,7 @@ interface GlobalStyleProps {
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   :root {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
+    font-size: 12px;
   }
   
   * {
