@@ -12,7 +12,6 @@
     "db:update": "prisma db push",
     "db": "prisma studio",
     "json-server": "json-server --watch data/todos.json --port 3001"
-
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",

@@ -6,16 +6,23 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   icon?: React.ReactNode;
   variant?: "primary" | "secondary" | "tertiary" | "transparent";
   borderless?: boolean;
+  key: string;
 };
 
 export function Input({
   variant = "primary",
   icon,
   borderless,
+  key,
   ...rest
 }: InputProps) {
   return (
-    <Label $variant={variant} htmlFor={rest.id} $borderless={borderless}>
+    <Label
+      key={key}
+      $variant={variant}
+      htmlFor={rest.id}
+      $borderless={borderless}
+    >
       {icon}
       <input {...rest} />
     </Label>

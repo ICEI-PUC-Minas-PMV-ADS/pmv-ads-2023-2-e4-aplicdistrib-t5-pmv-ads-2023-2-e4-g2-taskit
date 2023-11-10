@@ -1,10 +1,10 @@
 "use client";
 
-import { ITask } from "@/app/types/tasks";
+import { useRouter } from "next/navigation";
 import { FormEventHandler, useState } from "react";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
+
 import Modal from "./Modal";
-import { useRouter } from "next/navigation";
 import { deleteTodo, editTodo } from "@/app/api";
 
 interface TaskProps {
@@ -35,45 +35,35 @@ const Task: React.FC<TaskProps> = ({ task }) => {
 
   return (
     <tr key={task.id}>
-      <td className='w-full'>{task.text}</td>
+      <td className="w-full">{task.text}</td>
 
-      <td className='flex gap-5'>
+      <td className="flex gap-5">
         <FiEdit
           onClick={() => setOpenModalEdit(true)}
-          cursor='pointer'
-          className='text-blue-500'
+          cursor="pointer"
+          className="text-blue-500"
           size={25}
         />
         <Modal modalOpen={openModalEdit} setModalOpen={setOpenModalEdit}>
           <form onSubmit={handleSubmitEditTodo}>
-            <h3 className='font-bold text-lg'>Editar tarefa</h3>
-            <div className='modal-action'>
+            <h3 className="font-bold text-lg">Editar tarefa</h3>
+            <div className="modal-action">
               <input
                 value={taskToEdit}
                 onChange={(e) => setTaskToEdit(e.target.value)}
-                type='text'
-                placeholder='Type here'
-                className='input input-bordered w-full'
-                
+                type="text"
+                placeholder="Type here"
+                className="input input-bordered w-full"
               />
 
               <textarea
                 value={taskToEdit}
                 onChange={(e) => setTaskToEdit(e.target.value)}
-                
-                placeholder='bio'
-                className='textarea textarea-bordered'
-                
+                placeholder="bio"
+                className="textarea textarea-bordered"
               />
 
-              
-              
-
-              
-              
-
-            
-              <button type='submit' className='btn'>
+              <button type="submit" className="btn">
                 Submit
               </button>
             </div>
@@ -81,16 +71,14 @@ const Task: React.FC<TaskProps> = ({ task }) => {
         </Modal>
         <FiTrash2
           onClick={() => setOpenModalDeleted(true)}
-          cursor='pointer'
-          className='text-red-500'
+          cursor="pointer"
+          className="text-red-500"
           size={25}
         />
         <Modal modalOpen={openModalDeleted} setModalOpen={setOpenModalDeleted}>
-          <h3 className='text-lg'>
-            Tem certeza que você quer deletar?
-          </h3>
-          <div className='modal-action'>
-            <button onClick={() => handleDeleteTask(task.id)} className='btn'>
+          <h3 className="text-lg">Tem certeza que você quer deletar?</h3>
+          <div className="modal-action">
+            <button onClick={() => handleDeleteTask(task.id)} className="btn">
               Sim
             </button>
           </div>

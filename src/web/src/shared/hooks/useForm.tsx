@@ -33,7 +33,7 @@ export function useForm(init: Form) {
 
   function isValid() {
     return Object.values(form).every(({ value, required }) => {
-      return value.length > 3 || !required;
+      return value.length > 3 || required === false;
     });
   }
 

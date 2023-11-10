@@ -6,34 +6,51 @@ import { AuthService } from "../auth.service";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 
 export async function PUT(req: Request) {
-  const { email, password, os }: any = await req.json();
+  const { email, password }: any = await req.json();
 
-  if (!email || !password) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
+  if (!email || !password)
+    return NextResponse.json(
+      { code: 400, message: "Bad Request" },
+      { status: 400 }
+    );
 
   const hash = sha256.hmac(email.toLowerCase(), password);
   const user = await AuthService.Login(email, hash);
 
-  if (!user) return NextResponse.json({ code: 401, message: "Invalid Credentials" }, { status: 401 });
+  if (!user)
+    return NextResponse.json(
+      { code: 401, message: "Invalid Credentials" },
+      { status: 401 }
+    );
 
-  const token = jwt.sign({ id: user.id, name: user.name, email: user.email }, email, { expiresIn: "336h" });
+  const token = jwt.sign(
+    { id: user.id, name: user.name, email: user.email },
+    email,
+    { expiresIn: "336h" }
+  );
 
   const agent = req.headers.get("user-agent");
-  
-  const session = await AuthService.Create({ sessionToken: token, userId: user.id, agent, os, expires: new Date(Date.now() + 336 * 60 * 60 * 1000) });
 
-  return NextResponse.json({ id: session.id, token: session.sessionToken, expires: session.expires });
+  const session = await AuthService.Create({
+    sessionToken: token,
+    userId: user.id,
+    agent,
+    expires: new Date(Date.now() + 336 * 60 * 60 * 1000),
+  });
+
+  return NextResponse.json({
+    id: session.id,
+    token: session.sessionToken,
+    expires: session.expires,
+  });
 }
 
 export const Login: IRoutePathMethod = {
-  tags: [
-    "Auth"
-  ],
+  tags: ["Auth"],
   summary: "Log user in",
   description: "Validates user's session",
   operationId: "Login",
-  produces: [
-    "application/json"
-  ],
+  produces: ["application/json"],
   parameters: [
     {
       name: "id",
@@ -42,8 +59,8 @@ export const Login: IRoutePathMethod = {
       required: true,
       schema: {
         type: "string",
-      }
-    }
+      },
+    },
   ],
   responses: {
     200: {
@@ -53,14 +70,15 @@ export const Login: IRoutePathMethod = {
             $ref: "#/components/schemas/User",
             example: {
               id: "653d3b4b6f2dc131a30990ec",
-              token: "fd8613i6o3gd0sdh9v89qy398ctn8y3hex32.c23rhh30imv0i408yx9.3corjviuqcxw.3afasc3q37j37",
+              token:
+                "fd8613i6o3gd0sdh9v89qy398ctn8y3hex32.c23rhh30imv0i408yx9.3corjviuqcxw.3afasc3q37j37",
               expires: new Date().toISOString(),
               userId: "653d3b4b6f2dc131a30990ec",
-            }
-          }
-        }
+            },
+          },
+        },
       },
-      description: "OK. Session created."
+      description: "OK. Session created.",
     },
     401: {
       content: {
@@ -69,12 +87,12 @@ export const Login: IRoutePathMethod = {
             $ref: "#/components/schemas/ResponseInfo",
             example: {
               code: 401,
-              message: "Invalid Credentials"
-            }
-          }
-        }
+              message: "Invalid Credentials",
+            },
+          },
+        },
       },
-      description: "Unauthorized. Invalid Credentials."
+      description: "Unauthorized. Invalid Credentials.",
     },
     400: {
       content: {
@@ -83,12 +101,12 @@ export const Login: IRoutePathMethod = {
             $ref: "#/components/schemas/ResponseInfo",
             example: {
               code: 400,
-              message: "Bad Request"
-            }
-          }
-        }
+              message: "Bad Request",
+            },
+          },
+        },
       },
-      description: "Bad Request. Missing email or password."
-    }
-  }
-}
+      description: "Bad Request. Missing email or password.",
+    },
+  },
+};

@@ -1,15 +1,20 @@
 "use client";
 
 import { useState, useEffect, Fragment } from "react";
-import { FaChevronRight, FaKey } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
 
 import { useForm } from "@/shared/hooks/useForm";
 import { Input } from "@/shared/components/Input/Input";
 import { Button } from "@/shared/components/Button";
 
+import Tasks from "./tasks/page";
+
 import { AuthForm } from "./home.style";
 
 export default function Home() {
+  const [token, setToken] = useState<string>("");
+  const [userId, setUserId] = useState<string>("");
+  const [error, setError] = useState<string>("");
   const [action, setAction] = useState("login");
   const { form, handleInput, setForm, isValid } = useForm({
     name: { value: "", label: "name", placeholder: "Nome", type: "text" },
@@ -47,67 +52,77 @@ export default function Home() {
     });
   }, [action]);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!isValid()) return;
 
     if (action === "login") {
-      fetch("/api/login", {
-        method: "POST",
+      const userdata = await fetch("/api/v1/auth/login", {
+        method: "PUT",
         body: JSON.stringify({
           email: form.email.value,
           password: form.password.value,
         }),
-      });
+      }).then((res) => res.json());
+      setToken(userdata.token);
+      setUserId(userdata.id);
     } else {
-      fetch("/api/users", {
+      const newuser = await fetch("/api/v1/users", {
         method: "POST",
         body: JSON.stringify({
           name: form.name.value,
           email: form.email.value,
           password: form.password.value,
         }),
-      });
+      })
+        .then((res) => res.json())
+        .catch((err) => setError("Algo deu errado, tente novamente."));
+      if (newuser.id) {
+        setAction("login");
+      } else {
+        setError(newuser.message);
+      }
     }
   }
 
-  return (
-    <div>
-      <AuthForm onSubmit={handleSubmit}>
-        {action === "sigin" ? <h1>Cadastre-se</h1> : <></>}
-
-        {Object.values(form).map((item) =>
-          item.required ? (
-            <Input
-              borderless
-              key={item.label}
-              id={item.label}
-              type={item.type}
-              placeholder={item.placeholder}
-              defaultValue={item.value}
-              required={item.required}
-              onChange={handleInput}
-            />
-          ) : (
-            <Fragment key={item.label}></Fragment>
-          )
-        )}
-        <div>
-          <Button
-            type="submit"
-            $variant={action === "login" ? "primary" : "secondary"}
-          >
-            {action === "signin" ? "Próximo" : "Entre"}
-            {action === "signin" && <FaChevronRight />}
-          </Button>
-          <Button
-            $variant={"transparent"}
-            onClick={() => setAction(action === "login" ? "signin" : "login")}
-          >
-            {action === "signin" ? "ou acesse sua conta" : "ou Cadastre-se"}
-          </Button>
-        </div>
-      </AuthForm>
-    </div>
+  return !token ? (
+    <AuthForm onSubmit={handleSubmit}>
+      {action === "sigin" ? <h1>Cadastre-se</h1> : <></>}
+      {Object.values(form).map((item) =>
+        item.required ? (
+          <Input
+            borderless
+            key={item.label}
+            name={item.label}
+            id={item.label}
+            type={item.type}
+            placeholder={item.placeholder}
+            defaultValue={item.value}
+            required={item.required}
+            onChange={handleInput}
+          />
+        ) : (
+          <Fragment key={item.label}></Fragment>
+        )
+      )}
+      <div>
+        <Button
+          type="submit"
+          $variant={action === "login" ? "primary" : "secondary"}
+        >
+          {action === "signin" ? "Próximo" : "Entre"}
+          {action === "signin" && <FaChevronRight />}
+        </Button>
+        <Button
+          $variant={"transparent"}
+          onClick={() => setAction(action === "login" ? "signin" : "login")}
+        >
+          {action === "signin" ? "ou acesse sua conta" : "ou Cadastre-se"}
+        </Button>
+      </div>
+      {error && <p>{error}</p>}
+    </AuthForm>
+  ) : (
+    <Tasks token={token} userId={userId} />
   );
 }
