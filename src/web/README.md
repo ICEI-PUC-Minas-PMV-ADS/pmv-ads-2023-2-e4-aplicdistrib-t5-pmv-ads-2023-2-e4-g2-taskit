@@ -5,7 +5,7 @@
 0. Ter instalados **node.js** (obrigatório) e **yarn** (opcional, mas basta executar **`npm install -g yarn`** para instalar depois de instalar o node)
 1. Executar **`yarn`** ou **`npm install`** para instalar as dependências
 2. Adicione um arquivo **`.env`** na raiz do projeto com a seguinte variável de ambiente:
-   - **`DATABASE_URL`**: URL do banco de dados Postgres no formato `"mongodb+srv://user:senha@endereco_do_server_do_banco/taskit"`
+   - **`DATABASE_URL`**: `DATABASE_URL="mongodb+srv://taskit:VkQq1nuEpLeKaHqc@cluster0.uhcuczn.mongodb.net/taskit?retryWrites=true&w=majority"`
 3. Execução
    1. Ambiente Dev: execute **`yarn dev`** ou **`npm run dev`**
    2. Ambiente Prod: execute **`yarn build`** e **`yarn start`** (ou `npm run build`  ou **`npm run start`**)
