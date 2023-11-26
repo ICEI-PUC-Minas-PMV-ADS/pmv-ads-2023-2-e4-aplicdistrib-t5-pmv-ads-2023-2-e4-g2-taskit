@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Fragment } from "react";
 import { FaChevronRight, FaKey } from "react-icons/fa";
+import { useRouter } from 'next/navigation';
 
 import { useForm } from "@/shared/hooks/useForm";
 import { Input } from "@/shared/components/Input/Input";
@@ -49,8 +50,9 @@ export default function Home() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!isValid()) return;
-
+    //if (!isValid()) return;
+    console.log("teste", isValid(), e);
+    router.push("/tarefas");
     if (action === "login") {
       fetch("/api/login", {
         method: "POST",
@@ -70,6 +72,8 @@ export default function Home() {
       });
     }
   }
+
+  const router = useRouter();
 
   return (
     <div>
@@ -106,8 +110,15 @@ export default function Home() {
           >
             {action === "signin" ? "ou acesse sua conta" : "ou Cadastre-se"}
           </Button>
+
+
         </div>
       </AuthForm>
+          <Button
+          onClick={() => router.push("/timer")}
+          >
+            Timer
+          </Button>
     </div>
   );
 }

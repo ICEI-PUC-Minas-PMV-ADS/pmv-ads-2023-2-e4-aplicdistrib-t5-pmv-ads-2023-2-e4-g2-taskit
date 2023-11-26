@@ -6,13 +6,13 @@ import { useTheme } from "@/shared/hooks/Theme";
 import style from "./cadastro_usuario.module.scss";
 import { FaKey } from "react-icons/fa";
 import { useState, useEffect, Fragment } from "react";
-//import {useForm} from "@/shared/hooks/userForm"
+import {useForm} from "@/shared/hooks/useForm";
 
 const URL_API = "api/v1/users";
 
 export default function cadastroUsuario() {
 
-  /*const [action,setAction] = useState('cadastroUsuario');
+  const [action,setAction] = useState('cadastroUsuario');
   const {form,handleInput,setForm,isValid} = useForm({
   
     name:{value:'',label:'name',placeholder:'Nome', type:'text'},
@@ -54,8 +54,6 @@ export default function cadastroUsuario() {
   }
   
   }
-  
-  }*/
 
   return (
 
