@@ -25,20 +25,12 @@ Cadastro
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/fe10bf1a-7f1b-47a0-a58d-45fceaf4b1c6)
 
 
-Perfil
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/d3ea02e0-f57c-4752-b478-6b4cca47abe3)
-
 Home
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/5098f44b-0e3f-4dab-a441-a089af9277f6)
 
 
 Criar Tarefa
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/b0641027-ce32-495a-bc3c-45faa7c10408)
-
-
-Relatorio
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/90ad5784-b093-445f-8fee-b283c7125197)
-
 
 Timer
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/fe8cad1a-ba8d-4c09-9ed0-14524e187605)
@@ -58,10 +50,3 @@ Criar Tarefa <br>
 
 Timer <br>
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/e452591a-bba6-4667-a8d3-96224c0ddf55)
-
-Perfil <br>
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/c87e7af5-ccce-4cc2-88de-0200b6f30779)
-
-Relatório <br>
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/17a5459e-8077-4384-83b8-bba84f10d0e0)
-
