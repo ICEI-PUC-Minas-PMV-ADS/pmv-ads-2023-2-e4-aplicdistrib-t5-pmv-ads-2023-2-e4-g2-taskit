@@ -34,7 +34,7 @@ function TimerButton(props:Props) {
             <BsFillPlayCircleFill className="TimerIcon" onClick={handlePlayButton} type="button" />
             <BsFillPauseCircleFill onClick={handleStopButton} type="button"/>
             <BsFillSkipBackwardCircleFill onClick={handleReset} type="button"/>
-            <BsFillCheckCircleFill />
+            
             <Page />        
         </TimerIcon>
     

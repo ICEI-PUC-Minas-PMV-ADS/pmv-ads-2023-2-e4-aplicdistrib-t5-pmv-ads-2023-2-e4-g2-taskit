@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const TimerContainer = styled.div`
 display: flex;
-height: 40vh;
+height: 20vh;
 justify-content: center;
 align-itens: center;
 letter-spacing: 2px;

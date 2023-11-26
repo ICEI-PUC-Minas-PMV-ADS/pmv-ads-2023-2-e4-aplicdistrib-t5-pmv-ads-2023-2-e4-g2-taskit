@@ -25,9 +25,6 @@ Cadastro
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/fe10bf1a-7f1b-47a0-a58d-45fceaf4b1c6)
 
 
-Perfil
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/d3ea02e0-f57c-4752-b478-6b4cca47abe3)
-
 Home
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/5098f44b-0e3f-4dab-a441-a089af9277f6)
 
@@ -35,12 +32,21 @@ Home
 Criar Tarefa
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/b0641027-ce32-495a-bc3c-45faa7c10408)
 
-
-Relatorio
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/90ad5784-b093-445f-8fee-b283c7125197)
-
-
 Timer
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/fe8cad1a-ba8d-4c09-9ed0-14524e187605)
 
+## Mobile
+Login <br>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/003ab65b-ed5c-4435-b91f-c6b6ad6d4fe8)
 
+Criar Usuário<br>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/724ad50a-668f-4718-81f3-57b96a8804aa)
+
+Home <br>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/967d986e-ca38-472d-9e29-1b792cec96f1)
+
+Criar Tarefa <br>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/80173044-e245-46e4-9224-f244b96edf67)
+
+Timer <br>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/e452591a-bba6-4667-a8d3-96224c0ddf55)

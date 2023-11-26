@@ -2,7 +2,7 @@
 
 import { ITask } from "@/app/types/tasks";
 import { FormEventHandler, useState } from "react";
-import { FiEdit, FiTrash2 } from "react-icons/fi";
+import { FiEdit, FiTrash2, FiClock } from "react-icons/fi";
 import Modal from "./Modal";
 import { useRouter } from "next/navigation";
 import { deleteTodo, editTodo } from "@/app/api";
@@ -95,6 +95,14 @@ const Task: React.FC<TaskProps> = ({ task }) => {
             </button>
           </div>
         </Modal>
+
+        <FiClock 
+        onClick={() => router.push("/timer")}
+        cursor='pointer'
+        className='text-green-500'
+        size={25}
+        />
+
       </td>
     </tr>
   );
