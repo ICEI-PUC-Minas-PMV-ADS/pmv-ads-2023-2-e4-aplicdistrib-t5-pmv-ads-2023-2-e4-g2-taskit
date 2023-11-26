@@ -49,14 +49,8 @@
 - Passos: Acessar o postman e preencher os campos solicitados.
 - Critério de Êxito: Retorno do código 200.
 
-## Caso de teste 08 - Compartilhar Tarefa
 
-- Requisito Associado: RF-007 - O software deve permitir o compartilhamento das listas.
-- Objetivo do Teste: Verificar se a tarefa será compartilhada.
-- Passos: Acessar o postman e preencher os campos solicitados.
-- Critério de Êxito: Retorno do código 200.
-
-## Caso de teste 09 - Timer
+## Caso de teste 08 - Timer
 
 - Requisito Associado: RF-004 - O software deve apresentar um timer para o controle de tempo. 
 - Objetivo do Teste: Verificar se usuário consegue controlar o tempo por meio dos botões disponíveis.
