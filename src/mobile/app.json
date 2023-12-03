@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0f161f"
-      }
+      },
+      "package": "com.pucminas.taskit"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8b704fd8-a44e-456f-b49d-ef29d7d6346b"
+      }
     }
   }
 }

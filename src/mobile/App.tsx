@@ -4,11 +4,11 @@ import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
 export default function App() {
+  const uri = 'https://taskit-three.vercel.app';
   return (
     <WebView
-      style={styles.container}
-      // source={{ uri: 'https://taskit-three.vercel.app' }}
-      source={{ uri: 'http://192.168.177.107:3000' }}
+      style={styles.container}      
+      source={{ uri }}
     />
   );
 }
