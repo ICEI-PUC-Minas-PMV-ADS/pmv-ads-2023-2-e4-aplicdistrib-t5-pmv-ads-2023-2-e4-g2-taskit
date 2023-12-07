@@ -1,11 +1,10 @@
 "use client";
 
 import { AiOutlinePlus } from "react-icons/ai";
-import Modal from "@/app//tarefas/components/Modal";
+import Modal from "@/app/tarefas/components/Modal";
 import { FormEventHandler, useState } from "react";
 import { addTodo } from "@/app/api";
 import { useRouter } from "next/navigation";
-import { v4 as uuidv4 } from 'uuid';
 
 const AddTask = () => {
   const router = useRouter();
@@ -15,7 +14,7 @@ const AddTask = () => {
   const handleSubmitNewTodo: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
     await addTodo({
-      id: uuidv4(),
+      id: new Crypto().randomUUID(),
       text: newTaskValue,
     });
     setNewTaskValue("");
@@ -42,9 +41,6 @@ const AddTask = () => {
               type='text'
               placeholder='Escreva aqui'
               className='input input-bordered w-full max-w-xs'
-              
-              
-    
             />
 
             <textarea className="textarea textarea-bordered w-full max-w-xs" placeholder="Bio"></textarea>

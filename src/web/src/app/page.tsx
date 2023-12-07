@@ -46,6 +46,7 @@ export default function Home() {
         value: "",
       },
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [action]);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -106,7 +107,7 @@ export default function Home() {
           </Button>
           <Button
             $variant={"transparent"}
-            onClick={() => setAction(action === "login" ? "signin" : "login")}
+            onClick={(e) => {e.preventDefault(); setAction(action === "login" ? "signin" : "login")}}
           >
             {action === "signin" ? "ou acesse sua conta" : "ou Cadastre-se"}
           </Button>
