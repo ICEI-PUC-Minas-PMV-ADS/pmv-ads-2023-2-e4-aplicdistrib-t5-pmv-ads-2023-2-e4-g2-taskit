@@ -1,11 +1,47 @@
 # Plano de Testes de Usabilidade
 
-O teste de usabilidade permite avaliar a qualidade da interface com o usuário da aplicação interativa. O Plano de Testes de Software é gerado a partir da especificação do sistema e consiste em casos de testes que deverão ser executados quando a implementação estiver parcial ou totalmente pronta.
 
-As referências abaixo irão auxiliá-lo na geração do artefato "Plano de Testes de Usabilidade".
+| **Caso de Teste** 	| **CT-01 – Cadastro do Usuário**                         	|
+|-------	|---	|
+|	Requisito Associado 	| RF-002 - O software deve permitir cadastrar um usuário |
+| Objetivo do Teste 	| Verificar se o cadastro pode se realizado pelo usuário com facilidade.|
+| Passos 	| - Acessar o aplicativo; <br> - Selecionar a opção "Cadastre-se" <br> - Preencher os campos nome, email, senha e confirme senha; <br> - Selecionar o botão "Próximo". |
+|Critério de Êxito | O usuário terá seu acesso criado no Taskit. |
 
-> **Links Úteis**:
-> - [Teste De Usabilidade: O Que É e Como Fazer Passo a Passo (neilpatel.com)](https://neilpatel.com/br/blog/teste-de-usabilidade/)
-> - [Teste de usabilidade: tudo o que você precisa saber! | by Jon Vieira | Aela.io | Medium](https://medium.com/aela/teste-de-usabilidade-o-que-voc%C3%AA-precisa-saber-39a36343d9a6/)
-> - [Planejando testes de usabilidade: o que (e o que não) fazer | iMasters](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+| **Caso de Teste** 	| **CT-02 – Login do Usuário** 	|
+|-------	|---	|
+|	Requisito Associado 	| RF-003 - O software deve permitir que o usuário efetue login no sistema.|
+| Objetivo do Teste 	| Verificar se o login pode ser realizado com sucesso e facilidade.|
+| Passos 	| - Acessar o aplicativo; <br> - Preencher os campos email e senha <br> - Selecionar o botão "Entre". |
+|Critério de Êxito | O usuário conseguirá logar e acessar a tela de tarefas no TaskIt. |
+
+| **Caso de Teste** 	| **CT-03 – Cadastro de Tarefa** 	|
+|-------	|---	|
+|	Requisito Associado 	| RF-001 - O software deve permitir que o usuário crie uma tarefa|
+| Objetivo do Teste 	| Verificar se o usuário conseguirá criar uma tarefa com facilidade.|
+| Passos 	| - Acessar o aplicativo; <br> - Preencher os campos email e senha <br> - Selecionar o botão "Entre"; <br> - Selecionar "Adicionar Tarefa"; <br> - Preencher os campos; <br> Selecionar o botão "Avançar".|
+|Critério de Êxito | O usuário conseguirá criar a tarefa e visualizar na tela inicial do TaskIt. |
+
+| **Caso de Teste** 	| **CT-04 – Editar Tarefa** 	|
+|-------	|---	|
+|	Requisito Associado 	| RF-001 - O software deve permitir que o usuário editar uma tarefa|
+| Objetivo do Teste 	| Verificar se o usuário conseguirá criar uma tarefa com facilidade.|
+| Passos 	| - Acessar o aplicativo; <br> - Preencher os campos email e senha <br> - Selecionar o botão "Entre"; <br> - Selecionar o botão de "Editar Tarefa"; <br> - Alterar os campos desejados; <br> Selecionar o botão "Enviar".|
+|Critério de Êxito | O usuário conseguirá alterar a tarefa no TaskIt. |
+
+
+| **Caso de Teste** 	| **CT-05 – Apagar Tarefa** 	|
+|-------	|---	|
+|	Requisito Associado 	| RF-001 - O software deve permitir que o usuário apagar uma tarefa|
+| Objetivo do Teste 	| Verificar se o usuário conseguirá criar uma tarefa com facilidade.|
+| Passos 	| - Acessar o aplicativo; <br> - Preencher os campos email e senha <br> - Selecionar o botão "Entre"; <br> - Selecionar o botão de "Apagar Tarefa"; <br> - Selecionar o botão "Sim" para confirmar.|
+|Critério de Êxito | O usuário conseguirá apagar a tarefa no TaskIt. |
+
+
+| **Caso de Teste** 	| **CT-06 – Utitilizar função Timer** 	|
+|-------	|---	|
+|	Requisito Associado 	| RF-004 - O software deve apresentar um timer para controle do tempo|
+| Objetivo do Teste 	| Verificar se o usuário conseguirá controlar o tempo por meio dos botões disponíveis.|
+| Passos 	| - Acessar o aplicativo; <br> - Selecionar função timer <br> - Iniciar o contador; <br> - Pausar o contador; <br> - Zerar o contador.|
+|Critério de Êxito | O usuário conseguirá manipular o timer no TaskIt. |
+
