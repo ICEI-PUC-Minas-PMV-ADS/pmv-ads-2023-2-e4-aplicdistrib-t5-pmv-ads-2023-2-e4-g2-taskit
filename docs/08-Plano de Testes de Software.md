@@ -42,7 +42,4 @@
 - Objetivo do Teste: Verificar se usuário consegue controlar o tempo por meio dos botões disponíveis.
 - Passos: Clicar nos botões da página para controlar o timer.
 - Critério de Êxito: Início, pausa e recomeço do tempo. 
- 
-# Ferramentas de Testes (Opcional)
 
-- [Postman](https://www.postman.com/): ferramenta para testar, documentar e colaborar em APIs.
