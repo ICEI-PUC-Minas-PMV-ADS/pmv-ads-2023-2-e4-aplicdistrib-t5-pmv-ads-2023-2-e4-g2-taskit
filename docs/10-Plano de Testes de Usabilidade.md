@@ -25,7 +25,7 @@
 | **Caso de Teste** 	| **CT-04 – Editar Tarefa** 	|
 |-------	|---	|
 |	Requisito Associado 	| RF-001 - O software deve permitir que o usuário editar uma tarefa|
-| Objetivo do Teste 	| Verificar se o usuário conseguirá criar uma tarefa com facilidade.|
+| Objetivo do Teste 	| Verificar se o usuário conseguirá editar uma tarefa com facilidade.|
 | Passos 	| - Acessar o aplicativo; <br> - Preencher os campos email e senha <br> - Selecionar o botão "Entre"; <br> - Selecionar o botão de "Editar Tarefa"; <br> - Alterar os campos desejados; <br> Selecionar o botão "Enviar".|
 |Critério de Êxito | O usuário conseguirá alterar a tarefa no TaskIt. |
 
@@ -33,7 +33,7 @@
 | **Caso de Teste** 	| **CT-05 – Apagar Tarefa** 	|
 |-------	|---	|
 |	Requisito Associado 	| RF-001 - O software deve permitir que o usuário apagar uma tarefa|
-| Objetivo do Teste 	| Verificar se o usuário conseguirá criar uma tarefa com facilidade.|
+| Objetivo do Teste 	| Verificar se o usuário conseguirá apagar uma tarefa com facilidade.|
 | Passos 	| - Acessar o aplicativo; <br> - Preencher os campos email e senha <br> - Selecionar o botão "Entre"; <br> - Selecionar o botão de "Apagar Tarefa"; <br> - Selecionar o botão "Sim" para confirmar.|
 |Critério de Êxito | O usuário conseguirá apagar a tarefa no TaskIt. |
 
