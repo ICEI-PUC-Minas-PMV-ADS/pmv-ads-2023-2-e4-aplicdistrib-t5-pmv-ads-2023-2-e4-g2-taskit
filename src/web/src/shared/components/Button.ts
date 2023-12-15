@@ -34,6 +34,7 @@ export const Button = styled.button<ButtonStyleProps>`
   cursor: pointer;
   text-decoration: none;
   transition: 0.3s;
+  padding: 0 1rem;
 
   &:hover,
   &:focus {

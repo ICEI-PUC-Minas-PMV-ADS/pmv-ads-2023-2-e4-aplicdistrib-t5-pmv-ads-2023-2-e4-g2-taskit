@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import { AuthProvider } from "@/shared/auth/context/AuthContext";
 
 import StyleLayout from './style.layout';
-import Image from 'next/image';
 import { Auth } from '@/shared/auth/components/Auth';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,13 +21,6 @@ export default function RootLayout({
     <html lang="pt_BR">
       <body className={inter.className}>
         <StyleLayout>
-          <header>
-            <Image
-              src="/logo.svg"
-              width={120}
-              height={64}
-              alt="TaskIt" />
-          </header>
           <AuthProvider>
             <Auth>
               {children}

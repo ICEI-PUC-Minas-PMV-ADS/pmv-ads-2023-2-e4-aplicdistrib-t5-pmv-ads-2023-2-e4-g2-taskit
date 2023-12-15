@@ -1,20 +1,33 @@
 'use client';
 
+import Image from 'next/image';
+
 import { useAuth } from "../context/AuthContext"
 import { PublicPage } from "./Public/PublicPage";
+import { TopBar } from '@/shared/components/TopBar/TopBar';
+
+import { AuthContainer } from './Auth.style';
+import { TaskProvider } from '@/Tasks/context/TaskContext';
 
 export function Auth({ children }: { children: React.ReactNode }) {
-  const { session } = useAuth()
+  const { session, userData } = useAuth();
 
-  if (session.status === 'pending') {
-    return <h1>Loading...</h1>
-  }
+  return (
+    <AuthContainer>
+      {session.status === 'authenticated' && <TopBar />}
+      <div>
+        <header>
+          <Image
+            src="/logo.svg"
+            width={120}
+            height={64}
+            alt="TaskIt" />
+        </header>
 
-  if (session.status === 'unauthenticated') {
-    return <PublicPage />    
-  }
-
-  if (session.status === 'authenticated') {
-    return <>{children}</>
-  }
+        {session.status === 'unauthenticated' && <PublicPage />}
+        
+        {session.status === 'authenticated' && <TaskProvider token={userData.token}>{children}</TaskProvider>}
+      </div>
+    </AuthContainer>
+  )
 }

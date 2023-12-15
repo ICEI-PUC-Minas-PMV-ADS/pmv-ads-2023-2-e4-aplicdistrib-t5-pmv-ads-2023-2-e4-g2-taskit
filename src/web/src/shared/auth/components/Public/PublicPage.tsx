@@ -5,6 +5,7 @@ import { FaChevronRight } from "react-icons/fa";
 
 import { Input } from "@/shared/components/Input/Input";
 import { Button } from "@/shared/components/Button";
+import { useTheme } from "@/shared/hooks/Theme";
 
 import { AuthForm } from "./PublicPage.style";
 import { useAuth } from "../../context/AuthContext";
@@ -16,7 +17,9 @@ export function PublicPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checkpassword, setCheckPassword] = useState("");  
-
+  const { setTheme } = useTheme();
+  setTheme('dark');
+  
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();    
     if (action === "login") {

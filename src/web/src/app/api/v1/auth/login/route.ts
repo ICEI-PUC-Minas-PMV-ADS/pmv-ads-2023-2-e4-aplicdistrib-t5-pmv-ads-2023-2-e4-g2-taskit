@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { sha256 } from "js-sha256";
 import jwt from "jsonwebtoken";
 
-import { AuthService } from "../auth.service";
+import { AuthController } from "../auth.controller";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 
 export async function POST(req: Request) {
@@ -11,7 +11,7 @@ export async function POST(req: Request) {
   if (!email || !password) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
 
   const hash = sha256.hmac(password, password);
-  const user = await AuthService.Login(email, hash);
+  const user = await AuthController.Login(email, hash);
 
   if (!user) return NextResponse.json({ code: 401, message: "Invalid Credentials" }, { status: 401 });
 
@@ -19,7 +19,7 @@ export async function POST(req: Request) {
 
   const agent = req.headers.get("user-agent");
   
-  const session = await AuthService.Create({ sessionToken: token, userId: user.id, agent, os, expires: new Date(Date.now() + 336 * 60 * 60 * 1000) });
+  const session = await AuthController.Create({ sessionToken: token, userId: user.id, agent, os, expires: new Date(Date.now() + 336 * 60 * 60 * 1000) });
 
   return NextResponse.json({ id: session.id, token: session.sessionToken, expires: session.expires });
 }

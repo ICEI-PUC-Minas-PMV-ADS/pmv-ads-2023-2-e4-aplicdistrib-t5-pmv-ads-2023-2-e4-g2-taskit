@@ -3,23 +3,13 @@ import { NextResponse } from "next/server";
 
 import { verifyToken } from "@/shared/api/utils/verifyToken";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
-import { TaskService } from "../task.service";
-import { getAllTodos } from '@/app/api';
+import { TaskService } from "../task.controller";
 
 interface TasksParams {
   params: {
     id: string;
   }
 }
-
-export async function generateStaticParams() {
-  const tasks = await getAllTodos()
- 
-  return tasks.map((task: any) => ({
-    id: task.id,
-  }))
-}
-
 export async function GET(req: Request, { params }: TasksParams) {
   /** Check Token Validity */
   const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;

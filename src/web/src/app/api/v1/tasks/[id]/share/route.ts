@@ -3,7 +3,7 @@ import JWT from 'jsonwebtoken';
 
 import { verifyToken } from "@/shared/api/utils/verifyToken";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
-import { TaskService } from "../../task.service";
+import { TaskService } from "../../task.controller";
 
 interface TasksParams {
   params: {

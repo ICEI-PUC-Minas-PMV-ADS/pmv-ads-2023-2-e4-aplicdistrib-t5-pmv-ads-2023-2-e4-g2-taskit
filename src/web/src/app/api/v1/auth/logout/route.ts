@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { AuthService } from "../auth.service";
+import { AuthService } from "../auth.controller";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 import { verifyToken } from "@/shared/api/utils/verifyToken";
 
