@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }: any) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const oldToken = localStorage.getItem('@taskit:token');
+      const oldToken = localStorage?.getItem('@taskit:token');
       if (oldToken) {
         setToken(oldToken);
         setSession({ status: 'authenticated', token: oldToken });
@@ -50,10 +50,10 @@ export const AuthProvider = ({ children }: any) => {
         password: sha256.hmac(email.toLowerCase(), password),
       })
     }).then((res) => res.json()).then((data) => {
-      if (data.token) {
+      if (data.token && typeof window !== 'undefined') {
         setToken(data.token);
         setSessionId(data.id);
-        localStorage.setItem('@taskit:token', data.token);
+        localStorage?.setItem('@taskit:token', data.token);
         setSession({ status: 'authenticated', token: data.token });
       }
       if (data.message) {
@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }: any) => {
     });
   }
 
-  const userData = decode(localStorage.getItem('@taskit:token') || '');
+  const userData = decode(typeof window !== 'undefined' && localStorage?.getItem('@taskit:token') || '');
 
   async function Logout(sessionId: string, userId: string) {
     await fetch('/api/v1/auth/logout', {
@@ -77,10 +77,12 @@ export const AuthProvider = ({ children }: any) => {
         userId,
       })
     }).then((res) => res.json()).finally(() => {
-      setSession({ status: 'unauthenticated' });
-      localStorage.removeItem('@taskit:token');
-      setSessionId('');
-      setToken('');
+      if (typeof window !== 'undefined') {
+        setSession({ status: 'unauthenticated' });
+        localStorage?.removeItem('@taskit:token');
+        setSessionId('');
+        setToken('');
+      }
     });
   }
 
