@@ -5,12 +5,12 @@ import jwt from "jsonwebtoken";
 import { AuthService } from "../auth.service";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 
-export async function PUT(req: Request) {
+export async function POST(req: Request) {
   const { email, password, os }: any = await req.json();
 
   if (!email || !password) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
 
-  const hash = sha256.hmac(email.toLowerCase(), password);
+  const hash = sha256.hmac(password, password);
   const user = await AuthService.Login(email, hash);
 
   if (!user) return NextResponse.json({ code: 401, message: "Invalid Credentials" }, { status: 401 });

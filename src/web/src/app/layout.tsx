@@ -1,7 +1,10 @@
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google'
+import { AuthProvider } from "@/shared/auth/context/AuthContext";
+
 import StyleLayout from './style.layout';
 import Image from 'next/image';
+import { Auth } from '@/shared/auth/components/Auth';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,7 +29,11 @@ export default function RootLayout({
               height={64}
               alt="TaskIt" />
           </header>
-          {children}
+          <AuthProvider>
+            <Auth>
+              {children}
+            </Auth>
+          </AuthProvider>
         </StyleLayout>
       </body>
     </html>

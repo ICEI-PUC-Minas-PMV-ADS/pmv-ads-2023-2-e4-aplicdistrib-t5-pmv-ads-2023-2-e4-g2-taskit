@@ -4,7 +4,7 @@ import { AuthService } from "../auth.service";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 import { verifyToken } from "@/shared/api/utils/verifyToken";
 
-export async function PUT(req: Request) {
+export async function POST(req: Request) {
   const url = new URL(req.url);  
   const isAuthenticated = await verifyToken(req);
   if (!isAuthenticated) return NextResponse.json({ code: 403, message: 'Access Denied.', redirectTo: url.host + '/login' }, { status: 403 });

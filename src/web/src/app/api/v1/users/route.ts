@@ -33,7 +33,7 @@ interface NewUser {
  */
 export async function POST(req: Request) {
   const user: NewUser = await req.json();
-  let password = sha256.hmac(user.email.toLowerCase(), user.password);
+  let password = sha256.hmac(user.password, user.password);
 
   const userExists = await UserService.GetByEmail(user.email);
   if (userExists) return NextResponse.json({ code: 409, message: "User already exists." }, { status: 409 });

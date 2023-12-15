@@ -2,7 +2,7 @@
 import { Label } from "./Input.style";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  id: string;
+  id: string;  
   icon?: React.ReactNode;
   variant?: "primary" | "secondary" | "tertiary" | "transparent";
   borderless?: boolean;
@@ -11,7 +11,7 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 export function Input({
   variant = "primary",
   icon,
-  borderless,
+  borderless,  
   ...rest
 }: InputProps) {
   return (
