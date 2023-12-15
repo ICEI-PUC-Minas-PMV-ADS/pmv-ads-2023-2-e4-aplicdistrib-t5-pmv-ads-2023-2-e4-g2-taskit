@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Taskit",
+    "slug": "taskit",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0e161f"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0e161f"
+      },
+      "androidStatusBar": {
+        "backgroundColor": "#0e161f",
+        "translucent": false
+      },
+      "package": "com.pucminas.taskit"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8b704fd8-a44e-456f-b49d-ef29d7d6346b"
+      }
+    }
+  }
+}

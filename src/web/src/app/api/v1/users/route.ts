@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { sha256 } from "js-sha256";
 
-import { UserService } from "./user.service";
+import { UserController } from "./user.controller";
 import { verifyToken } from "@/shared/api/utils/verifyToken";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 
@@ -15,7 +15,7 @@ export async function GET(req: Request) {
   const isAuthenticated = await verifyToken(req);
   if (!isAuthenticated) return NextResponse.json({ code: 401, message: 'Access Denied', redirectTo: url.host + '/login' }, { status: 401 });
 
-  const users = await UserService.List();
+  const users = await UserController.List();
   if (!users || users.length === 0) return NextResponse.json({ code: 204, message: "There are no users in the database" }, { status: 204 });
 
   return NextResponse.json(users);
@@ -33,12 +33,12 @@ interface NewUser {
  */
 export async function POST(req: Request) {
   const user: NewUser = await req.json();
-  let password = sha256.hmac(user.email.toLowerCase(), user.password);
+  let password = sha256.hmac(user.password, user.password);
 
-  const userExists = await UserService.GetByEmail(user.email);
+  const userExists = await UserController.GetByEmail(user.email);
   if (userExists) return NextResponse.json({ code: 409, message: "User already exists." }, { status: 409 });
 
-  const newUser = await UserService.Create({ ...user, email: user.email.toLowerCase(), password });
+  const newUser = await UserController.Create({ ...user, email: user.email.toLowerCase(), password });
   return NextResponse.json(newUser);
 }
 

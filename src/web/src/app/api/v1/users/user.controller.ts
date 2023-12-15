@@ -158,7 +158,7 @@ async function GetByEmail(email: string) {
   })
 }
 
-export const UserService = {
+export const UserController = {
   Create,
   Update,
   Delete,

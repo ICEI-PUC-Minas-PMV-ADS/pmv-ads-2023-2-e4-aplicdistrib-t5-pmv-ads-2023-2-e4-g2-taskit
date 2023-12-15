@@ -5,7 +5,7 @@ import JWT from 'jsonwebtoken';
 
 import { verifyToken } from "@/shared/api/utils/verifyToken";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
-import { UserService } from "../user.service";
+import { UserController } from "../user.controller";
 
 interface UsersParams {
   params: {
@@ -34,9 +34,9 @@ export async function GET(req: Request, { params }: UsersParams) {
     let user: any;
     const userId: string = params.id;
     if (!userId.includes('@')) {
-      user = await UserService.Get(userId);
+      user = await UserController.Get(userId);
     } else {
-      user = await UserService.GetByEmail(params.id);
+      user = await UserController.GetByEmail(params.id);
     }
     return NextResponse.json(user);
   } catch (err) {
@@ -69,7 +69,7 @@ export async function PUT(req: Request, { params }: UsersParams) {
   }
 
   try {
-    const updatedUser = await UserService.Update({ ...user, id: params.id });
+    const updatedUser = await UserController.Update({ ...user, id: params.id });
     return NextResponse.json(updatedUser);
   } catch (err) {
     return NextResponse.json({ code: 404, message: "User not found." }, { status: 404 });
@@ -96,7 +96,7 @@ export async function DELETE(req: Request, { params }: UsersParams) {
   /** End of Check Token Validity */  
   
   try {
-    const deletedUser = await UserService.Delete(params.id);
+    const deletedUser = await UserController.Delete(params.id);
     return NextResponse.json({ message: "User deleted. Good bye " + deletedUser.name + "!" }, { status: 200, });
   } catch (err) {
     return NextResponse.json({ code: 404, message: "User not found." }, { status: 404 });

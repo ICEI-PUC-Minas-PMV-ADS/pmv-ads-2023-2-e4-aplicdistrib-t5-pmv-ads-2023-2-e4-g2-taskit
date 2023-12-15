@@ -68,7 +68,7 @@ async function Login(email: string, password: string) {
   })
 }
 
-export const AuthService = {
+export const AuthController = {
   Invalidate,
   Create,
   Get,

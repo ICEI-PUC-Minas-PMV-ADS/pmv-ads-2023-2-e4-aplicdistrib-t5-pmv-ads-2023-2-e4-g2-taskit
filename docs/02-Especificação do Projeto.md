@@ -82,9 +82,7 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 | RF-002 | O software deve permitir o cadastro de usuários.                                                                | ALTA       |
 | RF-003 | O software deve permitir o login e logout.                                                                      | ALTA       |
 | RF-004 | O software deve apresentar um timer para o controle de tempo.                                                   | MÉDIA      |
-| RF-005 | O software deve permitir que o usuário organize suas tarefas utilizando as categorias urgente, difícil e fácil. | MÉDIA      |
-| RF-006 | O software deve gerar um relatório comparando o tempo gasto com o tempo planejado.                              | BAIXA      |
-| RF-007 | O software deve permitir o compartilhamento das listas.                                                         | BAIXA      |
+
 
 ### Requisitos não Funcionais
 

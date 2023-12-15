@@ -17,15 +17,36 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ## Wireframes
 
-![Exemplo de Wireframe](img/wireframe-example.png)
+Login
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/d09752f4-329d-42ef-9ca8-28ed0ba49809)
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+
+Cadastro
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/fe10bf1a-7f1b-47a0-a58d-45fceaf4b1c6)
+
+
+Home
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/5098f44b-0e3f-4dab-a441-a089af9277f6)
+
+
+Criar Tarefa
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/b0641027-ce32-495a-bc3c-45faa7c10408)
+
+Timer
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/73408251/fe8cad1a-ba8d-4c09-9ed0-14524e187605)
+
+## Mobile
+Login <br>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/003ab65b-ed5c-4435-b91f-c6b6ad6d4fe8)
+
+Criar Usuário<br>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/724ad50a-668f-4718-81f3-57b96a8804aa)
+
+Home <br>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/967d986e-ca38-472d-9e29-1b792cec96f1)
+
+Criar Tarefa <br>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/80173044-e245-46e4-9224-f244b96edf67)
+
+Timer <br>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit/assets/100412134/e452591a-bba6-4667-a8d3-96224c0ddf55)
