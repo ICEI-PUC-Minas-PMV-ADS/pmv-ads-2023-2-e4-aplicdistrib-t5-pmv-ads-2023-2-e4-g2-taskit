@@ -5,7 +5,7 @@ import JWT from 'jsonwebtoken';
 
 import { verifyToken } from "@/shared/api/utils/verifyToken";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
-import { UserService } from "../user.service";
+import { UserService } from "../user.controller";
 
 interface UsersParams {
   params: {

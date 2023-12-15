@@ -3,7 +3,7 @@ import JWT from 'jsonwebtoken';
 
 import { verifyToken } from "@/shared/api/utils/verifyToken";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
-import { TaskService } from "./task.service";
+import { TaskService } from "./task.controller";
 
 export async function POST(req: Request) {
   /** Check Token Validity */
@@ -26,7 +26,13 @@ export async function POST(req: Request) {
   return NextResponse.json(createdTask);
 }
 
-export async function GET(req: Request) {
+interface GetTaskParams {
+  params: {
+    quantity: number;
+    page: number;
+  }
+}
+export async function GET(req: Request, { params }: GetTaskParams) {
   /** Check Token Validity */
   const token = req.headers?.get('Authorization')?.split('Bearer ')[1]!;
   const tokenUser: any = JWT.decode(token);
@@ -41,11 +47,12 @@ export async function GET(req: Request) {
   /** End of Check Token Validity */
 
   if (!tokenUser.id) return NextResponse.json({ code: 400, message: "Bad Request" }, { status: 400 });
+  const quantity = params.quantity ?? 10;
+  const page = params.page ?? 1;
+  const tasks = await TaskService.List(tokenUser.id, quantity, page);
+  if (!tasks || tasks.length === 0) return NextResponse.json({ code: 202, message: "There are no tasks for this user." }, { status: 202 });
 
-  const task = await TaskService.List(tokenUser.id);
-  if (!task || task.length === 0) return NextResponse.json({ code: 202, message: "There are no tasks for this user." }, { status: 202 });
-
-  return NextResponse.json(task);
+  return NextResponse.json(tasks);
 }
 
 export const CreateTask: IRoutePathMethod = {

@@ -1,5 +1,7 @@
 "use client";
 
+import { transparentize } from 'polished'
+
 import styled from "styled-components";
 import { readableColor, darken, lighten } from "polished";
 import { dimmColor } from "@/shared/utils/dimmColor";
@@ -17,7 +19,7 @@ export const Label = styled.label<InputProps>`
 
   border: solid 1px
     ${({ $variant: variant, theme, $borderless: borderless }) =>
-      borderless ? "transparent" : theme.input.border[variant]};
+    borderless ? "transparent" : theme.input.border[variant]};
   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
   background: ${({ $variant: variant, theme }) =>
@@ -29,17 +31,17 @@ export const Label = styled.label<InputProps>`
   }
 
   > input {
+    flex: 1;
     border: none;
     font-size: 1rem;
     height: 2rem;
-    background: ${({ $variant: variant, theme }) =>
-      theme.input.background[variant]};
+    background: transparent;
     color: ${({ $variant: variant = "primary", theme }) =>
-      readableColor(theme.input.background[variant], "#fff", "#000")};
+    readableColor(theme.input.background[variant], "#fff", "#000")};
 
     &::placeholder {
       color: ${({ $variant: variant, theme }) =>
-        dimmColor(theme.input.background[variant])};
+    dimmColor(theme.input.background[variant])};
     }
 
     &:focus {

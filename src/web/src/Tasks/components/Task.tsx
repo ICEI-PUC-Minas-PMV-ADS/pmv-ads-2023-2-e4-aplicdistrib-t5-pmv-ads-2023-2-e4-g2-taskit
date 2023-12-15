@@ -1,11 +1,13 @@
 "use client";
 
-import { ITask } from "@/app/types/tasks";
+import { useRouter } from "next/navigation";
 import { FormEventHandler, useState } from "react";
 import { FiEdit, FiTrash2, FiClock } from "react-icons/fi";
+
+import { useAuth } from "@/shared/auth/context/AuthContext";
+import { useTask } from "../context/TaskContext";
+import { ITask } from "../models/ITask";
 import Modal from "./Modal";
-import { useRouter } from "next/navigation";
-import { deleteTodo, editTodo } from "@/app/api";
 
 interface TaskProps {
   task: ITask;
@@ -13,13 +15,15 @@ interface TaskProps {
 
 const Task: React.FC<TaskProps> = ({ task }) => {
   const router = useRouter();
+  const { userData } = useAuth();
+  const { edit, remove } = useTask();
   const [openModalEdit, setOpenModalEdit] = useState<boolean>(false);
   const [openModalDeleted, setOpenModalDeleted] = useState<boolean>(false);
   const [taskToEdit, setTaskToEdit] = useState<string>(task.text);
 
   const handleSubmitEditTodo: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    await editTodo({
+    await edit(userData.token, {
       id: task.id,
       text: taskToEdit,
     });
@@ -28,7 +32,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
   };
 
   const handleDeleteTask = async (id: string) => {
-    await deleteTodo(id);
+    await remove(userData.token, id);
     setOpenModalDeleted(false);
     router.refresh();
   };
@@ -54,25 +58,16 @@ const Task: React.FC<TaskProps> = ({ task }) => {
                 type='text'
                 placeholder='Type here'
                 className='input input-bordered w-full'
-                
+
               />
 
               <textarea
                 value={taskToEdit}
                 onChange={(e) => setTaskToEdit(e.target.value)}
-                
                 placeholder='bio'
                 className='textarea textarea-bordered'
-                
               />
 
-              
-              
-
-              
-              
-
-            
               <button type='submit' className='btn'>
                 Submit
               </button>
@@ -96,11 +91,11 @@ const Task: React.FC<TaskProps> = ({ task }) => {
           </div>
         </Modal>
 
-        <FiClock 
-        onClick={() => router.push("/timer")}
-        cursor='pointer'
-        className='text-green-500'
-        size={25}
+        <FiClock
+          onClick={() => router.push("/timer")}
+          cursor='pointer'
+          className='text-green-500'
+          size={25}
         />
 
       </td>

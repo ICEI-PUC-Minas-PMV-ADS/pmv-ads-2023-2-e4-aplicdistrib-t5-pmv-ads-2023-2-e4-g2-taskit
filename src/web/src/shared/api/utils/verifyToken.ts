@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { AuthService } from "@/app/api/v1/auth/auth.service";
+import { AuthController } from "@/app/api/v1/auth/auth.controller";
 
 export async function verifyToken(req: Request) {
   const auth = req.headers?.get('Authorization');
@@ -11,7 +11,7 @@ export async function verifyToken(req: Request) {
   const decoded: any = jwt.decode(token);
   if (!decoded) return false;
 
-  const session = await AuthService.Get(token, decoded.id);
+  const session = await AuthController.Get(token, decoded.id);
   if (!session) return false;
 
   const now = new Date();
