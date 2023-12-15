@@ -22,10 +22,6 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0e161f"
       },
-      "androidStatusBar": {
-        "backgroundColor": "#0e161f",
-        "translucent": false
-      },
       "package": "com.pucminas.taskit"
     },
     "web": {
