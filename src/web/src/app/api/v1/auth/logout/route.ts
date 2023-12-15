@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { AuthService } from "../auth.controller";
+import { AuthController } from "../auth.controller";
 import { IRoutePathMethod } from "@/shared/api/interfaces/apidocs.interface";
 import { verifyToken } from "@/shared/api/utils/verifyToken";
 
@@ -12,7 +12,7 @@ export async function POST(req: Request) {
   const { sessionId, userId }: any = await req.json();
   if (!sessionId || !userId) return NextResponse.json({ code: 400, message: 'Bad Request.' }, { status: 400 });
 
-  await AuthService.Invalidate(sessionId, userId);
+  await AuthController.Invalidate(sessionId, userId);
 
   return NextResponse.json({ code: 200, message: 'Logged out. Session Invalidated.' }, { status: 200 });
 }
