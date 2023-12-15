@@ -5,8 +5,7 @@ import Constants from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
-  // const uri = 'https://taskit-three.vercel.app';
-  const uri = 'http://192.168.18.11:3000';
+  const uri = 'https://taskit-three.vercel.app';  
   return (
     <>
       <StatusBar style="dark" backgroundColor='#0e161f' />
