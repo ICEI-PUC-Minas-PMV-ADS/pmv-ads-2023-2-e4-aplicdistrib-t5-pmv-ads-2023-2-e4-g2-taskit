@@ -5,6 +5,8 @@ export const AuthContainer = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
 
   > div {
     flex: 1;
