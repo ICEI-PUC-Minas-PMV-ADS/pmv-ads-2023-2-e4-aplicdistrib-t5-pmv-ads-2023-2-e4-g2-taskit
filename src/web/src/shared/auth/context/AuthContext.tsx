@@ -2,9 +2,11 @@
 
 import { createContext, useContext, useState, useEffect } from 'react';
 import { sha256 } from "js-sha256";
+import { error } from 'console';
 
 export const AuthContext = createContext({
   session: {} as SessionState,
+  error: '',
   Login: async (email: string, password: string) => {},
   Logout: async (sessionId: string, userId: string) => {},
   Register: async (name: string, email: string, password: string) => {},
@@ -20,6 +22,7 @@ export interface SessionState {
 
 export const AuthProvider = ({ children }: any) => {
   const [token, setToken] = useState<string>('');
+  const [error, setError] = useState<string>('');
   const [session, setSession] = useState<SessionState>({
     status: 'pending',
   });
@@ -37,23 +40,28 @@ export const AuthProvider = ({ children }: any) => {
   }, []);
 
   async function Login(email: string, password: string) {
-    await fetch('/api/v1/login', {
+    await fetch('/api/v1/auth/login', {
       method: 'POST',
       body: JSON.stringify({
         email,
         password: sha256.hmac(email.toLowerCase(), password),
       })
     }).then((res) => res.json()).then((data) => {
-      setToken(data.token);
-      localStorage.setItem('@taskit:token', data.token);
-      setSession({ status: 'authenticated', token: data.token });
+      if(data.token) {
+        setToken(data.token);
+        localStorage.setItem('@taskit:token', data.token);
+        setSession({ status: 'authenticated', token: data.token });
+      }
+      if (data.message) {
+        setError(data.message);
+      }
     }).catch(() => {
       setSession({ status: 'unauthenticated', error: 'error' });
     });
   }
 
   async function Logout(sessionId: string, userId: string) {
-    await fetch('/api/v1/logout', {
+    await fetch('/api/v1/auth/logout', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -85,7 +93,7 @@ export const AuthProvider = ({ children }: any) => {
   }
 
   return (
-    <AuthContext.Provider value={{ session, Login, Logout, Register }}>
+    <AuthContext.Provider value={{ session, error, Login, Logout, Register }}>
       {children}
     </AuthContext.Provider>
   );

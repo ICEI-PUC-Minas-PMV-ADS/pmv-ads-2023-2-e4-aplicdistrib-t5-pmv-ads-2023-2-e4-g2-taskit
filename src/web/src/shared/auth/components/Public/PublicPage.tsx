@@ -1,8 +1,7 @@
 'use client';
 
-import { Fragment, useEffect, useState } from "react";
+import { useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
-import { useForm } from "@/shared/hooks/useForm";
 
 import { Input } from "@/shared/components/Input/Input";
 import { Button } from "@/shared/components/Button";
@@ -11,52 +10,19 @@ import { AuthForm } from "./PublicPage.style";
 import { useAuth } from "../../context/AuthContext";
 
 export function PublicPage() {
-  const { Login, Register } = useAuth();
+  const { Login, Register, error } = useAuth();
   const [action, setAction] = useState("login");
-  const { form, handleInput, setForm, isValid } = useForm({
-    name: { value: "", label: "name", placeholder: "Nome", type: "text" },
-    email: {
-      value: "",
-      required: true,
-      label: "email",
-      placeholder: "E-mail",
-      type: "email",
-    },
-    password: {
-      value: "",
-      required: true,
-      label: "password",
-      placeholder: "Senha",
-      type: "password",
-    },
-    checkpassword: {
-      value: "",
-      label: "checkpassword",
-      placeholder: "Confirme a senha",
-      type: "password",
-    },
-  });
-
-  useEffect(() => {
-    setForm({
-      ...form,
-      name: { ...form.name, required: action === "signin" },
-      checkpassword: {
-        ...form.checkpassword,
-        required: action === "signin",
-        value: "",
-      },
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [action]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [checkpassword, setCheckPassword] = useState("");  
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (!isValid()) return;
+    e.preventDefault();    
     if (action === "login") {
-      await Login(form.email.value, form.password.value);
+      await Login(email, password);
     } else {
-      await Register(form.name.value, form.email.value, form.password.value);
+      await Register(name, email, password);
     }
   }
 
@@ -64,22 +30,51 @@ export function PublicPage() {
     <AuthForm onSubmit={handleSubmit}>
       {action === "signin" ? <h1>Cadastre-se</h1> : <></>}
 
-      {Object.values(form).map((item) =>
-        item.required ? (
-          <Input
-            borderless
-            key={item.label}
-            id={item.label}
-            type={item.type}
-            placeholder={item.placeholder}
-            defaultValue={item.value}
-            required={item.required}
-            onChange={handleInput}
-          />
-        ) : (
-          <Fragment key={item.label}></Fragment>
-        )
-      )}
+      {action === "signin" && <Input
+        borderless
+        id='name'
+        type='text'
+        placeholder='Name'
+        defaultValue={name}
+        required
+        minLength={3}
+        onChange={e => setName(e.target.value)}
+      />}
+
+      <Input
+        borderless
+        id='email'
+        type='email'
+        placeholder='Email'
+        defaultValue={email}
+        required
+        onChange={e => setEmail(e.target.value)}
+      />
+
+      <Input
+        borderless
+        id='password'
+        type='password'
+        placeholder='Password'
+        defaultValue={password}
+        minLength={6}
+        required
+        onChange={e => setPassword(e.target.value)}
+      />
+
+      {action === "signin" && <Input
+        borderless
+        id='checkpassword'
+        type='password'
+        placeholder='Check Password'
+        defaultValue={checkpassword}
+        minLength={6}
+        required
+        onChange={e => setCheckPassword(e.target.value)}
+      />}
+
+      {error && <p>{error}</p>}
+
       <div>
         <Button
           type="submit"

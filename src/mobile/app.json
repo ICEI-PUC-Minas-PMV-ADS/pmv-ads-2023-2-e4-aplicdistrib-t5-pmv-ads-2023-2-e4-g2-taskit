@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0f161f"
+      "backgroundColor": "#0e161f"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,7 +20,11 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#0f161f"
+        "backgroundColor": "#0e161f"
+      },
+      "androidStatusBar": {
+        "backgroundColor": "#0e161f",
+        "translucent": false
       },
       "package": "com.pucminas.taskit"
     },
