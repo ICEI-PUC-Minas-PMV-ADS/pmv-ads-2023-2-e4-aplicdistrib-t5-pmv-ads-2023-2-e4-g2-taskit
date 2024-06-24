@@ -13,17 +13,13 @@ authors:
     given-names: Thaís
   - family-names: Eduardo Silva Oliveira
     given-names: Vinícius
-  - name-suffix: Wagner Cipriano da Silva
+  - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: 
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Cipriano da Silva
+    given-names: Wagner
 keywords:
-  - 
-  - 
+  - Pomodoro
+  - Gerenciamento de Tarefas
 repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-aplicdistrib-t5-pmv-ads-2023-2-e4-g2-taskit
 version: 1.0.0
 date-released: 2023-08-01
